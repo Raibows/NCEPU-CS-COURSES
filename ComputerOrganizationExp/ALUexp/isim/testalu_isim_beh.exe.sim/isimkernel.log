@@ -1,0 +1,28 @@
+Command line:
+   testalu_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  52830
+
+Sat May 18 20:03:45 2019
+
+
+ Elaboration Time: 0.109375 sec
+
+ Current Memory Usage: 5184.02 Meg
+
+ Total Signals          : 25
+ Total Nets             : 101
+ Total Signal Drivers   : 11
+ Total Blocks           : 5
+ Total Primitive Blocks : 4
+ Total Processes        : 4
+ Total Traceable Variables  : 11
+ Total Scalar Nets and Variables : 480
+
+ Total Simulation Time: 0.296875 sec
+
+ Current Memory Usage: 5026.73 Meg
+
+Sat May 18 20:09:22 2019
+

@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "C:/Users/Raibows/Downloads/st-code/Sram_Write_Read/register_file.xst" -ofn "C:/Users/Raibows/Downloads/st-code/Sram_Write_Read/register_file.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Sram_Write_Read.ucf -p xc3s1200e-fg320-4 register_file.ngc register_file.ngd  

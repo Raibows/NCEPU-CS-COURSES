@@ -1,0 +1,11 @@
+[Inputs]
+CLK
+RST
+Cin
+=INPUT[15:0]=
+[Outputs]
+Cout
+Zout
+=OUTPUT[15:0]=
+=stateCnt[6:0]=
+[BiDir]

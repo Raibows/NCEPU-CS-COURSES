@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=C:\Users\Raibows\Downloads\st-code\Sram_Write_Read\impact.xsl
+OUTFILE=C:\Users\Raibows\Downloads\st-code\Sram_Write_Read\impact.xsl
+FAMILY=Single
+PART=Single
+WORKINGDIR=C:\Users\Raibows\Downloads\st-code\Sram_Write_Read
+LICENSE=iMPACT
+USER_INFO=iMPACT
