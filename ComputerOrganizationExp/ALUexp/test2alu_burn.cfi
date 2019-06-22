@@ -1,0 +1,11 @@
+# PROMGEN: Xilinx Prom Generator P.20131013
+# Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+SOFTWARE_VERSION P.20131013
+DATE            05/18/2019 - 21:32
+SOURCE          C:\Users\Raibows\Desktop\2 ALU\test2alu_burn.mcs
+DEVICE          XCF04S
+DATA_WIDTH      8
+FILL_DATA       0xFF
+SIGNATURE       0x00AE0D04
+START_ADDRESS   0x00000000 END_ADDRESS 0x00075393 DIRECTION_UP   "C:/Users/Raibows/Desktop/2 ALU/alu.bit" 3s1200efg320

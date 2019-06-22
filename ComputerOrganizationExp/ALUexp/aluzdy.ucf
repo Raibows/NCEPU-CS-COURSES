@@ -1,0 +1,60 @@
+
+NET "CLK" LOC = U9;	# CLK KEY
+
+NET "RST" LOC = U10;			# reset from RST KEY
+
+
+# handled switch ,dip totaly 16 bits.
+
+NET "INPUT[0]" LOC = J6;	#SW0
+NET "INPUT[1]" LOC = J7;
+NET "INPUT[2]" LOC = K2;
+NET "INPUT[3]" LOC = K7;
+NET "INPUT[4]" LOC = M1;
+NET "INPUT[5]" LOC = N1;
+NET "INPUT[6]" LOC = N2;
+NET "INPUT[7]" LOC = R1;
+NET "INPUT[8]" LOC = R4;
+NET "INPUT[9]" LOC = U1;
+NET "INPUT[10]" LOC = V2;
+NET "INPUT[11]" LOC = V3;
+NET "INPUT[12]" LOC = V4;
+NET "INPUT[13]" LOC = U8;
+NET "INPUT[14]" LOC = R7;
+NET "INPUT[15]" LOC = T7; # SW15
+
+# led lights ,on the TOP of the board.
+
+NET "OUTPUT[0]" LOC = D10; 	# L0
+NET "OUTPUT[1]" LOC = E10;
+NET "OUTPUT[2]" LOC = A11;
+NET "OUTPUT[3]" LOC = B11;
+NET "OUTPUT[4]" LOC = C11;
+NET "OUTPUT[5]" LOC = D11;
+NET "OUTPUT[6]" LOC = E11;
+NET "OUTPUT[7]" LOC = F11;
+NET "OUTPUT[8]" LOC = A12;
+NET "OUTPUT[9]" LOC = E12;
+NET "OUTPUT[10]" LOC = F12;
+NET "OUTPUT[11]" LOC = A13;
+NET "OUTPUT[12]" LOC = B13;
+NET "OUTPUT[13]" LOC = D13;
+NET "OUTPUT[14]" LOC = E13;
+NET "OUTPUT[15]" LOC = A14;	#L15
+
+# 7-seg digit display
+
+NET "stateCnt[6]" LOC = F8;
+NET "stateCnt[5]" LOC = E8;
+NET "stateCnt[4]" LOC = A8;
+NET "stateCnt[3]" LOC = F7;
+NET "stateCnt[2]" LOC = E7;
+NET "stateCnt[1]" LOC = D7;
+NET "stateCnt[0]" LOC = C7;
+
+
+
+
+
+# PlanAhead Generated IO constraints 
+

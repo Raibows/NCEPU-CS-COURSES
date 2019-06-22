@@ -1,0 +1,10 @@
+Storage Target: Xilinx Flash/PROM
+Storage Family: Platform Flash
+xcf04s          [4 M]
+FF
+test2alu_burn
+C:\Users\Raibows\Desktop\2 ALU\
+
+MCS
+No
+

@@ -1,0 +1,4 @@
+AR sram_write_read behavioral C:/Users/Raibows/Downloads/st-code/Sram_Write_Read/Sram_Write_Read.vhd sub00/vhpl01 1561164690
+EN register_file NULL C:/Users/Raibows/Downloads/st-code/Sram_Write_Read/Sram_Write_Read.vhd sub00/vhpl02 1561164050
+AR register_file behavior C:/Users/Raibows/Downloads/st-code/Sram_Write_Read/Sram_Write_Read.vhd sub00/vhpl03 1561164051
+EN sram_write_read NULL C:/Users/Raibows/Downloads/st-code/Sram_Write_Read/Sram_Write_Read.vhd sub00/vhpl00 1561164689

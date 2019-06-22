@@ -1,0 +1,511 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: Sram_Write_Read.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Sram_Write_Read.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Sram_Write_Read"
+Output Format                      : NGC
+Target Device                      : xc3s1200e-4-fg320
+
+---- Source Options
+Top Module Name                    : Sram_Write_Read
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+WARNING:HDLParsers:3607 - Unit work/Sram_Write_Read is now defined in a different file.  It was defined in "I:/CO exps/3/Sram_Write_Read/Sram_Write_Read.vhd", and is now defined in "C:/Users/Raibows/Downloads/st-code/Sram_Write_Read/Sram_Write_Read.vhd".
+WARNING:HDLParsers:3607 - Unit work/Sram_Write_Read/Behavioral is now defined in a different file.  It was defined in "I:/CO exps/3/Sram_Write_Read/Sram_Write_Read.vhd", and is now defined in "C:/Users/Raibows/Downloads/st-code/Sram_Write_Read/Sram_Write_Read.vhd".
+Compiling vhdl file "C:/Users/Raibows/Downloads/st-code/Sram_Write_Read/Sram_Write_Read.vhd" in Library work.
+Entity <sram_write_read> compiled.
+Entity <sram_write_read> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <Sram_Write_Read> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <Sram_Write_Read> in library <work> (Architecture <behavioral>).
+Entity <Sram_Write_Read> analyzed. Unit <Sram_Write_Read> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Sram_Write_Read>.
+    Related source file is "C:/Users/Raibows/Downloads/st-code/Sram_Write_Read/Sram_Write_Read.vhd".
+WARNING:Xst:1780 - Signal <tmp_read_data> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <state_controler> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <write_state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 19                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | waiting                                        |
+    | Power Up State     | prepare                                        |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_1> for signal <read_state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 19                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 6                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | waiting                                        |
+    | Power Up State     | prepare                                        |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_2> for signal <ctrl_state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 3                                              |
+    | Inputs             | 0                                              |
+    | Outputs            | 3                                              |
+    | Clock              | ctrl_r                    (rising_edge)        |
+    | Reset              | rst                       (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | n                                              |
+    | Power Up State     | r                                              |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 16-bit register for signal <ADDR>.
+    Found 16-bit tristate buffer for signal <DATA>.
+    Found 1-bit register for signal <RAM1_EN>.
+    Found 1-bit register for signal <RAM1_OE>.
+    Found 1-bit register for signal <RAM1_WE>.
+    Found 16-bit register for signal <Mtridata_DATA> created at line 107.
+    Found 1-bit register for signal <Mtrien_DATA> created at line 107.
+    Found 16-bit up counter for signal <tmp_addr>.
+    Found 16-bit register for signal <tmp_data>.
+    Found 16-bit register for signal <tmp_read_addr>.
+    Found 16-bit adder for signal <tmp_read_addr$addsub0000> created at line 150.
+    Found 16-bit register for signal <to_light>.
+    Summary:
+	inferred   3 Finite State Machine(s).
+	inferred   1 Counter(s).
+	inferred  84 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  16 Tristate(s).
+Unit <Sram_Write_Read> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 16-bit adder                                          : 1
+# Counters                                             : 1
+ 16-bit up counter                                     : 1
+# Registers                                            : 9
+ 1-bit register                                        : 4
+ 16-bit register                                       : 5
+# Tristates                                            : 1
+ 16-bit tristate buffer                                : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_2> for best encoding.
+Optimizing FSM <ctrl_state/FSM> on signal <ctrl_state[1:3]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ r     | 001
+ w     | 100
+ n     | 010
+-------------------
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <read_state/FSM> on signal <read_state[1:3]> with user encoding.
+---------------------
+ State   | Encoding
+---------------------
+ prepare | 000
+ start   | 001
+ achieve | 010
+ waiting | 011
+ over    | 100
+---------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <write_state/FSM> on signal <write_state[1:3]> with user encoding.
+---------------------
+ State   | Encoding
+---------------------
+ prepare | 000
+ start   | 001
+ achieve | 010
+ waiting | 011
+ over    | 100
+---------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 3
+# Adders/Subtractors                                   : 1
+ 16-bit adder                                          : 1
+# Counters                                             : 1
+ 16-bit up counter                                     : 1
+# Registers                                            : 84
+ Flip-Flops                                            : 84
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Sram_Write_Read> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Sram_Write_Read, actual ratio is 1.
+FlipFlop read_state_FSM_FFd2 has been replicated 1 time(s)
+FlipFlop read_state_FSM_FFd3 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 111
+ Flip-Flops                                            : 111
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Sram_Write_Read.ngr
+Top Level Output File Name         : Sram_Write_Read
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 71
+
+Cell Usage :
+# BELS                             : 273
+#      GND                         : 1
+#      INV                         : 4
+#      LUT1                        : 30
+#      LUT2                        : 1
+#      LUT3                        : 39
+#      LUT3_D                      : 3
+#      LUT3_L                      : 17
+#      LUT4                        : 72
+#      LUT4_D                      : 3
+#      LUT4_L                      : 36
+#      MUXCY                       : 30
+#      MUXF5                       : 4
+#      VCC                         : 1
+#      XORCY                       : 32
+# FlipFlops/Latches                : 111
+#      FDC                         : 22
+#      FDCE                        : 48
+#      FDE                         : 33
+#      FDP                         : 8
+# Clock Buffers                    : 2
+#      BUFGP                       : 2
+# IO Buffers                       : 69
+#      IBUF                        : 17
+#      IOBUF                       : 16
+#      OBUF                        : 36
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1200efg320-4 
+
+ Number of Slices:                      106  out of   8672     1%  
+ Number of Slice Flip Flops:            111  out of  17344     0%  
+ Number of 4 input LUTs:                205  out of  17344     1%  
+ Number of IOs:                          71
+ Number of bonded IOBs:                  71  out of    250    28%  
+ Number of GCLKs:                         2  out of     24     8%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 108   |
+ctrl_r                             | BUFGP                  | 3     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------------------------------------+------------------------+-------+
+Control Signal                                                   | Buffer(FF name)        | Load  |
+-----------------------------------------------------------------+------------------------+-------+
+ctrl_state_FSM_Acst_FSM_inv(ctrl_state_FSM_Acst_FSM_inv1_INV_0:O)| NONE(RAM1_EN)          | 78    |
+-----------------------------------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 5.528ns (Maximum Frequency: 180.897MHz)
+   Minimum input arrival time before clock: 4.631ns
+   Maximum output required time after clock: 4.914ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 5.528ns (frequency: 180.897MHz)
+  Total number of paths / destination ports: 1097 / 141
+-------------------------------------------------------------------------
+Delay:               5.528ns (Levels of Logic = 17)
+  Source:            tmp_read_addr_1 (FF)
+  Destination:       tmp_read_addr_15 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: tmp_read_addr_1 to tmp_read_addr_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             4   0.591   0.762  tmp_read_addr_1 (tmp_read_addr_1)
+     LUT1:I0->O            1   0.704   0.000  Madd_tmp_read_addr_addsub0000_cy<1>_rt (Madd_tmp_read_addr_addsub0000_cy<1>_rt)
+     MUXCY:S->O            1   0.464   0.000  Madd_tmp_read_addr_addsub0000_cy<1> (Madd_tmp_read_addr_addsub0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_tmp_read_addr_addsub0000_cy<2> (Madd_tmp_read_addr_addsub0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_tmp_read_addr_addsub0000_cy<3> (Madd_tmp_read_addr_addsub0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_tmp_read_addr_addsub0000_cy<4> (Madd_tmp_read_addr_addsub0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_tmp_read_addr_addsub0000_cy<5> (Madd_tmp_read_addr_addsub0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_tmp_read_addr_addsub0000_cy<6> (Madd_tmp_read_addr_addsub0000_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_tmp_read_addr_addsub0000_cy<7> (Madd_tmp_read_addr_addsub0000_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_tmp_read_addr_addsub0000_cy<8> (Madd_tmp_read_addr_addsub0000_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_tmp_read_addr_addsub0000_cy<9> (Madd_tmp_read_addr_addsub0000_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_tmp_read_addr_addsub0000_cy<10> (Madd_tmp_read_addr_addsub0000_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_tmp_read_addr_addsub0000_cy<11> (Madd_tmp_read_addr_addsub0000_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_tmp_read_addr_addsub0000_cy<12> (Madd_tmp_read_addr_addsub0000_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_tmp_read_addr_addsub0000_cy<13> (Madd_tmp_read_addr_addsub0000_cy<13>)
+     MUXCY:CI->O           0   0.059   0.000  Madd_tmp_read_addr_addsub0000_cy<14> (Madd_tmp_read_addr_addsub0000_cy<14>)
+     XORCY:CI->O           1   0.804   0.424  Madd_tmp_read_addr_addsub0000_xor<15> (tmp_read_addr_addsub0000<15>)
+     LUT4:I3->O            1   0.704   0.000  tmp_read_addr_mux0000<15> (tmp_read_addr_mux0000<15>)
+     FDCE:D                    0.308          tmp_read_addr_15
+    ----------------------------------------
+    Total                      5.528ns (4.342ns logic, 1.186ns route)
+                                       (78.5% logic, 21.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ctrl_r'
+  Clock period: 3.091ns (frequency: 323.520MHz)
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Delay:               3.091ns (Levels of Logic = 1)
+  Source:            ctrl_state_FSM_FFd1 (FF)
+  Destination:       ctrl_state_FSM_FFd1 (FF)
+  Source Clock:      ctrl_r rising
+  Destination Clock: ctrl_r rising
+
+  Data Path: ctrl_state_FSM_FFd1 to ctrl_state_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             18   0.591   1.068  ctrl_state_FSM_FFd1 (ctrl_state_FSM_FFd1)
+     INV:I->O              1   0.704   0.420  ctrl_state_FSM_FFd1-In1_INV_0 (ctrl_state_FSM_FFd1-In)
+     FDC:D                     0.308          ctrl_state_FSM_FFd1
+    ----------------------------------------
+    Total                      3.091ns (1.603ns logic, 1.488ns route)
+                                       (51.9% logic, 48.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 81 / 81
+-------------------------------------------------------------------------
+Offset:              4.631ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       Mtridata_DATA_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst to Mtridata_DATA_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            18   1.218   1.103  rst_IBUF (rst_IBUF)
+     LUT4:I2->O           17   0.704   1.051  Mtridata_DATA_and00001 (Mtridata_DATA_and0000)
+     FDE:CE                    0.555          Mtridata_DATA_0
+    ----------------------------------------
+    Total                      4.631ns (2.477ns logic, 2.154ns route)
+                                       (53.5% logic, 46.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 67 / 51
+-------------------------------------------------------------------------
+Offset:              4.914ns (Levels of Logic = 1)
+  Source:            Mtrien_DATA (FF)
+  Destination:       DATA<15> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: Mtrien_DATA to DATA<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             17   0.591   1.051  Mtrien_DATA (Mtrien_DATA)
+     IOBUF:T->IO               3.272          DATA_15_IOBUF (DATA<15>)
+    ----------------------------------------
+    Total                      4.914ns (3.863ns logic, 1.051ns route)
+                                       (78.6% logic, 21.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.17 secs
+ 
+--> 
+
+Total memory usage is 4536556 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    4 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
