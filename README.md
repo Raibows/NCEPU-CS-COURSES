@@ -9,7 +9,7 @@ This is an open source project aimed at sharing undergrate courses for college o
     - Experiment
 - [ ] Computer Organization Exp
 - [ ] Operating System Exp
-- [ ] Assembler Language Exp
+- [x] Assembly Language Exp
 - [x] Algorithm
     - Course
     - Experiment
