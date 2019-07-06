@@ -19,5 +19,6 @@ This is an open source project aimed at sharing undergrate courses for college o
 2. June,22 2019 perfect Computer Organization Exp
 3. June,29 2019 update Assembly Lang Exp
 4. July,1 2019 update Assembly Lang Exp
+5. July,6 2019 update Assembly Lang Exp
 ## Copyright
 For materials not specifically stated, the license is granted under Apache License 2.0 license.
