@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\Raibows\Desktop\ALUexp\alu.ncd
-OUTFILE=C:\Users\Raibows\Desktop\ALUexp\alu.bit
+INFILE=C:\Users\Raibows\Documents\vscode\NCEPU_CS_COURSES\ComputerOrganizationExp\ALUexp\alu.ncd
+OUTFILE=C:\Users\Raibows\Documents\vscode\NCEPU_CS_COURSES\ComputerOrganizationExp\ALUexp\alu.bit
 FAMILY=Spartan3E
 PART=xc3s1200e-4fg320
-WORKINGDIR=C:\Users\Raibows\Desktop\ALUexp
+WORKINGDIR=C:\Users\Raibows\Documents\vscode\NCEPU_CS_COURSES\ComputerOrganizationExp\ALUexp
 LICENSE=WebPack
 USER_INFO=__0_0_0

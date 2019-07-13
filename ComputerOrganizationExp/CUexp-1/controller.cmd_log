@@ -1,0 +1,48 @@
+xst -intstyle ise -ifn "C:/CO exps/2 ALU/controller.xst" -ofn "C:/CO exps/2 ALU/controller.syr" 
+xst -intstyle ise -ifn "C:/CO exps/2 ALU/controller.xst" -ofn "C:/CO exps/2 ALU/controller.syr" 
+xst -intstyle ise -ifn "C:/CO exps/2 ALU/controller.xst" -ofn "C:/CO exps/2 ALU/controller.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 "controller.ngc" controller.ngd  
+netgen -intstyle ise -rpw 100 -tpw 0 -ar Structure -tm controller -w -dir netgen/translate -ofmt vhdl -sim controller.ngd controller_translate.vhd 
+xst -intstyle ise -ifn "C:/CO exps/2 ALU/controller.xst" -ofn "C:/CO exps/2 ALU/controller.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 "controller.ngc" controller.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 "controller.ngc" controller.ngd  
+netgen -intstyle ise -rpw 100 -tpw 0 -ar Structure -tm controller -w -dir netgen/translate -ofmt vhdl -sim controller.ngd controller_translate.vhd 
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o controller_map.ncd controller.ngd controller.pcf 
+par -w -intstyle ise -ol high -t 1 controller_map.ncd controller.ncd controller.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml controller.twx controller.ncd -o controller.twr controller.pcf -ucf aluzdy.ucf 
+bitgen -intstyle ise -f controller.ut controller.ncd 
+xst -intstyle ise -ifn "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/controller.xst" -ofn "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/controller.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 controller.ngc controller.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o controller_map.ncd controller.ngd controller.pcf 
+par -w -intstyle ise -ol high -t 1 controller_map.ncd controller.ncd controller.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml controller.twx controller.ncd -o controller.twr controller.pcf -ucf aluzdy.ucf 
+bitgen -intstyle ise -f controller.ut controller.ncd 
+xst -intstyle ise -ifn "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/controller.xst" -ofn "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/controller.xst" -ofn "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/controller.xst" -ofn "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/controller.xst" -ofn "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/controller.xst" -ofn "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/controller.syr" 
+xst -intstyle ise -ifn "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/controller.xst" -ofn "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/controller.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 controller.ngc controller.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 controller.ngc controller.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o controller_map.ncd controller.ngd controller.pcf 
+par -w -intstyle ise -ol high -t 1 controller_map.ncd controller.ncd controller.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 controller.ngc controller.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o controller_map.ncd controller.ngd controller.pcf 
+par -w -intstyle ise -ol high -t 1 controller_map.ncd controller.ncd controller.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml controller.twx controller.ncd -o controller.twr controller.pcf -ucf aluzdy.ucf 
+bitgen -intstyle ise -f controller.ut controller.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 controller.ngc controller.ngd  
+xst -intstyle ise -ifn "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/controller.xst" -ofn "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/controller.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 controller.ngc controller.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o controller_map.ncd controller.ngd controller.pcf 
+par -w -intstyle ise -ol high -t 1 controller_map.ncd controller.ncd controller.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml controller.twx controller.ncd -o controller.twr controller.pcf -ucf aluzdy.ucf 
+bitgen -intstyle ise -f controller.ut controller.ncd 
+xst -intstyle ise -ifn "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/controller.xst" -ofn "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/controller.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 controller.ngc controller.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o controller_map.ncd controller.ngd controller.pcf 
+par -w -intstyle ise -ol high -t 1 controller_map.ncd controller.ncd controller.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml controller.twx controller.ncd -o controller.twr controller.pcf -ucf aluzdy.ucf 
+bitgen -intstyle ise -f controller.ut controller.ncd 
+bitgen -intstyle ise -f controller.ut controller.ncd 

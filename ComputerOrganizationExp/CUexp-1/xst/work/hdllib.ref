@@ -1,0 +1,4 @@
+AR alu behavioral "D:/thinpad/CO exps/2 ALU/alu.vhd" sub00/vhpl01 1545622049
+EN controller NULL C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/alu.vhd sub00/vhpl02 1562579440
+AR controller behavioral C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/alu.vhd sub00/vhpl03 1562579441
+EN alu NULL "D:/thinpad/CO exps/2 ALU/alu.vhd" sub00/vhpl00 1545622048

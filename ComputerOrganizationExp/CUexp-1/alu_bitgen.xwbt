@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\thinpad\CO exps\2 ALU\alu.ncd
+OUTFILE=D:\thinpad\CO exps\2 ALU\alu.bit
+FAMILY=Spartan3E
+PART=xc3s1200e-4fg320
+WORKINGDIR=D:\thinpad\CO exps\2 ALU
+LICENSE=WebPack
+USER_INFO=__0_0_0

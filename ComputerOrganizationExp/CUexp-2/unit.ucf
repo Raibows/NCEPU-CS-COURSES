@@ -1,0 +1,42 @@
+
+# PlanAhead Generated physical constraints 
+NET "showCtrl"CLOCK_DEDICATED_ROUTE = "FALSE";
+NET "bZero_ctrl" CLOCK_DEDICATED_ROUTE = "FALSE";
+NET "instructions[0]" LOC = J6;
+NET "instructions[1]" LOC = J7;
+NET "instructions[2]" LOC = K2;
+NET "instructions[3]" LOC = K7;
+NET "instructions[4]" LOC = M1;
+NET "instructions[5]" LOC = N1;
+NET "instructions[6]" LOC = N2;
+NET "instructions[7]" LOC = R1;
+NET "instructions[8]" LOC = R4;
+NET "instructions[9]" LOC = U1;
+NET "instructions[10]" LOC = V2;
+NET "instructions[11]" LOC = V3;
+NET "instructions[12]" LOC = V4;
+NET "instructions[13]" LOC = U8;
+NET "instructions[14]" LOC = R7;
+NET "instructions[15]" LOC = T7;
+NET "bZero_ctrl" LOC = V16;
+NET "showCtrl" LOC = U11;
+NET "clk" LOC = U9;
+NET "clk0" LOC = B8;
+NET "rst" LOC = U10;
+
+NET "light[15]" LOC = A14;
+NET "light[14]" LOC = E13;
+NET "light[13]" LOC = D13;
+NET "light[12]" LOC = B13;
+NET "light[11]" LOC = A13;
+NET "light[10]" LOC = F12;
+NET "light[9]" LOC = E12;
+NET "light[8]" LOC = A12;
+NET "light[7]" LOC = F11;
+NET "light[6]" LOC = E11;
+NET "light[5]" LOC = D11;
+NET "light[4]" LOC = C11;
+NET "light[3]" LOC = B11;
+NET "light[2]" LOC = A11;
+NET "light[1]" LOC = E10;
+NET "light[0]" LOC = D10;
