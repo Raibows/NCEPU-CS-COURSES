@@ -7,7 +7,7 @@ This is an open source project aimed at sharing undergrate courses for college o
 - [x] Data Structure
     - Course
     - Experiment
-- [ ] Computer Organization Exp
+- [x] Computer Organization Exp
 - [ ] Operating System Exp
 - [x] Assembly Language Exp
 - [x] Algorithm
@@ -21,5 +21,6 @@ This is an open source project aimed at sharing undergrate courses for college o
 4. July,1 2019 update Assembly Lang Exp
 5. July,6 2019 update Assembly Lang Exp
 6. July,7 2019 update Assembly Lang Exp
+7. July,13 2019 update ComputerOrganization Exp
 ## Copyright
 For materials not specifically stated, the license is granted under Apache License 2.0 license.

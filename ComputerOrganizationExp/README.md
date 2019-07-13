@@ -1,7 +1,7 @@
 ## Computer Organization Exp
 - [x] ALU exp
 - [x] RAM exp
-- [ ] CU exp
+- [x] CU exp
 - [ ] CPU exp
 
 ## WARNING

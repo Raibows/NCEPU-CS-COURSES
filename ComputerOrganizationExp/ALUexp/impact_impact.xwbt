@@ -1,8 +1,8 @@
 INTSTYLE=impact
-INFILE=C:\Users\Raibows\Desktop\ALUexp\impact.xsl
-OUTFILE=C:\Users\Raibows\Desktop\ALUexp\impact.xsl
+INFILE=C:\Users\Raibows\Documents\vscode\NCEPU_CS_COURSES\ComputerOrganizationExp\ALUexp\impact.xsl
+OUTFILE=C:\Users\Raibows\Documents\vscode\NCEPU_CS_COURSES\ComputerOrganizationExp\ALUexp\impact.xsl
 FAMILY=Single
 PART=Single
-WORKINGDIR=C:\Users\Raibows\Desktop\ALUexp
+WORKINGDIR=C:\Users\Raibows\Documents\vscode\NCEPU_CS_COURSES\ComputerOrganizationExp\ALUexp
 LICENSE=iMPACT
 USER_INFO=iMPACT

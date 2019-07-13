@@ -1,9 +1,12 @@
-V3 6
+V3 7
 FL "C:/Users/Raibows/Desktop/2 ALU/alu.vhd" 2019/05/22.17:31:41 P.20131013
 FL C:/Users/Raibows/Desktop/ALUexp/alu.vhd 2019/05/24.22:41:53 P.20131013
-EN work/alu 1558708927 FL C:/Users/Raibows/Desktop/ALUexp/alu.vhd \
+FL C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/ALUexp/alu.vhd 2019/07/08.09:49:31 P.20131013
+EN work/alu 1562552125 \
+      FL C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/ALUexp/alu.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/alu/Behavioral 1558708928 \
-      FL C:/Users/Raibows/Desktop/ALUexp/alu.vhd EN work/alu 1558708927
+AR work/alu/Behavioral 1562552126 \
+      FL C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/ALUexp/alu.vhd \
+      EN work/alu 1562552125
 FL "D:/thinpad/CO exps/2 ALU/alu.vhd" 2018/12/24.11:24:47 P.20131013
 FL "D:/thinpad/CO exps/aluzdy/alu.vhd" 2018/12/19.10:49:35 P.20131013

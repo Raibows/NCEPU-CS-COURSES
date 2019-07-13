@@ -1,0 +1,20 @@
+Release 14.7 - netgen P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: netgen -intstyle ise -rpw 100 -tpw 0 -ar Structure -tm controller
+-w -dir netgen/translate -ofmt vhdl -sim controller.ngd controller_translate.vhd
+ 
+
+Reading design 'controller.ngd' ...
+Flattening design ...
+Processing design ... 
+  Preping design's networks ...
+  Preping design's macros ...
+Writing VHDL netlist 'C:\CO exps\2
+ALU\netgen\translate\controller_translate.vhd' ...
+INFO:NetListWriters:635 - The generated VHDL netlist contains Xilinx SIMPRIM
+   simulation primitives and has to be used with SIMPRIM library for correct
+   compilation and simulation. 
+Number of warnings: 0
+Number of info messages: 1
+Total memory usage is 135392 kilobytes

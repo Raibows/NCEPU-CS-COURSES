@@ -112,9 +112,6 @@ process(RST, opCode)
 			when others=> y<="0000000000000000";
 		
 		end case;
-	end process;
-
-		
-	
+	end process;	
 end Behavioral;
 

@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total CPU time to Xst completion: 0.15 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total CPU time to Xst completion: 0.15 secs
  
 --> Reading design: alu.prj
 
@@ -104,8 +104,12 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "C:/Users/Raibows/Desktop/ALUexp/alu.vhd" in Library work.
+WARNING:HDLParsers:3607 - Unit work/alu is now defined in a different file.  It was defined in "C:/Users/Raibows/Desktop/ALUexp/alu.vhd", and is now defined in "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/ALUexp/alu.vhd".
+WARNING:HDLParsers:3607 - Unit work/alu/Behavioral is now defined in a different file.  It was defined in "C:/Users/Raibows/Desktop/ALUexp/alu.vhd", and is now defined in "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/ALUexp/alu.vhd".
+Compiling vhdl file "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/ALUexp/alu.vhd" in Library work.
 Entity <alu> compiled.
+WARNING:HDLParsers:3335 - "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/ALUexp/alu.vhd" Line 67. Null range: 14 to 0
+WARNING:HDLParsers:3335 - "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/ALUexp/alu.vhd" Line 72. Null range: 14 to 0
 Entity <alu> (Architecture <behavioral>) compiled.
 
 =========================================================================
@@ -118,8 +122,24 @@ Analyzing hierarchy for entity <alu> in library <work> (architecture <behavioral
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <alu> in library <work> (Architecture <behavioral>).
-WARNING:Xst:819 - "C:/Users/Raibows/Desktop/ALUexp/alu.vhd" line 56: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <a>, <b>
+WARNING:Xst:821 - "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/ALUexp/alu.vhd" line 67: Loop body will iterate zero times
+WARNING:Xst:821 - "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/ALUexp/alu.vhd" line 72: Loop body will iterate zero times
+WARNING:Xst:819 - "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/ALUexp/alu.vhd" line 57: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <a>, <b>, <temp3>, <temp2>
+INFO:Xst:2679 - Register <temp3> in unit <alu> has a constant value of 0000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <temp2> in unit <alu> has a constant value of 0000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <judge<11>> in unit <alu> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <judge<10>> in unit <alu> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <judge<9>> in unit <alu> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <judge<8>> in unit <alu> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <judge<7>> in unit <alu> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <judge<6>> in unit <alu> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <judge<5>> in unit <alu> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <judge<4>> in unit <alu> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <judge<3>> in unit <alu> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <judge<2>> in unit <alu> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <judge<1>> in unit <alu> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <judge<0>> in unit <alu> has a constant value of 0 during circuit operation. The register is replaced by logic.
 Entity <alu> analyzed. Unit <alu> generated.
 
 
@@ -130,40 +150,47 @@ Entity <alu> analyzed. Unit <alu> generated.
 Performing bidirectional port resolution...
 
 Synthesizing Unit <alu>.
-    Related source file is "C:/Users/Raibows/Desktop/ALUexp/alu.vhd".
+    Related source file is "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/ALUexp/alu.vhd".
 WARNING:Xst:1306 - Output <Zout> is never assigned.
 WARNING:Xst:1306 - Output <Cout> is never assigned.
 WARNING:Xst:647 - Input <Cin> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:1780 - Signal <zFlag> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <sFlag> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <temp4> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <temp1> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <oFlag> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <cFlag> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
     Found finite state machine <FSM_0> for signal <state>.
     -----------------------------------------------------------------------
-    | States             | 4                                              |
-    | Transitions        | 4                                              |
+    | States             | 5                                              |
+    | Transitions        | 5                                              |
     | Inputs             | 0                                              |
-    | Outputs            | 10                                             |
+    | Outputs            | 12                                             |
     | Clock              | CLK                       (rising_edge)        |
     | Reset              | RST                       (negative)           |
     | Reset type         | asynchronous                                   |
-    | Reset State        | 00                                             |
-    | Power Up State     | 00                                             |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
     | Encoding           | automatic                                      |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
+WARNING:Xst:737 - Found 1-bit latch for signal <judge_12>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <judge_13>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <zFlag>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <judge_14>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <judge_15>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <vFlag>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <sFlag>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <cFlag>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Found 16-bit register for signal <OUTPUT>.
     Found 7-bit register for signal <stateCnt>.
     Found 16-bit register for signal <a>.
     Found 16-bit register for signal <b>.
     Found 4-bit register for signal <opCode>.
     Found 16-bit adder for signal <y$addsub0000>.
-    Found 16-bit adder for signal <y$addsub0001> created at line 61.
-    Found 16-bit shifter rotate left for signal <y$shift0007> created at line 69.
-    Found 16-bit shifter logical left for signal <y$shift0008> created at line 66.
-    Found 16-bit shifter logical right for signal <y$shift0009> created at line 67.
-    Found 16-bit shifter arithmetic right for signal <y$shift0010> created at line 68.
-    Found 16-bit xor2 for signal <y$xor0000> created at line 64.
+    Found 16-bit adder for signal <y$addsub0001> created at line 103.
+    Found 16-bit shifter rotate left for signal <y$shift0007> created at line 111.
+    Found 16-bit shifter logical left for signal <y$shift0008> created at line 108.
+    Found 16-bit shifter logical right for signal <y$shift0009> created at line 109.
+    Found 16-bit shifter arithmetic right for signal <y$shift0010> created at line 110.
+    Found 16-bit xor2 for signal <y$xor0000> created at line 106.
     Summary:
 	inferred   1 Finite State Machine(s).
 	inferred  59 D-type flip-flop(s).
@@ -183,6 +210,8 @@ Macro Statistics
  16-bit register                                       : 3
  4-bit register                                        : 1
  7-bit register                                        : 1
+# Latches                                              : 8
+ 1-bit latch                                           : 8
 # Logic shifters                                       : 4
  16-bit shifter arithmetic right                       : 1
  16-bit shifter logical left                           : 1
@@ -198,14 +227,15 @@ Macro Statistics
 =========================================================================
 
 Analyzing FSM <FSM_0> for best encoding.
-Optimizing FSM <state/FSM> on signal <state[1:4]> with one-hot encoding.
+Optimizing FSM <state/FSM> on signal <state[1:5]> with one-hot encoding.
 -------------------
  State | Encoding
 -------------------
- 00    | 0001
- 01    | 0010
- 10    | 0100
- 11    | 1000
+ 000   | 00001
+ 001   | 00010
+ 010   | 00100
+ 011   | 01000
+ 100   | 10000
 -------------------
 WARNING:Xst:1710 - FF/Latch <stateCnt_1> (without init value) has a constant value of 1 in block <alu>. This FF/Latch will be trimmed during the optimization process.
 
@@ -218,6 +248,8 @@ Macro Statistics
  16-bit adder                                          : 2
 # Registers                                            : 59
  Flip-Flops                                            : 59
+# Latches                                              : 8
+ 1-bit latch                                           : 8
 # Logic shifters                                       : 4
  16-bit shifter arithmetic right                       : 1
  16-bit shifter logical left                           : 1
@@ -231,6 +263,8 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+INFO:Xst:2261 - The FF/Latch <judge_14> in Unit <alu> is equivalent to the following FF/Latch, which will be removed : <judge_13> 
+WARNING:Xst:1710 - FF/Latch <judge_12> (without init value) has a constant value of 0 in block <alu>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <stateCnt_1> (without init value) has a constant value of 1 in block <alu>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <stateCnt_0> in Unit <alu> is equivalent to the following FF/Latch, which will be removed : <stateCnt_3> 
 WARNING:Xst:2170 - Unit alu : the following signal(s) form a combinatorial loop: y_shift0006<15>.
@@ -247,8 +281,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 61
- Flip-Flops                                            : 61
+# Registers                                            : 62
+ Flip-Flops                                            : 62
 
 =========================================================================
 
@@ -277,27 +311,27 @@ Design Statistics
 # IOs                              : 44
 
 Cell Usage :
-# BELS                             : 548
+# BELS                             : 564
 #      GND                         : 1
-#      INV                         : 3
-#      LUT2                        : 40
-#      LUT2_D                      : 2
-#      LUT2_L                      : 2
-#      LUT3                        : 101
-#      LUT3_D                      : 17
-#      LUT3_L                      : 21
-#      LUT4                        : 195
-#      LUT4_D                      : 12
-#      LUT4_L                      : 27
+#      INV                         : 2
+#      LUT2                        : 37
+#      LUT2_D                      : 7
+#      LUT3                        : 95
+#      LUT3_D                      : 22
+#      LUT3_L                      : 20
+#      LUT4                        : 221
+#      LUT4_D                      : 18
+#      LUT4_L                      : 28
 #      MULT_AND                    : 14
 #      MUXCY                       : 30
-#      MUXF5                       : 50
+#      MUXF5                       : 36
 #      VCC                         : 1
 #      XORCY                       : 32
-# FlipFlops/Latches                : 61
-#      FDC                         : 19
+# FlipFlops/Latches                : 66
+#      FDC                         : 20
 #      FDCE                        : 36
 #      FDP                         : 6
+#      LD_1                        : 4
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 40
@@ -310,9 +344,9 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                      215  out of   8672     2%  
- Number of Slice Flip Flops:             61  out of  17344     0%  
- Number of 4 input LUTs:                420  out of  17344     2%  
+ Number of Slices:                      234  out of   8672     2%  
+ Number of Slice Flip Flops:             66  out of  17344     0%  
+ Number of 4 input LUTs:                450  out of  17344     2%  
  Number of IOs:                          44
  Number of bonded IOBs:                  41  out of    250    16%  
  Number of GCLKs:                         1  out of     24     4%  
@@ -335,26 +369,31 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-CLK                                | BUFGP                  | 61    |
------------------------------------+------------------------+-------+
+-------------------------------------+------------------------+-------+
+Clock Signal                         | Clock buffer(FF name)  | Load  |
+-------------------------------------+------------------------+-------+
+CLK                                  | BUFGP                  | 62    |
+judge_12_not0001(judge_12_not00011:O)| NONE(*)(vFlag)         | 4     |
+-------------------------------------+------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
 -----------------------------------+------------------------+-------+
 Control Signal                     | Buffer(FF name)        | Load  |
 -----------------------------------+------------------------+-------+
-RST_inv(RST_inv1_INV_0:O)          | NONE(OUTPUT_0)         | 61    |
+RST_inv(RST_inv1_INV_0:O)          | NONE(OUTPUT_0)         | 62    |
 -----------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 10.615ns (Maximum Frequency: 94.210MHz)
-   Minimum input arrival time before clock: 5.795ns
+   Minimum period: 10.825ns (Maximum Frequency: 92.379MHz)
+   Minimum input arrival time before clock: 5.630ns
    Maximum output required time after clock: 4.310ns
    Maximum combinational path delay: No path found
 
@@ -364,55 +403,77 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
-  Clock period: 10.615ns (frequency: 94.210MHz)
-  Total number of paths / destination ports: 7916 / 61
+  Clock period: 10.825ns (frequency: 92.379MHz)
+  Total number of paths / destination ports: 7992 / 62
 -------------------------------------------------------------------------
-Delay:               10.615ns (Levels of Logic = 8)
-  Source:            opCode_0 (FF)
-  Destination:       OUTPUT_9 (FF)
+Delay:               10.825ns (Levels of Logic = 8)
+  Source:            b_9 (FF)
+  Destination:       OUTPUT_2 (FF)
   Source Clock:      CLK rising
   Destination Clock: CLK rising
 
-  Data Path: opCode_0 to OUTPUT_9
+  Data Path: b_9 to OUTPUT_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            26   0.591   1.264  opCode_0 (opCode_0)
-     LUT4:I3->O           29   0.704   1.340  y_cmp_eq00051 (y_cmp_eq0005)
-     LUT3:I1->O            1   0.704   0.455  OUTPUT_mux0001<9>16 (OUTPUT_mux0001<9>16)
-     LUT4_L:I2->LO         1   0.704   0.104  OUTPUT_mux0001<9>26 (OUTPUT_mux0001<9>26)
-     LUT4:I3->O            1   0.704   0.455  OUTPUT_mux0001<9>67 (OUTPUT_mux0001<9>67)
-     LUT4:I2->O            1   0.704   0.424  OUTPUT_mux0001<9>115 (OUTPUT_mux0001<9>115)
-     LUT4:I3->O            1   0.704   0.000  OUTPUT_mux0001<9>166_SW0_F (N312)
-     MUXF5:I0->O           1   0.321   0.424  OUTPUT_mux0001<9>166_SW0 (N197)
-     LUT4:I3->O            1   0.704   0.000  OUTPUT_mux0001<9>187 (OUTPUT_mux0001<9>)
-     FDC:D                     0.308          OUTPUT_9
+     FDCE:C->Q             6   0.591   0.844  b_9 (b_9)
+     LUT4:I0->O            3   0.704   0.610  y_or00039 (y_or00039)
+     LUT3:I1->O            7   0.704   0.712  y_or000323 (y_or0003)
+     LUT4_D:I3->O         20   0.704   1.137  y<2>2 (N26)
+     LUT4:I2->O            1   0.704   0.499  y<2>47 (y<2>47)
+     LUT3:I1->O            2   0.704   0.451  y<2>115 (y<2>115)
+     LUT4:I3->O            1   0.704   0.000  y<2>158_SW0_F (N297)
+     MUXF5:I0->O           1   0.321   0.424  y<2>158_SW0 (N230)
+     LUT4:I3->O            1   0.704   0.000  OUTPUT_mux0001<2>14 (OUTPUT_mux0001<2>)
+     FDC:D                     0.308          OUTPUT_2
     ----------------------------------------
-    Total                     10.615ns (6.148ns logic, 4.467ns route)
-                                       (57.9% logic, 42.1% route)
+    Total                     10.825ns (6.148ns logic, 4.677ns route)
+                                       (56.8% logic, 43.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'judge_12_not0001'
+  Clock period: 2.310ns (frequency: 432.900MHz)
+  Total number of paths / destination ports: 3 / 2
+-------------------------------------------------------------------------
+Delay:               2.310ns (Levels of Logic = 1)
+  Source:            vFlag (LATCH)
+  Destination:       judge_14 (LATCH)
+  Source Clock:      judge_12_not0001 rising
+  Destination Clock: judge_12_not0001 rising
+
+  Data Path: vFlag to judge_14
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD_1:G->Q             2   0.676   0.622  vFlag (vFlag)
+     LUT2:I0->O            1   0.704   0.000  judge_13_mux00011 (judge_13_mux0001)
+     LD_1:D                    0.308          judge_14
+    ----------------------------------------
+    Total                      2.310ns (1.688ns logic, 0.622ns route)
+                                       (73.1% logic, 26.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
   Total number of paths / destination ports: 80 / 52
 -------------------------------------------------------------------------
-Offset:              5.795ns (Levels of Logic = 5)
-  Source:            INPUT<15> (PAD)
-  Destination:       OUTPUT_15 (FF)
+Offset:              5.630ns (Levels of Logic = 5)
+  Source:            INPUT<2> (PAD)
+  Destination:       OUTPUT_2 (FF)
   Destination Clock: CLK rising
 
-  Data Path: INPUT<15> to OUTPUT_15
+  Data Path: INPUT<2> to OUTPUT_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             3   1.218   0.706  INPUT_15_IBUF (INPUT_15_IBUF)
-     LUT4:I0->O            3   0.704   0.706  OUTPUT_mux0001<15>4 (OUTPUT_mux0001<15>4)
-     LUT4:I0->O            1   0.704   0.000  OUTPUT_mux0001<15>112_SW0_G (N301)
-     MUXF5:I1->O           1   0.321   0.424  OUTPUT_mux0001<15>112_SW0 (N179)
-     LUT4:I3->O            1   0.704   0.000  OUTPUT_mux0001<15>133 (OUTPUT_mux0001<15>)
-     FDC:D                     0.308          OUTPUT_15
+     IBUF:I->O             6   1.218   0.748  INPUT_2_IBUF (INPUT_2_IBUF)
+     LUT2:I1->O            1   0.704   0.499  OUTPUT_mux0001<2>5 (OUTPUT_mux0001<2>5)
+     LUT4:I1->O            1   0.704   0.000  y<2>158_SW0_F (N297)
+     MUXF5:I0->O           1   0.321   0.424  y<2>158_SW0 (N230)
+     LUT4:I3->O            1   0.704   0.000  OUTPUT_mux0001<2>14 (OUTPUT_mux0001<2>)
+     FDC:D                     0.308          OUTPUT_2
     ----------------------------------------
-    Total                      5.795ns (3.959ns logic, 1.836ns route)
-                                       (68.3% logic, 31.7% route)
+    Total                      5.630ns (3.959ns logic, 1.671ns route)
+                                       (70.3% logic, 29.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
@@ -437,13 +498,13 @@ Offset:              4.310ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.98 secs
+Total CPU time to Xst completion: 7.82 secs
  
 --> 
 
-Total memory usage is 4536504 kilobytes
+Total memory usage is 4522184 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   11 (   0 filtered)
-Number of infos    :    2 (   0 filtered)
+Number of warnings :   25 (   0 filtered)
+Number of infos    :   18 (   0 filtered)
 

@@ -5,7 +5,9 @@ Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
 -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 alu.ngc
 alu.ngd
 
-Reading NGO file "C:/Users/Raibows/Desktop/ALUexp/alu.ngc" ...
+Reading NGO file
+"C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/ALUe
+xp/alu.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -27,7 +29,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 4420376 kilobytes
+Total memory usage is 4405928 kilobytes
 
 Writing NGD file "alu.ngd" ...
 Total REAL time to NGDBUILD completion:  3 sec

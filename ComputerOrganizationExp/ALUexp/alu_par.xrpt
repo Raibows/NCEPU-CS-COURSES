@@ -5,14 +5,14 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Fri May 24 22:42:27 2019">
+  <application stringID="par" timeStamp="Mon Jul 08 10:15:46 2019">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
           <item stringID="variable" value="Path"/>
-          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\..\..\..\DocNav;C:\Xilinx\14.7\ISE_DS\PlanAhead\bin;C:\Xilinx\14.7\ISE_DS\EDK\bin\nt64;C:\Xilinx\14.7\ISE_DS\EDK\lib\nt64;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\powerpc-eabi\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnuwin\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\arm\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;C:\Xilinx\14.7\ISE_DS\common\bin\nt64;C:\Xilinx\14.7\ISE_DS\common\lib\nt64;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\libnvvp;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MATLAB\R2016a\runtime\win64;C:\Program Files\MATLAB\R2016a\bin;C:\Program Files\MATLAB\R2016a\polyspace\bin;C:\Program Files\Microsoft VS Code\bin;C:\Mingw64\mingw64\bin;C:\Users\Raibows\Downloads\CTEX\WinEdt;C:\texlive\2017\bin\win32;C:\Program Files\cuda;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk-10.0.1\bin;C:\Users\Raibows\scoop\shims;C:\Users\Raibows\Anaconda3;C:\Users\Raibows\Anaconda3\Library\mingw-w64\bin;C:\Users\Raibows\Anaconda3\Library\usr\bin;C:\Users\Raibows\Anaconda3\Library\bin;C:\Users\Raibows\Anaconda3\Scripts;C:\Users\Raibows\AppData\Local\Programs\Python\Python36\Scripts\;C:\Users\Raibows\AppData\Local\Programs\Python\Python36\;C:\Users\Raibows\AppData\Local\Microsoft\WindowsApps;C:\Program Files\cuda\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2018.3.1\bin;C:\Program Files\JetBrains\CLion 2018.3.2\bin;C:\Program Files\JetBrains\PyCharm 2018.3.4\bin"/>
+          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\..\..\..\DocNav;C:\Xilinx\14.7\ISE_DS\PlanAhead\bin;C:\Xilinx\14.7\ISE_DS\EDK\bin\nt64;C:\Xilinx\14.7\ISE_DS\EDK\lib\nt64;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\powerpc-eabi\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnuwin\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\arm\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;C:\Xilinx\14.7\ISE_DS\common\bin\nt64;C:\Xilinx\14.7\ISE_DS\common\lib\nt64;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\libnvvp;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MATLAB\R2016a\runtime\win64;C:\Program Files\MATLAB\R2016a\bin;C:\Program Files\MATLAB\R2016a\polyspace\bin;C:\Program Files\Microsoft VS Code\bin;C:\Mingw64\mingw64\bin;C:\Users\Raibows\Downloads\CTEX\WinEdt;C:\texlive\2017\bin\win32;C:\Program Files\cuda;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk-10.0.1\bin;C:\Go\bin;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Users\Raibows\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\Raibows\AppData\Local\Programs\Python\Python37-32\;C:\Users\Raibows\scoop\shims;C:\Users\Raibows\Anaconda3;C:\Users\Raibows\Anaconda3\Library\mingw-w64\bin;C:\Users\Raibows\Anaconda3\Library\usr\bin;C:\Users\Raibows\Anaconda3\Library\bin;C:\Users\Raibows\Anaconda3\Scripts;C:\Users\Raibows\AppData\Local\Programs\Python\Python36\Scripts\;C:\Users\Raibows\AppData\Local\Programs\Python\Python36\;C:\Users\Raibows\AppData\Local\Microsoft\WindowsApps;C:\Program Files\cuda\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2018.3.1\bin;C:\Program Files\JetBrains\CLion 2018.3.2\bin;C:\Program Files\JetBrains\PyCharm 2018.3.4\bin;C:\Program Files\JetBrains\WebStorm 2019.1.2\bin;C:\Users\Raibows\go\bin;C:\Users\Raibows\AppData\Local\GitHubDesktop\bin"/>
         </row>
         <row stringID="row" value="1">
           <item stringID="variable" value="PATHEXT"/>
@@ -59,17 +59,17 @@
     </task>
     <task stringID="PAR_DEVICE_UTILIZATION">
       <section stringID="PAR_DESIGN_SUMMARY">
-        <item AVAILABLE="8672" dataType="int" stringID="PAR_SLICES" value="230"></item>
+        <item AVAILABLE="8672" dataType="int" stringID="PAR_SLICES" value="248"></item>
       </section>
     </task>
     <task stringID="PAR_PAR">
       <section stringID="PAR_DESIGN_SUMMARY">
-        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="26 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="25 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="17 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="17 secs "/>
         <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
         <item dataType="float" stringID="PAR_TIMING_SCORE" value="0.000000"/>
-        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="26 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="25 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="18 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="17 secs "/>
       </section>
     </task>
     <task stringID="PAR_par">
@@ -88,9 +88,17 @@
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X1Y1"/>
             <item label="Locked" stringID="LOCKED" value="No"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="38.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.083000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="0.252000"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="40.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.129000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="0.298000"/>
+          </row>
+          <row stringID="row" value="2">
+            <item label="Clock Net" stringID="CLOCK_NET" value="judge_12_not0001"/>
+            <item label="Routed" stringID="ROUTED" value="ROUTED"/>
+            <item label="Resource" stringID="RESOURCE" value="Local"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="3.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.116000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.802000"/>
           </row>
         </table>
       </section>

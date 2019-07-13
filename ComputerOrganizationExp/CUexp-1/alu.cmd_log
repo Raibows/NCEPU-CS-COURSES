@@ -1,0 +1,129 @@
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf -ucf aluzdy.ucf 
+bitgen -intstyle ise -f alu.ut alu.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf -ucf aluzdy.ucf 
+bitgen -intstyle ise -f alu.ut alu.ncd 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf -ucf aluzdy.ucf 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf -ucf aluzdy.ucf 
+bitgen -intstyle ise -f alu.ut alu.ncd 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf -ucf aluzdy.ucf 
+bitgen -intstyle ise -f alu.ut alu.ncd 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf -ucf aluzdy.ucf 
+bitgen -intstyle ise -f alu.ut alu.ncd 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/aluzdy/alu.xst" -ofn "D:/thinpad/CO exps/aluzdy/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf -ucf aluzdy.ucf 
+bitgen -intstyle ise -f alu.ut alu.ncd 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/2 ALU/alu.xst" -ofn "D:/thinpad/CO exps/2 ALU/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf -ucf aluzdy.ucf 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/2 ALU/alu.xst" -ofn "D:/thinpad/CO exps/2 ALU/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf -ucf aluzdy.ucf 
+bitgen -intstyle ise -f alu.ut alu.ncd 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/2 ALU/alu.xst" -ofn "D:/thinpad/CO exps/2 ALU/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf -ucf aluzdy.ucf 
+bitgen -intstyle ise -f alu.ut alu.ncd 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/2 ALU/alu.xst" -ofn "D:/thinpad/CO exps/2 ALU/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf -ucf aluzdy.ucf 
+bitgen -intstyle ise -f alu.ut alu.ncd 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/2 ALU/alu.xst" -ofn "D:/thinpad/CO exps/2 ALU/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf -ucf aluzdy.ucf 
+bitgen -intstyle ise -f alu.ut alu.ncd 
+xst -intstyle ise -ifn "D:/thinpad/CO exps/2 ALU/alu.xst" -ofn "D:/thinpad/CO exps/2 ALU/alu.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc aluzdy.ucf -p xc3s1200e-fg320-4 "alu.ngc" alu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o alu_map.ncd alu.ngd alu.pcf 
+par -w -intstyle ise -ol high -t 1 alu_map.ncd alu.ncd alu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alu.twx alu.ncd -o alu.twr alu.pcf -ucf aluzdy.ucf 
+bitgen -intstyle ise -f alu.ut alu.ncd 
+vhdtdtfi -lib work alu.vhd -prj aluzdy -o alu.spl -module alu -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e alu.spl {D:/thinpad/CO exps/2 ALU/alu.sym} 

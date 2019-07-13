@@ -1,0 +1,527 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Reading design: controller.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "controller.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "controller"
+Output Format                      : NGC
+Target Device                      : xc3s1200e-4-fg320
+
+---- Source Options
+Top Module Name                    : controller
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/alu.vhd" in Library work.
+Architecture behavioral of Entity controller is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <controller> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <controller> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/alu.vhd" line 129: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <to_output>
+INFO:Xst:2679 - Register <PCSource> in unit <controller> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <to_output<12>> in unit <controller> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <to_output<10>> in unit <controller> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <to_output<9>> in unit <controller> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <to_output<8>> in unit <controller> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <to_output<5>> in unit <controller> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <to_output<4>> in unit <controller> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <to_output<1>> in unit <controller> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <to_output<0>> in unit <controller> has a constant value of 0 during circuit operation. The register is replaced by logic.
+Entity <controller> analyzed. Unit <controller> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <controller>.
+    Related source file is "C:/Users/Raibows/Documents/vscode/NCEPU_CS_COURSES/ComputerOrganizationExp/CUexp/alu.vhd".
+WARNING:Xst:647 - Input <bZero_ctrl> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <opCode> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <instr<10:2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <endtwo> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <bzero_state> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <RegDst> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <PcWriteCond<0>> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:646 - Signal <PCSource<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <show_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 4                                              |
+    | Inputs             | 0                                              |
+    | Outputs            | 4                                              |
+    | Clock              | showCtrl                  (rising_edge)        |
+    | Reset              | rst                       (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Power Up State     | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 0                                              |
+    | Outputs            | 12                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 7-bit register for signal <stateCnt>.
+    Found 2-bit register for signal <ALUOp>.
+    Found 1-bit register for signal <ALUsrcA<0>>.
+    Found 2-bit register for signal <ALUsrcB>.
+    Found 16-bit register for signal <instr>.
+    Found 1-bit register for signal <IorD<0>>.
+    Found 1-bit register for signal <IRWrite<0>>.
+    Found 1-bit register for signal <MemRead<0>>.
+    Found 2-bit register for signal <MemtoReg>.
+    Found 1-bit register for signal <MemWrite<0>>.
+    Found 1-bit register for signal <PcWrite<0>>.
+    Found 3-bit register for signal <RegWrite>.
+    Found 3-bit register for signal <to_output<15:13>>.
+    Found 1-bit register for signal <to_output<11>>.
+    Found 2-bit register for signal <to_output<7:6>>.
+    Found 2-bit register for signal <to_output<3:2>>.
+    Summary:
+	inferred   2 Finite State Machine(s).
+	inferred  37 D-type flip-flop(s).
+Unit <controller> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 20
+ 1-bit register                                        : 14
+ 16-bit register                                       : 1
+ 2-bit register                                        : 3
+ 3-bit register                                        : 1
+ 7-bit register                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <state/FSM> on signal <state[1:5]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 00001
+ 001   | 00010
+ 010   | 00100
+ 011   | 01000
+ 100   | 10000
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <show_state/FSM> on signal <show_state[1:4]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 0001
+ 01    | 0010
+ 10    | 0100
+ 11    | 1000
+-------------------
+WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 1 in block <stateCnt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MemtoReg_1> (without init value) has a constant value of 0 in block <controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegWrite_1> (without init value) has a constant value of 0 in block <controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegWrite_2> (without init value) has a constant value of 0 in block <controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <to_output_3> (without init value) has a constant value of 0 in block <controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <instr_2> of sequential type is unconnected in block <controller>.
+WARNING:Xst:2677 - Node <instr_3> of sequential type is unconnected in block <controller>.
+WARNING:Xst:2677 - Node <instr_4> of sequential type is unconnected in block <controller>.
+WARNING:Xst:2677 - Node <instr_5> of sequential type is unconnected in block <controller>.
+WARNING:Xst:2677 - Node <instr_6> of sequential type is unconnected in block <controller>.
+WARNING:Xst:2677 - Node <instr_7> of sequential type is unconnected in block <controller>.
+WARNING:Xst:2677 - Node <instr_8> of sequential type is unconnected in block <controller>.
+WARNING:Xst:2677 - Node <instr_9> of sequential type is unconnected in block <controller>.
+WARNING:Xst:2677 - Node <instr_10> of sequential type is unconnected in block <controller>.
+WARNING:Xst:2677 - Node <instr_2> of sequential type is unconnected in block <controller>.
+WARNING:Xst:2677 - Node <instr_3> of sequential type is unconnected in block <controller>.
+WARNING:Xst:2677 - Node <instr_4> of sequential type is unconnected in block <controller>.
+WARNING:Xst:2677 - Node <instr_5> of sequential type is unconnected in block <controller>.
+WARNING:Xst:2677 - Node <instr_6> of sequential type is unconnected in block <controller>.
+WARNING:Xst:2677 - Node <instr_7> of sequential type is unconnected in block <controller>.
+WARNING:Xst:2677 - Node <instr_8> of sequential type is unconnected in block <controller>.
+WARNING:Xst:2677 - Node <instr_9> of sequential type is unconnected in block <controller>.
+WARNING:Xst:2677 - Node <instr_10> of sequential type is unconnected in block <controller>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 2
+# Registers                                            : 37
+ Flip-Flops                                            : 37
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <MemtoReg_1> (without init value) has a constant value of 0 in block <controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegWrite_1> (without init value) has a constant value of 0 in block <controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegWrite_2> (without init value) has a constant value of 0 in block <controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <to_output_3> (without init value) has a constant value of 0 in block <controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <stateCnt_1> (without init value) has a constant value of 1 in block <controller>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <stateCnt_3> in Unit <controller> is equivalent to the following FF/Latch, which will be removed : <stateCnt_0> 
+
+Optimizing unit <controller> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block controller, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 40
+ Flip-Flops                                            : 40
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : controller.ngr
+Top Level Output File Name         : controller
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 43
+
+Cell Usage :
+# BELS                             : 76
+#      GND                         : 1
+#      INV                         : 2
+#      LUT2                        : 5
+#      LUT2_D                      : 1
+#      LUT2_L                      : 4
+#      LUT3                        : 12
+#      LUT3_D                      : 1
+#      LUT3_L                      : 2
+#      LUT4                        : 32
+#      LUT4_D                      : 4
+#      LUT4_L                      : 9
+#      MUXF5                       : 2
+#      VCC                         : 1
+# FlipFlops/Latches                : 40
+#      FDC                         : 21
+#      FDCE                        : 2
+#      FDE                         : 7
+#      FDP                         : 10
+# Clock Buffers                    : 2
+#      BUFGP                       : 2
+# IO Buffers                       : 31
+#      IBUF                        : 8
+#      OBUF                        : 23
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1200efg320-4 
+
+ Number of Slices:                       40  out of   8672     0%  
+ Number of Slice Flip Flops:             40  out of  17344     0%  
+ Number of 4 input LUTs:                 72  out of  17344     0%  
+ Number of IOs:                          43
+ Number of bonded IOBs:                  33  out of    250    13%  
+ Number of GCLKs:                         2  out of     24     8%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 29    |
+showCtrl                           | BUFGP                  | 11    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-------------------------------------------+------------------------+-------+
+Control Signal                             | Buffer(FF name)        | Load  |
+-------------------------------------------+------------------------+-------+
+ALUsrcB_Acst_inv(ALUsrcB_Acst_inv1_INV_0:O)| NONE(ALUOp_0)          | 33    |
+-------------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 5.365ns (Maximum Frequency: 186.393MHz)
+   Minimum input arrival time before clock: 3.807ns
+   Maximum output required time after clock: 4.310ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 5.365ns (frequency: 186.393MHz)
+  Total number of paths / destination ports: 252 / 29
+-------------------------------------------------------------------------
+Delay:               5.365ns (Levels of Logic = 4)
+  Source:            instr_11 (FF)
+  Destination:       RegWrite_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: instr_11 to RegWrite_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             13   0.591   1.018  instr_11 (instr_11)
+     LUT3_L:I2->LO         1   0.704   0.104  RegWrite_mux0000<0>10 (RegWrite_mux0000<0>10)
+     LUT4:I3->O            1   0.704   0.424  RegWrite_mux0000<0>30_SW0 (N50)
+     LUT4_L:I3->LO         1   0.704   0.104  RegWrite_mux0000<0>30 (RegWrite_mux0000<0>30)
+     LUT4:I3->O            1   0.704   0.000  RegWrite_mux0000<0>37 (RegWrite_mux0000<0>)
+     FDC:D                     0.308          RegWrite_0
+    ----------------------------------------
+    Total                      5.365ns (3.715ns logic, 1.650ns route)
+                                       (69.2% logic, 30.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'showCtrl'
+  Clock period: 3.426ns (frequency: 291.886MHz)
+  Total number of paths / destination ports: 25 / 11
+-------------------------------------------------------------------------
+Delay:               3.426ns (Levels of Logic = 2)
+  Source:            show_state_FSM_FFd2 (FF)
+  Destination:       to_output_11 (FF)
+  Source Clock:      showCtrl rising
+  Destination Clock: showCtrl rising
+
+  Data Path: show_state_FSM_FFd2 to to_output_11
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              6   0.591   0.844  show_state_FSM_FFd2 (show_state_FSM_FFd2)
+     LUT4_L:I0->LO         1   0.704   0.275  to_output_7_mux0001_SW0 (N4)
+     LUT3:I0->O            1   0.704   0.000  to_output_7_mux0001 (to_output_7_mux0001)
+     FDC:D                     0.308          to_output_7
+    ----------------------------------------
+    Total                      3.426ns (2.307ns logic, 1.119ns route)
+                                       (67.3% logic, 32.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 14 / 14
+-------------------------------------------------------------------------
+Offset:              3.807ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       instr_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst to instr_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.218   0.622  rst_IBUF (rst_IBUF)
+     LUT2:I0->O            7   0.704   0.708  instr_and00001 (instr_and0000)
+     FDE:CE                    0.555          instr_0
+    ----------------------------------------
+    Total                      3.807ns (2.477ns logic, 1.330ns route)
+                                       (65.1% logic, 34.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              4.310ns (Levels of Logic = 1)
+  Source:            stateCnt_3 (FF)
+  Destination:       stateCnt<3> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: stateCnt_3 to stateCnt<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              2   0.591   0.447  stateCnt_3 (stateCnt_3)
+     OBUF:I->O                 3.272          stateCnt_3_OBUF (stateCnt<3>)
+    ----------------------------------------
+    Total                      4.310ns (3.863ns logic, 0.447ns route)
+                                       (89.6% logic, 10.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'showCtrl'
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Offset:              4.310ns (Levels of Logic = 1)
+  Source:            to_output_14 (FF)
+  Destination:       OUTPUT<14> (PAD)
+  Source Clock:      showCtrl rising
+
+  Data Path: to_output_14 to OUTPUT<14>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.591   0.447  to_output_14 (to_output_14)
+     OBUF:I->O                 3.272          OUTPUT_14_OBUF (OUTPUT<14>)
+    ----------------------------------------
+    Total                      4.310ns (3.863ns logic, 0.447ns route)
+                                       (89.6% logic, 10.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.24 secs
+ 
+--> 
+
+Total memory usage is 4521544 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   37 (   0 filtered)
+Number of infos    :   10 (   0 filtered)
+
