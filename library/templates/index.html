@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block title %}图书馆{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <div class="sticky-top">
+        {% if current_user.is_authenticated %}
+            <div id="update-div" class="container">
+
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="container">
+    <div class="page-header">
+        {% if current_user.is_authenticated %}
+            <h1 style="color: red">你好, {{ current_user.user_name }}</h1>
+        {% else %}
+            <h1 style="color: red">你好，陌生人</h1>
+        {% endif %}
+    </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+    <script src="app/static/jquery.min.js">
+    </script>
+
+
+    <script>
+    function getBookRemainnum(book_basic_isbn, destid, loadid) {
+        $.ajax({
+            url: '{{ url_for('main.help_borrow_book') }}',
+            type: 'post',
+            data: {'book_basic_isbn': book_basic_isbn},
+            success: function (data) {
+                var x = "<div class=\"alert alert-info\">\n" +
+                    "        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">×</button>\n" +
+                    data.message_info +
+                    "</div>";
+                $(loadid).text(data.book_basic_remain_num);
+                {#$('#update-div').text(data.message_info);#}
+                $('#update-div').append(x);
+            }
+        })
+    }
+</script>
+
+
+
+    {% if current_user.is_authenticated %}
+        <form class="form-inline my-2 my-lg-0" role="search" method="post" action="{{ url_for('main.index') }}">
+            <div align="center">
+            <div class="input-group" style="width: 800px; height: 80px">
+                <table cellspacing="5px">
+                    <tr>
+                <td><input class="form-control" name="keyword" placeholder="请输入任何书籍名称、作者、书籍ISBN关键词，关键词以空格分隔，不超过30个字符" size="80"></td>
+                <td>
+                <span class="input-group-btn">
+                <button type="submit" class="btn btn-secondary">华电搜索</button>
+                </span>
+                </td></tr>
+                </table>
+            </div>
+            </div>
+        </form>
+    {% endif %}
+
+
+
+
+
+
+
+
+    {% if not current_user.is_authenticated%}
+    <body background="{{ url_for('static', filename='4-min.jpg') }}" style="background-size: cover">
+        <br><br><br>
+    <h1 align="center" style="color: #46ff2b">华北电力大学图书馆欢迎您</h1>
+
+    {% endif %}
+
+
+
+    <div class="container">
+    {% if current_user.is_authenticated %}
+        <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+            {% for r in row %}
+                <tr>
+                    {% for c in r %}
+                        <td style="width: 300px">
+                            <div class="container" style="width: 300px">
+                                <div class="media" style="width: 300px; height: 230px">
+                                    <div class="media-left">
+                                        <img src="{{ url_for('static',filename=c.book_basic_cover) }}"
+                                             class="media-object" style="width:120px;height: 185px">
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><b>书籍名称：</b> {{ c.book_basic_name }}</h5>
+                                        <p>
+                                        <h5><b>作者：</b> {{ c.book_basic_author }}</h5>
+                                        </p>
+                                        <p>
+                                        <h5><b>ISBN：</b> {{ c.book_basic_isbn }}</h5>
+                                        </p>
+                                        <p>
+                                        <h5>
+                                        <b>书籍总量：</b> <nobr>{{ c.get_book_basic_status()[0] }}</nobr>
+                                        </h5>
+                                        </p>
+                                        <h5>
+                                        <b>书籍余量：</b> <nobr id="load_data{{ c.book_basic_isbn }}">{{ c.get_book_basic_status()[1] }}</nobr>
+                                        </h5>
+                                        </p>
+                                        <h5>
+                                        <b>书籍丢失：</b> <nobr>{{ c.get_book_basic_status()[3] }}</nobr>
+                                        </h5>
+                                        </p>
+                                        <p>
+                                            <a id="btn_lend{{ c.book_basic_isbn }}" class="btn btn-info" href="javascript:getBookRemainnum(
+                                            '{{ c.book_basic_isbn }}',
+                                            '#btn_lend{{ c.book_basic_isbn }}', '#load_data{{ c.book_basic_isbn }}')">
+                                                借阅此书
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+        </div>
+    {% endif %}
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+{% endblock %}
+
+
+

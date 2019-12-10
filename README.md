@@ -24,5 +24,6 @@ This is an open source project aimed at sharing undergrate courses for college o
 6. July, 7 2019 update Assembly Lang Exp
 7. July, 13 2019 update ComputerOrganization Exp
 8. Oct, 19 2019 update Prolog Lang Exp
+9. Dec, 10 2019 update DatabaseExp sqlExercise
 ## Copyright
 For materials not specifically stated, the license is granted under Apache License 2.0 license.
