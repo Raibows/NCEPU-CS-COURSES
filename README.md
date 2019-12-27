@@ -2,31 +2,40 @@
 This is an open source project aimed at sharing undergrate courses for college of Computer Science. All the courses and materials are from NCEPU.But not all the courses are included.If you have any supplement plan or advice, please <a href="Mailto:raibows@hotmail.com">contact </a>with me.
 
 ## Course Catalog
-- [ ] Advanced Program Design (cpp)
+- [ ] Advanced Program Design (Cpp)
 - [ ] OOP Program Design (Java)
-- [x] Data Structure
-    - Course
+- [x] DataStructure
+    - Course Task
     - Experiment
-- [x] Computer Organization Exp
-- [ ] Operating System Exp
-- [x] Assembly Language Exp
+- [x] Computer Organization
+    - Experiment
+- [ ] Operating System
+    - Experiment
+- [x] Assembly Language
 - [x] Algorithm
-    - Course
+    - Course Task
     - Experiment
 - [x] Python Program Design (Python)
-- [x] Prolog Lang Exp
-- [x] DatabaseExp
-    - BookManagementSystem
+- [x] Prolog Lang
+    - Experiment
+- [x] Database
+    - SqlExcercise
 - [x] SoftwareEngineering
+    - BookManagementSystem
+    - KnowledgeMindmap
+- [ ] Compiler
+
 ## Update Record
-1. June, 19 2019
-2. June, 22 2019 perfect Computer Organization Exp
-3. June, 29 2019 update Assembly Lang Exp
-4. July, 1 2019 update Assembly Lang Exp
-5. July, 6 2019 update Assembly Lang Exp
-6. July, 7 2019 update Assembly Lang Exp
-7. July, 13 2019 update ComputerOrganization Exp
-8. Oct, 19 2019 update Prolog Lang Exp
-9. Dec, 11 2019 update DatabaseExp sqlExercise
+1. June, 19 2019 init this repo
+2. June, 22 2019 add Computer Organization
+3. June, 29 2019 add Assembly Lang
+4. July, 1 2019 update Assembly Lang 
+5. July, 6 2019 update Assembly Lang
+6. July, 7 2019 update Assembly Lang
+7. July, 13 2019 update ComputerOrganization
+8. Oct, 19 2019 add Prolog Lang
+9. Dec, 11 2019 add Database
+10. Dec, 27 2019 add Softwareengineering
+
 ## Copyright
 For materials not specifically stated, the license is granted under Apache License 2.0 license.
