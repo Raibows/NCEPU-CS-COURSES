@@ -22,7 +22,7 @@ def logout_all():
 
 def create_app():
     app.app_context().push()
-    password = 'chizuo7750380'
+    password = ''
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://root:' + password + '@127.0.0.1/library?charset=utf8mb4'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['WTF_CSRF_ENABLED'] = False
