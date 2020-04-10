@@ -53,19 +53,21 @@ void del() {
     scanf("%d", &val);
     int hash = val % dict_max;
     node* cur = arr[hash];
+    bool flag = false;
     while(cur != NULL)
     {
-        if (cur->val == val)
+        if (cur->next && cur->next->val == val)
         {
-            node* temp = cur;
-            cur = cur->next;
+            flag = true;
+            node* temp = cur->next;
+            cur->next = temp->next;
             delete temp;
-            printf("%d has been deleted\n", val);
-            return;
+            break;
         }
         cur = cur->next;
     }
-    printf("%d not found!\n", val);
+    if (flag) printf("%d has been deleted\n", val);
+    else printf("%d not found!\n", val);
 }
 int main(int argc, char* argv[]) {
     char op = '1';
