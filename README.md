@@ -1,5 +1,5 @@
 ## Introduction
-This is an open source project aimed at sharing undergrate courses for college of Computer Science. All the courses and materials are from NCEPU.But not all the courses are included.If you have any supplement plan or advice, please <a href="Mailto:raibows@hotmail.com">contact </a>with me.
+This is an open source project aimed at sharing undergrate courses for college of Computer Science. All the courses, codes and materials are from NCEPU. If you have any support plan or advice, please <a href="Mailto:luckychizuo@gmail.com">contact </a>with me.
 
 ## Course Catalog
 - [ ] Advanced Program Design (Cpp)
