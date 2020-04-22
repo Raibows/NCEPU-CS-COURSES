@@ -2,7 +2,7 @@
 This is an open source project aimed at sharing undergrate courses for college of Computer Science. All the courses, codes and materials are from NCEPU. If you have any support plan or advice, please <a href="Mailto:luckychizuo@gmail.com">contact </a>with me.
 
 ## Course Catalog
-- [ ] Advanced Program Design (Cpp)
+- [x] Advanced Program Design (cpp)
 - [ ] OOP Program Design (Java)
 - [x] DataStructure
     - Course Task
