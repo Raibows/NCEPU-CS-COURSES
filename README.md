@@ -1,5 +1,5 @@
 ## Introduction
-This is an open source project aimed at sharing undergrate courses for college of Computer Science. All the courses, codes and materials are from NCEPU. If you have any support plan or advice, please <a href="Mailto:luckychizuo@gmail.com">contact </a>with me.
+This is an open source project aimed at sharing undergraduate courses for college of Computer Science. All the courses, codes and materials are from NCEPU. If you have any support plan or advice, please <a href="Mailto:luckychizuo@gmail.com">contact </a>with me.
 
 ## Course Catalog
 - [x] Advanced Program Design (cpp)
@@ -25,6 +25,7 @@ This is an open source project aimed at sharing undergrate courses for college o
     - KnowledgeMindmap
 - [x] Compiler
     - LLang Compiler
+- [x] CyberSecurityExp
 
 ## Update Record
 1. Jun, 19 2019 init this repo
@@ -36,8 +37,9 @@ This is an open source project aimed at sharing undergrate courses for college o
 7. Jul, 13 2019 update ComputerOrganization
 8. Oct, 19 2019 add Prolog Lang
 9. Dec, 11 2019 add Database
-10. Dec, 27 2019 add Softwareengineering
-11. Jan, 2 2020 update Compiler
+10. Dec, 27 2019 add SoftwareEngineering
+11. Jan, 2 2020 add Compiler
+12. Jul, 9 2020 add CyberSecurityExp
 
 ## Copyright
 For materials not specifically stated, the license is granted under Apache License 2.0 license.
