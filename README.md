@@ -26,6 +26,7 @@ This is an open source project aimed at sharing undergraduate courses for colleg
 - [x] Compiler
     - LLang Compiler
 - [x] CyberSecurityExp
+- [x] SoftwareDesign&Practice 
 
 ## Update Record
 1. Jun, 19 2019 init this repo
@@ -40,6 +41,7 @@ This is an open source project aimed at sharing undergraduate courses for colleg
 10. Dec, 27 2019 add SoftwareEngineering
 11. Jan, 2 2020 add Compiler
 12. Jul, 9 2020 add CyberSecurityExp
+13. Jul, 11 2020 add SoftwareDesign&Practice
 
 ## Copyright
 For materials not specifically stated, the license is granted under Apache License 2.0 license.
