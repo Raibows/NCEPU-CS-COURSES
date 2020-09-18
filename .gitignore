@@ -1,0 +1,8 @@
+*.exe
+*.o
+.vscode/
+*.pyc
+*.out
+*.pt
+*.log
+venv/
