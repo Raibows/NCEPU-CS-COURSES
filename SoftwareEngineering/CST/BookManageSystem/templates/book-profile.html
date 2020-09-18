@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}书籍资料{% endblock %}
+
+
+
+{% block content %}
+    {{ super() }}
+    <div class="sticky-top">
+        {% if current_user.is_authenticated %}
+            <div id="update-div" class="container">
+
+            </div>
+        {% endif %}
+    </div>
+    <div class="container">
+    <div class="page-header">
+        <h1>书籍详细信息</h1>
+    </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="app/static/jquery.min.js"></script>
+
+    <script>
+        function LendThisBook(book_id, destid, loadid) {
+            $.ajax({
+                url: '{{ url_for('main.help_borrow_this_book') }}',
+                type: 'post',
+                data: {'book_id': book_id},
+                success: function (data) {
+                    var x = "<div class=\"alert alert-info\">\n" +
+                        "        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">×</button>\n" +
+                        data.message_info +
+                        "</div>";
+                    remainid = loadid + '_remain';
+                    borrowedid = loadid + '_borrowed';
+                    $(remainid).text(data.book_basic_remain_num);
+                    $(borrowedid).text(data.book_basic_borrowed_num);
+                    if (data.flag) {
+                        var update_user_id = destid + '_user_id';
+                        var update_user_name = destid + '_user_name';
+                        var update_borrow_time = destid + '_borrow_time';
+                        $(destid).html('已借出');
+                        $(update_user_id).text(data.user_id);
+                        $(update_user_name).text(data.user_name);
+                        $(update_borrow_time).text(data.borrow_time)
+                    }
+                    $('#update-div').append(x);
+                }
+            })
+        }
+    </script>
+
+    <script>
+    $(document).ready(function () {
+        $('#delete-button').click(function () {
+            $("#myModal").modal("show");
+        });
+    })
+    </script>
+
+    <script>
+    $(document).ready(function () {
+        $('#yes_button').click(function (data) {
+            $.get("{{ url_for('auth.delete_book_basic', isbn=c.book_basic_isbn) }}", function () {
+                var url = "http://127.0.0.1:5000/";
+                window.location.assign(url);
+            });
+        });
+    });
+    </script>
+
+    <div class="container">
+            <div class="media" style="width: 400px; height: 280px">
+                <div class="media-left">
+                    <img src="{{ url_for('static',filename=c.book_basic_cover) }}"
+                         class="media-object" style="width:130px;height: 185px">
+                </div>
+                <div class="media-body">
+                    <h5 class="media-heading"><b>书籍名称：</b> {{ c.book_basic_name }}</h5>
+                    <p>
+                    <h5><b>作者：</b> {{ c.book_basic_author }}</h5>
+                    </p>
+                    <p>
+                    <h5><b>ISBN：</b> {{ c.book_basic_isbn }}</h5>
+                    </p>
+                    <p>
+                    <h5>
+                        <b>书籍总量：</b>
+                        <nobr>{{ c.get_book_basic_status()[0] }}</nobr>
+                    </h5>
+                    </p>
+                    <p>
+                    <h5>
+                        <b>书籍可借：</b>
+                        <nobr id="load_data{{ c.book_basic_isbn }}_remain">{{ c.get_book_basic_status()[1] }}</nobr>
+                    </h5>
+                    </p>
+                    <p>
+                    <h5>
+                        <b>书籍借出：</b>
+                        <nobr id="load_data{{ c.book_basic_isbn }}_borrowed">{{ c.get_book_basic_status()[2] }}</nobr>
+                    </h5>
+                    </p>
+                    <p>
+                    <h5>
+                        <b>书籍丢失：</b>
+                        <nobr>{{ c.get_book_basic_status()[3] }}</nobr>
+                    </h5>
+                    </p>
+                    {% if current_user.user_role_name == 'admin' %}
+                        <button type="button" class="btn btn-danger" id="delete-button">删除该书籍</button>
+                    {% endif %}
+                </div>
+            </div>
+    </div>
+    <div class="container" align="center">
+        <div class="container">
+            <div class="panel-heading text-center">
+                <center><h4>用户借阅记录</h4></center>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                    <tr>
+                    <td>书籍状态</td>
+                    <td>书籍id</td>
+                    <td>借阅人id</td>
+                    <td>借阅人姓名</td>
+                    <td>借出时间</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for book in books %}
+                        {% if book.book_lost == False %}
+                            {% if book.book_borrowed %}
+                                <tr>
+                                <td>已借出</td>
+                                <td>{{ book.book_id }}</td>
+                                <td>{{ book.borrow_log[0].borrow_user_id }}</td>
+                                <td>{{ book.borrow_log[0].borrow_user.user_name }}</td>
+                                <td>{{ book.borrow_log[0].borrow_time }}</td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                <td id="btn_lend{{ book.book_id }}">
+                                    <a id="btn-lend{{ book.book_id }}" class="btn btn-info" href="javascript:LendThisBook(
+                                    '{{ book.book_id }}',
+                                    '#btn_lend{{ book.book_id }}', '#load_data{{ c.book_basic_isbn }}')">
+                                    可借阅
+                                    </a>
+                                </td>
+                                <td>{{ book.book_id }}</td>
+                                <td id="btn_lend{{ book.book_id }}_user_id">——</td>
+                                <td id="btn_lend{{ book.book_id }}_user_name">——</td>
+                                <td id="btn_lend{{ book.book_id }}_borrow_time">——</td>
+                                </tr>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if current_user.user_role_name == 'admin' %}
+                    {% for l in lost %}
+                            <tr>
+                                <td>已丢失</td>
+                                <td>{{ l.lost_book_id }}</td>
+                                <td>{{ l.lost_user_id }}</td>
+                                <td>{{ l.lost_user.user_name }}</td>
+                                <td>{{ l.lost_book_time }}</td>
+                            </tr>
+                    {% endfor %}
+                    {% endif %}
+                        </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">危险操作警告</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="hhhhtest">您确认要删除该书籍吗？此操作将会删除有关该书籍的所有信息，包括借阅记录，不可恢复</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">放弃</button>
+                        <button class="btn btn-danger" id="yes_button">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
