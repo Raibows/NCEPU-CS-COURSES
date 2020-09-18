@@ -1,28 +1,31 @@
 ## NCEPU-CS-COURSES
 
-Initial commit on 19 Jun 2019.
+[README](README_en.md)  |  [中文文档](README.md)
 
-### Introduction
+本项目第一次贡献源于2019年6月19日。
 
-This is an open source project aimed at sharing undergraduate courses and experiments example codes for college of Computer Science. All the courses, codes and materials are from NCEPU. If you have any support plan or advice, please <a href="Mailto:luckychizuo@gmail.com">contact </a>with me. And welcome to pull requests!
+### 简介
 
-### Catalog
+本项目致力于收集和分享华北电力大学本科期间计算机系的课程以及实验代码。本项目仅以学习交流为目的，所有代码仅供参考。如果你有任何想法或者建议，请发起pull requests或与我们联系。欢迎大家一起为该项目作出贡献！
 
-- [x] Advanced Program Design
-- [ ] OOP Program Design
-- [x] DataStructure
-- [x] Computer Organization Exp
-- [ ] Operating System Exp
-- [x] Assembly Language
-- [x] Algorithm
-- [x] Python Program Design
-- [x] Prolog Lang Exp
-- [x] Database SQL Exercise
-- [x] SoftwareEngineering
-- [x] Compiler Exp
-- [x] CyberSecurity Exp
-- [x] SoftwareDesign&Practice
+### 目录
 
-### Copyright & License
+- [x] 高级程序设计
+- [ ] 面向对象程序设计
+- [x] 数据结构
+- [x] 计算机组成原理实验
+- [x] 操作系统实验
+- [x] 汇编语言
+- [x] 算法设计与分析
+- [x] Python 编程
+- [x] 人工智能（Prolog语言实验）
+- [x] 数据库实验
+- [x] 软件工程
+- [x] 编译技术实验
+- [x] 网络安全实验
+- [x] 软件设计与实践实验
+- [ ] 硬件设计与实践实验
 
-For materials not specifically stated, the license is granted under Apache License 2.0 license.
+### 版权和许可
+
+对于未特别说明的部分，该许可是根据Apache许可2.0许可授予的。
