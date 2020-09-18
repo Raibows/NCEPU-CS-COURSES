@@ -1,0 +1,15 @@
+c:\users\administrator\documents\visual studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+c:\users\administrator\documents\visual studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+c:\users\administrator\documents\visual studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
+c:\users\administrator\documents\visual studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
+C:\360安全浏览器下载\ConsoleApplication1\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
+C:\360安全浏览器下载\ConsoleApplication1\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
+C:\360安全浏览器下载\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\360安全浏览器下载\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\360安全浏览器下载\ConsoleApplication1\ConsoleApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\360安全浏览器下载\木马测试\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
+C:\360安全浏览器下载\木马测试\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
+C:\360安全浏览器下载\木马测试\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\360安全浏览器下载\木马测试\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\360安全浏览器下载\木马测试\ConsoleApplication1\obj\x86\Debug\ResolveAssemblyReference.cache

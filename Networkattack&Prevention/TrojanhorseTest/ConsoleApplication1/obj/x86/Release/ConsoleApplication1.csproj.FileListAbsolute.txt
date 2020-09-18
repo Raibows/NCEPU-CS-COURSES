@@ -1,0 +1,5 @@
+C:\Users\zfy\Desktop\木马测试\木马测试\ConsoleApplication1\bin\Release\ConsoleApplication1.exe
+C:\Users\zfy\Desktop\木马测试\木马测试\ConsoleApplication1\bin\Release\ConsoleApplication1.pdb
+C:\Users\zfy\Desktop\木马测试\木马测试\ConsoleApplication1\obj\x86\Release\ConsoleApplication1.exe
+C:\Users\zfy\Desktop\木马测试\木马测试\ConsoleApplication1\obj\x86\Release\ConsoleApplication1.pdb
+C:\Users\zfy\Desktop\木马测试\木马测试\ConsoleApplication1\obj\x86\Release\ConsoleApplication1.csprojAssemblyReference.cache

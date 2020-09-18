@@ -1,0 +1,101 @@
+c:\users\administrator\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\Interop.MSTSCLib.dll
+c:\users\administrator\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\AxInterop.MSTSCLib.dll
+c:\users\administrator\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+c:\users\administrator\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+c:\users\administrator\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+c:\users\administrator\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\administrator\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\administrator\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+c:\users\administrator\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+c:\users\administrator\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Interop.MSTSCLib.dll
+c:\users\administrator\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\AxInterop.MSTSCLib.dll
+c:\users\administrator\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+c:\users\administrator\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+c:\users\administrator\documents\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\Interop.MsRdpSessionManager.dll
+C:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\Interop.MsRdpSessionManager.dll
+C:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\Interop.MSTSCLib.dll
+C:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\AxInterop.MSTSCLib.dll
+C:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+C:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Interop.MSTSCLib.dll
+C:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\AxInterop.MSTSCLib.dll
+C:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\Interop.MsRdpSessionManager.dll
+D:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\Interop.MSTSCLib.dll
+D:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\AxInterop.MSTSCLib.dll
+D:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+D:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+D:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+D:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+D:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Interop.MSTSCLib.dll
+D:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\AxInterop.MSTSCLib.dll
+D:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+D:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form3.resources
+C:\360安全浏览器下载\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form2.resources
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Interop.MSTSCLib.dll
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\AxInterop.MSTSCLib.dll
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csprojAssemblyReference.cache
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\Interop.MsRdpSessionManager.dll
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\Interop.MSTSCLib.dll
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\AxInterop.MSTSCLib.dll
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form2.resources
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form3.resources
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.cache
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form4.resources
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form5.resources
+C:\Users\zfy\Desktop\FTP服务（终极版V2.0）\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form6.resources
+C:\Users\zfy\Desktop\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\zfy\Desktop\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\zfy\Desktop\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Interop.MSTSCLib.dll
+C:\Users\zfy\Desktop\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\AxInterop.MSTSCLib.dll
+C:\Users\zfy\Desktop\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csprojAssemblyReference.cache
+C:\Users\zfy\Desktop\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\Interop.MsRdpSessionManager.dll
+C:\Users\zfy\Desktop\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\Interop.MSTSCLib.dll
+C:\Users\zfy\Desktop\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\AxInterop.MSTSCLib.dll
+C:\Users\zfy\Desktop\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+C:\Users\zfy\Desktop\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form3.resources
+C:\Users\zfy\Desktop\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form4.resources
+C:\Users\zfy\Desktop\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form5.resources
+C:\Users\zfy\Desktop\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form6.resources
+C:\Users\zfy\Desktop\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\zfy\Desktop\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.cache
+C:\Users\zfy\Desktop\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\zfy\Desktop\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+E:\课程文件\网络攻击与防范\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+E:\课程文件\网络攻击与防范\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+E:\课程文件\网络攻击与防范\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Interop.MSTSCLib.dll
+E:\课程文件\网络攻击与防范\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\AxInterop.MSTSCLib.dll
+E:\课程文件\网络攻击与防范\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csprojAssemblyReference.cache
+E:\课程文件\网络攻击与防范\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\Interop.MsRdpSessionManager.dll
+E:\课程文件\网络攻击与防范\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\Interop.MSTSCLib.dll
+E:\课程文件\网络攻击与防范\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\AxInterop.MSTSCLib.dll
+E:\课程文件\网络攻击与防范\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+E:\课程文件\网络攻击与防范\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form3.resources
+E:\课程文件\网络攻击与防范\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form4.resources
+E:\课程文件\网络攻击与防范\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form5.resources
+E:\课程文件\网络攻击与防范\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form6.resources
+E:\课程文件\网络攻击与防范\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\课程文件\网络攻击与防范\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.cache
+E:\课程文件\网络攻击与防范\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.CoreCompileInputs.cache
+E:\课程文件\网络攻击与防范\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+E:\课程文件\网络攻击与防范\FTP服务\WindowsFormsApplication1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
