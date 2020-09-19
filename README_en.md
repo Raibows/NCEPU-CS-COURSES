@@ -6,7 +6,7 @@ Initial commit on 19 Jun 2019.
 
 ### Introduction
 
-This is an open source project aimed at sharing undergraduate courses and experiments example codes for college of Computer Science. All the courses, codes and materials are from NCEPU. If you have any support plan or advice, please <a href="Mailto:luckychizuo@gmail.com">contact </a>with me. And welcome to pull requests!
+This is an open source project aimed at sharing undergraduate courses and experiments example codes for college of Computer Science. All the courses, codes and materials are from NCEPU. If you have any support plan or advice, please <a href="Mailto:luckychizuo@gmail.com">contact </a>with me. And welcome to pull requests!Note: The code in the CS folder comes from the computer science and technology major, and the IS folder comes from the information security major.
 
 ### Catalog
 
@@ -25,6 +25,8 @@ This is an open source project aimed at sharing undergraduate courses and experi
 - [x] CyberSecurity Exp
 - [x] SoftwareDesign&Practice
 - [ ] HardwareDesign&practice
+- [x] Cryptography Exp
+- [x] Network attack&prevention Exp
 
 ### Copyright & License
 
