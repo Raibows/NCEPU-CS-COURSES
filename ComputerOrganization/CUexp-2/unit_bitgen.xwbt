@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=D:\experiment\CU\unit.ncd
-OUTFILE=D:\experiment\CU\unit.bit
-FAMILY=Spartan3E
-PART=xc3s1200e-4fg320
-WORKINGDIR=D:\experiment\CU
-LICENSE=WebPack
-USER_INFO=__0_0_0
