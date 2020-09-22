@@ -1,0 +1,122 @@
+
+NET "CLK" LOC = U9;	# CLK KEY
+
+NET "RST" LOC = U10;			# reset from RST KEY
+
+NET "clk0" LOC = B8;
+
+NET "showCtrl" CLOCK_DEDICATED_ROUTE = "FALSE";
+NET "showCtrl" LOC = U11;
+
+NET "bZero_ctrl" CLOCK_DEDICATED_ROUTE = "FALSE";
+NET "bZero_ctrl" LOC = V16;
+
+# handled switch ,dip totaly 16 bits.
+
+NET "INPUT[0]" LOC = J6;	#SW0
+NET "INPUT[1]" LOC = J7;
+NET "INPUT[2]" LOC = K2;
+NET "INPUT[3]" LOC = K7;
+NET "INPUT[4]" LOC = M1;
+NET "INPUT[5]" LOC = N1;
+NET "INPUT[6]" LOC = N2;
+NET "INPUT[7]" LOC = R1;
+NET "INPUT[8]" LOC = R4;
+NET "INPUT[9]" LOC = U1;
+NET "INPUT[10]" LOC = V2;
+NET "INPUT[11]" LOC = V3;
+NET "INPUT[12]" LOC = V4;
+NET "INPUT[13]" LOC = U8;
+NET "INPUT[14]" LOC = R7;
+NET "INPUT[15]" LOC = T7; # SW15
+
+# led lights ,on the TOP of the board.
+
+NET "OUTPUT[0]" LOC = D10; 	# L0
+NET "OUTPUT[1]" LOC = E10;
+NET "OUTPUT[2]" LOC = A11;
+NET "OUTPUT[3]" LOC = B11;
+NET "OUTPUT[4]" LOC = C11;
+NET "OUTPUT[5]" LOC = D11;
+NET "OUTPUT[6]" LOC = E11;
+NET "OUTPUT[7]" LOC = F11;
+NET "OUTPUT[8]" LOC = A12;
+NET "OUTPUT[9]" LOC = E12;
+NET "OUTPUT[10]" LOC = F12;
+NET "OUTPUT[11]" LOC = A13;
+NET "OUTPUT[12]" LOC = B13;
+NET "OUTPUT[13]" LOC = D13;
+NET "OUTPUT[14]" LOC = E13;
+NET "OUTPUT[15]" LOC = A14;	#L15
+
+# 7-seg digit display
+
+NET "stateCnt_L[6]" LOC = F8;
+NET "stateCnt_L[5]" LOC = E8;
+NET "stateCnt_L[4]" LOC = A8;
+NET "stateCnt_L[3]" LOC = F7;
+NET "stateCnt_L[2]" LOC = E7;
+NET "stateCnt_L[1]" LOC = D7;
+NET "stateCnt_L[0]" LOC = C7;
+
+NET "stateCnt_R[6]" LOC = B10;
+NET "stateCnt_R[5]" LOC = A10;
+NET "stateCnt_R[4]" LOC = G9;
+NET "stateCnt_R[3]" LOC = F9;
+NET "stateCnt_R[2]" LOC = E9;
+NET "stateCnt_R[1]" LOC = D9;
+NET "stateCnt_R[0]" LOC = C9;
+
+
+
+# PlanAhead Generated IO constraints 
+
+
+
+
+NET "ADDR[0]" LOC = C17;
+NET "ADDR[1]" LOC = C18;
+NET "ADDR[2]" LOC = D16;
+NET "ADDR[3]" LOC = D17;
+NET "ADDR[4]" LOC = E15;
+NET "ADDR[5]" LOC = E16;
+NET "ADDR[6]" LOC = F14;
+NET "ADDR[7]" LOC = F15;
+NET "ADDR[8]" LOC = F17;
+NET "ADDR[9]" LOC = F18;
+NET "ADDR[10]" LOC = G13;
+NET "ADDR[11]" LOC = G14;
+NET "ADDR[12]" LOC = G15;
+NET "ADDR[13]" LOC = G16;
+NET "ADDR[14]" LOC = H14;
+NET "ADDR[15]" LOC = H15;
+NET "DATA[0]" LOC = J12;
+NET "DATA[1]" LOC = J13;
+NET "DATA[2]" LOC = J14;
+NET "DATA[3]" LOC = J15;
+NET "DATA[4]" LOC = J16;
+NET "DATA[5]" LOC = J17;
+NET "DATA[6]" LOC = K12;
+NET "DATA[7]" LOC = K13;
+NET "DATA[8]" LOC = K14;
+NET "DATA[9]" LOC = K15;
+NET "DATA[10]" LOC = L15;
+NET "DATA[11]" LOC = L16;
+NET "DATA[12]" LOC = L17;
+NET "DATA[13]" LOC = L18;
+NET "DATA[14]" LOC = M13;
+NET "DATA[15]" LOC = M14;
+NET "RAM1_EN" LOC = M15;
+NET "RAM1_OE" LOC = M16;
+NET "RAM1_WE" LOC = M18;
+
+
+NET "CONTROL" CLOCK_DEDICATED_ROUTE = "FALSE";
+NET "CONTROL" LOC = U14;
+
+
+NET "clk_rw" LOC = V14;
+# PlanAhead Generated physical constraints 
+
+
+NET "DBC" LOC = C14;
