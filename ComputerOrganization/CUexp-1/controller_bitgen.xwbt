@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=C:\Users\Raibows\Documents\vscode\NCEPU_CS_COURSES\ComputerOrganizationExp\CUexp\controller.ncd
-OUTFILE=C:\Users\Raibows\Documents\vscode\NCEPU_CS_COURSES\ComputerOrganizationExp\CUexp\controller.bit
-FAMILY=Spartan3E
-PART=xc3s1200e-4fg320
-WORKINGDIR=C:\Users\Raibows\Documents\vscode\NCEPU_CS_COURSES\ComputerOrganizationExp\CUexp
-LICENSE=WebPack
-USER_INFO=__0_0_0
