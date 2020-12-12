@@ -1,0 +1,25 @@
+int main()
+{
+	int numa;
+	int numb = 6;
+	double numc = 3.5;
+	numa = 1 + 2;
+	numb = numb - numa;
+	numc = numc * 2.7;
+	if(numa == numb)
+	{
+		numa = numa + 1;
+	}
+	else
+	{
+		numa = numa - 1;
+	}
+	while(numb > 0)
+	{
+		numb = numb - 1;
+	}
+	for(numa = 3; numa > 0; numa--)
+	{
+		numc = numc * 1.5;
+	}
+}
