@@ -1,6 +1,9 @@
 # CompilerExperiment
 
-华北电力大学编译技术实验
+# Author
+<a href="https://github.com/Leon-Francis">Leon-Francis</a>
+
+# 华北电力大学编译技术实验
 
 本实验设计简单的C语言的编译程序，采用递归下降法建立语法树，计算属性以及打印四元式
 
@@ -8,10 +11,10 @@
 
 单词类别以及产生式如下所示：(不够整洁)
 
-![avatar](./TokenIMG1.jpg)
+<img src="https://raw.githubusercontent.com/QueenShark/PhotosSetNew/main/20201213215633.jpg"/>
 
-![avatar](./TokenIMG2.jpg)
+<img src="https://raw.githubusercontent.com/QueenShark/PhotosSetNew/main/20201213215646.jpg"/>
 
-![avatar](./ProductionIMG1.jpg)
+<img src="https://raw.githubusercontent.com/QueenShark/PhotosSetNew/main/20201213215517.jpg"/>
 
-![avatar](./ProductionIMG2.jpg)
+<img src="https://raw.githubusercontent.com/QueenShark/PhotosSetNew/main/20201213215612.jpg"/>
