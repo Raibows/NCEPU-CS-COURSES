@@ -1,6 +1,6 @@
 ## NCEPU-CS-COURSES
 
-[README](README_en.md) | [中文文档](README.md)
+[README](README_en.md) | [中文文档](README.md) | [Wiki](https://github.com/Raibows/NCEPU-CS-COURSES/wiki)
 
 Initial commit on 19 Jun 2019.
 

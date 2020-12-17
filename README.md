@@ -1,14 +1,14 @@
 ## NCEPU-CS-COURSES
 
-[README](README_en.md)  |  [中文文档](README.md)
+[README](README_en.md) | [中文文档](README.md) | [Wiki](https://github.com/Raibows/NCEPU-CS-COURSES/wiki)
 
 本项目第一次贡献源于2019年6月19日。
 
 ### 简介
 
-本项目致力于收集和分享华北电力大学本科期间计算机系的课程以及实验代码。本项目仅以学习交流为目的，所有代码仅供参考。如果你有任何想法或者建议，请发起issue或与我们联系。欢迎大家一起为该项目作出贡献！欢迎pull requests！关于贡献请见本项目[Wiki](https://github.com/Raibows/NCEPU-CS-COURSES/wiki)！
+本项目致力于收集和分享华北电力大学本科期间计算机系的课程以及实验代码。本项目仅以学习交流为目的，所有代码仅供参考。如果你有任何想法或者建议，请发起issue或与我们联系。欢迎大家一起为该项目作出贡献！欢迎pull requests！建议您参阅本项目[Wiki](https://github.com/Raibows/NCEPU-CS-COURSES/wiki)！
 
-注明：CS文件夹中代码来自计算机科学与技术专业，IS文件夹来自信息安全专业。
+注明：CS文件夹中代码来自计算机科学与技术专业，IS文件夹来自信息安全专业
 
 ### 目录
 
