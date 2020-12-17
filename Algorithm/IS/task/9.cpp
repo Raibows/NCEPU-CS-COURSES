@@ -2,7 +2,7 @@
 using namespace std;
 int a[1111111];
 int b,c,d;
-int s[111];//´ú±íµÚi°üÌÇ¹û
+int s[111];//ä»£è¡¨ç¬¬iåŒ…ç³–æžœ
 int main()
 {
     memset(a,-1,sizeof(a));

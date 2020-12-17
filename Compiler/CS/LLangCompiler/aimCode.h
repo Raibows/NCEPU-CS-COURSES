@@ -32,9 +32,9 @@ struct BasicBlock
 class aimCode
 {
 private:
-	vector<BasicBlock> basicBlock; //»ù±¾¿é
-	void initBasicBlock();  //³õÊ¼»¯»ù±¾¿é
-	int findblocknameByGen(int index);  //¸ù¾İËÄÔªÊ½µØÖ·ÕÒµ½»ù±¾¿é
+	vector<BasicBlock> basicBlock; //åŸºæœ¬å—
+	void initBasicBlock();  //åˆå§‹åŒ–åŸºæœ¬å—
+	int findblocknameByGen(int index);  //æ ¹æ®å››å…ƒå¼åœ°å€æ‰¾åˆ°åŸºæœ¬å—
 	string findblocknameByGen(string index) {
 		int i = stoi(index);
 		i = findblocknameByGen(i);
@@ -57,16 +57,16 @@ void aimCode::initBasicBlock()
 {
 	for (int i = 0; i < genStructs.size() - 1; i++)
 	{
-		if (i == 0) {   //³ÌĞòµÚÒ»ÌõÎªÈë¿Ú
+		if (i == 0) {   //ç¨‹åºç¬¬ä¸€æ¡ä¸ºå…¥å£
 			setOut_port(0);
 		}
-		if (genStructs[i].code <= 58 && genStructs[i].code >= 52) //Ìø×ªÓï¾ä
+		if (genStructs[i].code <= 58 && genStructs[i].code >= 52) //è·³è½¬è¯­å¥
 		{
-			setOut_port(genStructs[i].result);//Ìø×ªµ½µÄÓï¾äÎªÈë¿ÚÓï¾ä
-			setOut_port(i + 1); //Ìø×ªÓï¾äµÄÏÂÒ»ĞĞ,ÎªÈë¿ÚÓï¾ä
+			setOut_port(genStructs[i].result);//è·³è½¬åˆ°çš„è¯­å¥ä¸ºå…¥å£è¯­å¥
+			setOut_port(i + 1); //è·³è½¬è¯­å¥çš„ä¸‹ä¸€è¡Œ,ä¸ºå…¥å£è¯­å¥
 		}
 	}
-	for (int i = 0; i < genStructs.size();) //°ÑÈë¿ÚÓï¾ä¼ÓÈëµ½»ù±¾¿é
+	for (int i = 0; i < genStructs.size();) //æŠŠå…¥å£è¯­å¥åŠ å…¥åˆ°åŸºæœ¬å—
 	{
 		BasicBlock bb;
 		bb.add(genStructs[i]);
@@ -102,7 +102,7 @@ void aimCode::initblockcodes()
 
 int aimCode::findblocknameByGen(int index)
 {
-	for (int i = 0; i < basicBlock.size(); i++) //iÎªblockË÷Òı
+	for (int i = 0; i < basicBlock.size(); i++) //iä¸ºblockç´¢å¼•
 	{
 		for (int j = 0; j < basicBlock[i].gens.size(); j++)
 		{
@@ -118,11 +118,11 @@ int aimCode::findblocknameByGen(int index)
 
 
 
-//´òÓ¡Ä¿±ê´úÂë
+//æ‰“å°ç›®æ ‡ä»£ç 
 void aimCode::writecodes()
 {
 	ofstream OutFile("D:/asm.txt");
-	cout << "Éú³É»ã±à´úÂëÈçÏÂ" << endl;
+	cout << "ç”Ÿæˆæ±‡ç¼–ä»£ç å¦‚ä¸‹" << endl;
 	for (int blockindex = 0; blockindex < basicBlock.size(); blockindex++)
 	{
 		OutFile << basicBlock[blockindex].name << ":\n";
@@ -296,7 +296,7 @@ vector<string> aimCode::createcode(GenStruct gen)
 }
 
 
-//ÅĞ¶ÏstringÊÇ·ñÔÚindexºóËÄÔªÊ½ÖĞ´æÔÚ
+//åˆ¤æ–­stringæ˜¯å¦åœ¨indexåå››å…ƒå¼ä¸­å­˜åœ¨
 bool aimCode::stringisinGen(string str, int index)
 {
 	for (int k = genStructs.size() - 1; k >= index; k--)
@@ -308,7 +308,7 @@ bool aimCode::stringisinGen(string str, int index)
 }
 
 
-//±éÀúËùÓĞ»ù±¾¿é£¬°Ñ·Ç´ıÓÃµÄ¼Ä´æÆ÷ÀïÖµ¸øÉ¾ÁË,°Ñ»ù±¾¿éÀïµÄRvalueÇå¿Õ
+//éå†æ‰€æœ‰åŸºæœ¬å—ï¼ŒæŠŠéå¾…ç”¨çš„å¯„å­˜å™¨é‡Œå€¼ç»™åˆ äº†,æŠŠåŸºæœ¬å—é‡Œçš„Rvalueæ¸…ç©º
 void aimCode::clearNotUse(GenStruct gen)
 {
 	int index = gen.label;
@@ -318,7 +318,7 @@ void aimCode::clearNotUse(GenStruct gen)
 		{
 			if (!stringisinGen(regs[i].Rvalue[j], index))
 			{
-				//É¾³ı
+				//åˆ é™¤
 				regs[i].Rvalue.erase(regs[i].Rvalue.begin() + j);
 			}
 		}

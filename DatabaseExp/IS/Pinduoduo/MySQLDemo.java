@@ -12,29 +12,29 @@ public class MySQLDemo {
     static final String PASS = "123456";
     Connection conn = null;
     
-    // Á¬½ÓÊı¾İ¿â
+    // è¿æ¥æ•°æ®åº“
     public void connect() {
         try{
             Class.forName(JDBC_DRIVER);
         
-            System.out.println("Á¬½ÓÊı¾İ¿â...");
+            System.out.println("è¿æ¥æ•°æ®åº“...");
             conn = DriverManager.getConnection(DB_URL, USER,PASS);
             if (!conn.isClosed()) {
-            	System.out.print("Êı¾İ¿âÁ¬½Ó³É¹¦£¡£¡");
+            	System.out.print("æ•°æ®åº“è¿æ¥æˆåŠŸï¼ï¼");
             }
             
         }catch(SQLException se){
-            // ´¦Àí JDBC ´íÎó
+            // å¤„ç† JDBC é”™è¯¯
             se.printStackTrace();
         }catch(Exception e){
-            // ´¦Àí Class.forName ´íÎó
+            // å¤„ç† Class.forName é”™è¯¯
             e.printStackTrace();
         }
     }
     
     
     
-    // ¹Ø±ÕÁ¬½Ó
+    // å…³é—­è¿æ¥
     public  void closed() {
     	try{
             if(conn!=null) conn.close();

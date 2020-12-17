@@ -2,15 +2,15 @@
 #include <iomanip>
 #define Grammar_Maxid 13
 
-//ÅĞ¶ÏÊÇ·ñÊôÓÚID¡£
+//åˆ¤æ–­æ˜¯å¦å±äºIDã€‚
 bool typeIsId(string str)
 {
-	if (str == "±êÊ¶·û" || str == "³£Êı" || str == "ÕûÊı" || str == "ÊµÊı")
+	if (str == "æ ‡è¯†ç¬¦" || str == "å¸¸æ•°" || str == "æ•´æ•°" || str == "å®æ•°")
 		return true;
 	return false;
 }
 
-//ÖÕ½á·û½á¹¹Ìå
+//ç»ˆç»“ç¬¦ç»“æ„ä½“
 struct vecEnd
 {
 	string end;
@@ -33,7 +33,7 @@ public:
 	string getNotEnd() { return notEnd; }
 	Grammar_FL(int id) { InitGrammar_FL(id); };
 	void InitGrammar_FL(int id);
-	//Çó¼¯ºÏÊ±ÅĞ¶ÏÊÇ·ñÖØ¸´´æÔÚ
+	//æ±‚é›†åˆæ—¶åˆ¤æ–­æ˜¯å¦é‡å¤å­˜åœ¨
 	bool isexistFirstvt(string str)
 	{
 		for (int i = 0; i < fristvt.size(); i++)
@@ -65,24 +65,24 @@ public:
 
 vector <TreeNode> CreateTreeStack;
 
-//µÃµ½µ±Ç°¹æÔ¼´®ÀïµÄ·ÇÖÕ½á·û¸öÊı
+//å¾—åˆ°å½“å‰è§„çº¦ä¸²é‡Œçš„éç»ˆç»“ç¬¦ä¸ªæ•°
 int returnStackendIndex(int top)
 {
 	int sizeinStack = 0;
 	for (int i = 0; i < top;)
 	{
-		if (CreateTreeStack[sizeinStack].data.type == "·ÇÖÕ½á·û") sizeinStack++;
+		if (CreateTreeStack[sizeinStack].data.type == "éç»ˆç»“ç¬¦") sizeinStack++;
 		else
 		{
 			i++;
 			sizeinStack++;
 		}
 	}
-	if (CreateTreeStack[sizeinStack].data.type == "·ÇÖÕ½á·û") sizeinStack++;
+	if (CreateTreeStack[sizeinStack].data.type == "éç»ˆç»“ç¬¦") sizeinStack++;
 	return sizeinStack;
 }
 
-//Çó³ö¸ø¶¨id²úÉúÊ½ÍÆ³öµÄÖÕ½á·û¼¯
+//æ±‚å‡ºç»™å®šidäº§ç”Ÿå¼æ¨å‡ºçš„ç»ˆç»“ç¬¦é›†
 void Grammar_FL::InitGrammar_FL(int id)
 {
 	this->id = id;
@@ -93,7 +93,7 @@ void Grammar_FL::InitGrammar_FL(int id)
 
 			notEnd = grammar[i].getINP();
 			vector<string> vec = split(grammar[i].getOUP(), " ");
-			//¸³ÖµFristvt
+			//èµ‹å€¼Fristvt
 			if (!isUpper(vec[0]) && vec[0] != "?")
 			{
 				if (!isexistFirstvt(vec[0]))
@@ -110,7 +110,7 @@ void Grammar_FL::InitGrammar_FL(int id)
 					}
 				}
 			}
-			//¸³ÖµLastvt
+			//èµ‹å€¼Lastvt
 			if (!isUpper(vec[vec.size() - 1]) && vec[vec.size() - 1] != "?")
 			{
 				if (!isexistLastvt(vec[vec.size() - 1]))
@@ -138,7 +138,7 @@ class Table
 public:
 	Table();
 	~Table();
-	void finishGra();    //Íê³ÉFristvt & Lastvt
+	void finishGra();    //å®ŒæˆFristvt & Lastvt
 	//void printTable();
 	bool Match(vector<token>, string &);
 	void printBuffer();
@@ -146,7 +146,7 @@ public:
 	void printSignStack();
 private:
 	Grammar_FL *flgrammar[Grammar_Maxid];
-	vector<vecEnd> end;   //ÖÕ½á·û¼¯ºÏ
+	vector<vecEnd> end;   //ç»ˆç»“ç¬¦é›†åˆ
 	int **t_relation;
 	void initEnd();
 	bool isexistEnd(vecEnd str)
@@ -156,7 +156,7 @@ private:
 				return true;
 		return false;
 	}
-	//¸ù¾İ×Ö·û´®²éÑ¯ÖÕ½á·ûÔÚendµÄÖĞµÄË÷Òı
+	//æ ¹æ®å­—ç¬¦ä¸²æŸ¥è¯¢ç»ˆç»“ç¬¦åœ¨endçš„ä¸­çš„ç´¢å¼•
 	int findend(string str)
 	{
 		for (int i = 0; i < end.size(); i++)
@@ -166,9 +166,9 @@ private:
 		}
 		return -1;
 	}
-	vector <token> signStack;   //·ûºÅÕ»
-	vector <token> Buffer;//ÊäÈë»º³åÇø
-	//µÃµ½token nameÊôĞÔ
+	vector <token> signStack;   //ç¬¦å·æ ˆ
+	vector <token> Buffer;//è¾“å…¥ç¼“å†²åŒº
+	//å¾—åˆ°token nameå±æ€§
 	string getSignStackname(token t)
 	{
 
@@ -179,7 +179,7 @@ private:
 	Tree *GrammarTree = NULL;
 };
 
-//Íê³ÉËã·ûÓÅÏÈ¹ØÏµ±í
+//å®Œæˆç®—ç¬¦ä¼˜å…ˆå…³ç³»è¡¨
 void Table::initEnd()
 {
 
@@ -194,23 +194,23 @@ void Table::initEnd()
 				end.push_back(e);
 		}
 	}
-	//t_relation³õÊ¼»¯,0´ú±íÎŞ¹ØÏµ,1´ú±íĞ¡ÓÚ<,2´ú±íµÈÓÚ=,3´ú±í´óÓÚ>
+	//t_relationåˆå§‹åŒ–,0ä»£è¡¨æ— å…³ç³»,1ä»£è¡¨å°äº<,2ä»£è¡¨ç­‰äº=,3ä»£è¡¨å¤§äº>
 	int size = end.size();
 	t_relation = new int *[size];
 	for (int i = 0; i < size; i++)
 		t_relation[i] = new int[size];
 	for (int i = 0; i < size; i++)
 		for (int j = 0; j < size; j++)
-			t_relation[i][j] = 0;     //³õÊ¼»¯Îª¿Õ°×
-		//Íê³É1<  ,...aP....  a<Fristvt(P)
-	for (int i = 0; i < grammar_length; i++)  //´ÓµÚÒ»¸öÎÄ·¨¿ªÊ¼
+			t_relation[i][j] = 0;     //åˆå§‹åŒ–ä¸ºç©ºç™½
+		//å®Œæˆ1<  ,...aP....  a<Fristvt(P)
+	for (int i = 0; i < grammar_length; i++)  //ä»ç¬¬ä¸€ä¸ªæ–‡æ³•å¼€å§‹
 	{
 		vector<string> vec = split(grammar[i].getOUP(), " ");
-		for (int j = 0; j < vec.size() - 1; j++) //´ÓµÚÒ»¸öµ¥´Ê¿ªÊ¼ÅĞ¶ÏÊÇ·ñÊÇÖÕ½á·û
+		for (int j = 0; j < vec.size() - 1; j++) //ä»ç¬¬ä¸€ä¸ªå•è¯å¼€å§‹åˆ¤æ–­æ˜¯å¦æ˜¯ç»ˆç»“ç¬¦
 		{
-			if (isUpper(vec[j]))//ÊÇ·ÇÖÕ½á·û
+			if (isUpper(vec[j]))//æ˜¯éç»ˆç»“ç¬¦
 			{
-				//ÕÒµ½Lasttv(vec[j]) > vec[j+1]
+				//æ‰¾åˆ°Lasttv(vec[j]) > vec[j+1]
 				vector <string> vec1;
 				for (int k = 0; k < Grammar_Maxid; k++)
 				{
@@ -225,13 +225,13 @@ void Table::initEnd()
 				{
 					int row = findend(vec1[k]);
 					int col = findend(vec[j + 1]);
-					t_relation[row][col] = 3;   //3´ú±í>
+					t_relation[row][col] = 3;   //3ä»£è¡¨>
 				}
 			}
-			else//ÖÕ½á·û
+			else//ç»ˆç»“ç¬¦
 			{
-				//ÅĞ¶Ï isUpper(vec[j+1]),ÖÕ½á·ûÔò=£¬·ÇÖÕ½á·ûÔò vec[j] < Fristvt(vec[j+1])
-				if (isUpper(vec[j + 1])) //µÚ¶ş¸öÊÇ·ÇÖÕ½á·û
+				//åˆ¤æ–­ isUpper(vec[j+1]),ç»ˆç»“ç¬¦åˆ™=ï¼Œéç»ˆç»“ç¬¦åˆ™ vec[j] < Fristvt(vec[j+1])
+				if (isUpper(vec[j + 1])) //ç¬¬äºŒä¸ªæ˜¯éç»ˆç»“ç¬¦
 				{
 					vector <string> vec1;
 					for (int k = 0; k < Grammar_Maxid; k++)
@@ -247,16 +247,16 @@ void Table::initEnd()
 					{
 						int row = findend(vec[j]);
 						int col = findend(vec1[k]);
-						t_relation[row][col] = 1;   //1´ú±í<
+						t_relation[row][col] = 1;   //1ä»£è¡¨<
 					}
-					//ÅĞ¶ÏµÚÈı¸öÊÇ²»ÊÇÖÕ½á·û
+					//åˆ¤æ–­ç¬¬ä¸‰ä¸ªæ˜¯ä¸æ˜¯ç»ˆç»“ç¬¦
 					if (j + 2 < vec.size())
 					{
-						if (!isUpper(vec[j + 2])) //ÊÇÖÕ½á·û
+						if (!isUpper(vec[j + 2])) //æ˜¯ç»ˆç»“ç¬¦
 						{
 							int row = findend(vec[j]);
 							int col = findend(vec[j + 2]);
-							t_relation[row][col] = 2;  //¼Ó=  ĞÎÈç aQb
+							t_relation[row][col] = 2;  //åŠ =  å½¢å¦‚ aQb
 						}
 					}
 				}
@@ -264,11 +264,11 @@ void Table::initEnd()
 				{
 					int row = findend(vec[j]);
 					int col = findend(vec[j + 1]);
-					t_relation[row][col] = 2; //2´ú±í=
+					t_relation[row][col] = 2; //2ä»£è¡¨=
 				}
 			}
 		}
-		//khkj  µÈºÅ = ¸³Öµ Èç S-> if B then S else S  if=then=else
+		//khkj  ç­‰å· = èµ‹å€¼ å¦‚ S-> if B then S else S  if=then=else
 		for (int i = 0; i < (int)vec.size() - 2; i++)
 		{
 			string str1 = vec[i];
@@ -304,30 +304,30 @@ void Table::initEnd()
 
 }
 
-//¹¹Ôìº¯Êı(Íê³ÉÊ÷µÄ½¨Á¢¡¢±íµÄ½¨Á¢£©
+//æ„é€ å‡½æ•°(å®Œæˆæ ‘çš„å»ºç«‹ã€è¡¨çš„å»ºç«‹ï¼‰
 Table::Table()
 {
-	GrammarTree = new Tree();     //½¨Á¢Óï·¨Ê÷
+	GrammarTree = new Tree();     //å»ºç«‹è¯­æ³•æ ‘
 	for (int i = 0; i < Grammar_Maxid; i++)
 	{
 		flgrammar[i] = new Grammar_FL(i);
 	}
-	finishGra();   //µ÷ÓÃº¯ÊıÇó³öÁ½¼¯ºÏ
-	initEnd();     //Íê³ÉËã·ûÓÅÏÈ¹ØÏµ±í
+	finishGra();   //è°ƒç”¨å‡½æ•°æ±‚å‡ºä¸¤é›†åˆ
+	initEnd();     //å®Œæˆç®—ç¬¦ä¼˜å…ˆå…³ç³»è¡¨
 }
 
 
-//Îö¹¹º¯Êı
+//ææ„å‡½æ•°
 Table::~Table()
 {
-	//ÊÍ·Å¿Õ¼ä flgrammar
+	//é‡Šæ”¾ç©ºé—´ flgrammar
 	for (int i = 0; i < Grammar_Maxid; i++)
 	{
 		delete flgrammar[i];
 		flgrammar[i] = NULL;
 	}
 
-	//ÊÍ·Å¿Õ¼ä t_relation
+	//é‡Šæ”¾ç©ºé—´ t_relation
 	for (int i = 0; i < end.size(); i++)
 	{
 		delete[] t_relation[i];
@@ -341,7 +341,7 @@ Table::~Table()
 	GrammarTree = NULL;
 }
 
-//Çó³öfirstvtºÍlastvt¼¯ºÏ
+//æ±‚å‡ºfirstvtå’Œlastvté›†åˆ
 void Table::finishGra()
 {
 
@@ -368,7 +368,7 @@ void Table::finishGra()
 						}
 					}
 				}
-				//Íê³ÉLastvt
+				//å®ŒæˆLastvt
 				int lastindex = vec.size() - 1;
 				if (isUpper(vec[lastindex]) && vec[lastindex] != flgrammar[id]->getNotEnd())
 				{
@@ -395,20 +395,20 @@ void Table::finishGra()
 }  //
 
 
-//Êä³öËã·ûÓÅÏÈ±í
+//è¾“å‡ºç®—ç¬¦ä¼˜å…ˆè¡¨
 /*
 void Table::printTable()
 {
-	//Êä³ö±íÍ·
+	//è¾“å‡ºè¡¨å¤´
 	cout << "  ";
 	for (int i = 0; i < end.size(); i++)
 	{
 		cout << end[i].end << "  ";
 	}
 	cout << endl;
-	//Êä³ö±í
+	//è¾“å‡ºè¡¨
 	for (int row = 0; row < end.size(); row++)
-	{   //Êä³ö±íÁĞ
+	{   //è¾“å‡ºè¡¨åˆ—
 		cout << end[row].end;
 		for (int col = 0; col < end.size(); col++)
 		{
@@ -419,16 +419,16 @@ void Table::printTable()
 }
 */
 
-//Êä³öµ±Ç°ÊäÈë»º³åÇø
+//è¾“å‡ºå½“å‰è¾“å…¥ç¼“å†²åŒº
 void Table::printBuffer()
 {
-	cout << "µ±Ç°ÊäÈë»º³åÇø:  ";
+	cout << "å½“å‰è¾“å…¥ç¼“å†²åŒº:  ";
 	for (int i = 0; i < Buffer.size(); i++)
 		cout << Buffer[i].name;
 	cout << endl;
 }
 
-//Êä³ö
+//è¾“å‡º
 void Table::printCreateTreeStack()
 {
 	for (int i = 0; i < CreateTreeStack.size(); i++)
@@ -437,10 +437,10 @@ void Table::printCreateTreeStack()
 }
 
 
-//Êä³öµ±Ç°·ûºÅÕ»
+//è¾“å‡ºå½“å‰ç¬¦å·æ ˆ
 void Table::printSignStack()
 {
-	cout << "µ±Ç°·ûºÅÕ»:  ";
+	cout << "å½“å‰ç¬¦å·æ ˆ:  ";
 	for (int i = 0; i < CreateTreeStack.size(); i++)
 		cout << CreateTreeStack[i].data.name;
 	cout << endl;
@@ -450,11 +450,11 @@ void Table::printSignStack()
 }
 
 
-//¹æÔ¼²¢½¨Á¢ËÄÔªÊ½
+//è§„çº¦å¹¶å»ºç«‹å››å…ƒå¼
 bool Table::Match(vector<token>tokens, string &ErrorMessage)
 {
 	ErrorMessage = "";
-	token temp("#", 0, -1, "½áÊø·û", 0);
+	token temp("#", 0, -1, "ç»“æŸç¬¦", 0);
 	signStack.push_back(temp);
 	CreateTreeStack.push_back(*CreateTreeNode(temp));
 	Buffer.push_back(temp);
@@ -472,7 +472,7 @@ bool Table::Match(vector<token>tokens, string &ErrorMessage)
 		typeIsId(t.type) ? col = findend("id") : col = findend(t.name);
 		if (col == -1)
 		{
-			ErrorMessage = "·Ç·¨×Ö·û" + t.name;
+			ErrorMessage = "éæ³•å­—ç¬¦" + t.name;
 			printBuffer();
 			return false;
 		}
@@ -481,25 +481,25 @@ bool Table::Match(vector<token>tokens, string &ErrorMessage)
 		switch (result)
 		{
 		case 0:
-			ErrorMessage = t.name + "¸½½ü³öÏÖ´íÎó";
+			ErrorMessage = t.name + "é™„è¿‘å‡ºç°é”™è¯¯";
 			printBuffer();
 			return false;
 			break;
-		case 1: // < ÒÆ½ø
+		case 1: // < ç§»è¿›
 			signStack.push_back(t);
 			CreateTreeStack.push_back(*CreateTreeNode(t));
 			Buffer.pop_back();
 			break;
-		case 2: // =  ÒÆ½ø
-			//ÅĞ¶ÏÊÇ·ñÎª #
+		case 2: // =  ç§»è¿›
+			//åˆ¤æ–­æ˜¯å¦ä¸º #
 			if (t.name == "#") {
-				//½¨Á¢Ê÷
-				token temp("W", 0, -1, "·ÇÖÕ½á·û", 0);
+				//å»ºç«‹æ ‘
+				token temp("W", 0, -1, "éç»ˆç»“ç¬¦", 0);
 				TreeNode *pNew = CreateTreeNode(temp);
 				vector<TreeNode> pushendLast;
 				for (int i = 0; i < CreateTreeStack.size(); i++)
 					pushendLast.push_back(CreateTreeStack[i]);
-				token temp1("#", 0, -1, "½áÊø·û", 0);
+				token temp1("#", 0, -1, "ç»“æŸç¬¦", 0);
 				CreateTreeStack.push_back(*CreateTreeNode(temp1));
 				pushendLast.push_back(*CreateTreeNode(temp1));
 				pNew = InsertAllChild(pNew, pushendLast);
@@ -510,35 +510,35 @@ bool Table::Match(vector<token>tokens, string &ErrorMessage)
 			CreateTreeStack.push_back(*CreateTreeNode(t));
 			Buffer.pop_back();
 			break;
-		case 3: // > ¹æÔ¼    
+		case 3: // > è§„çº¦    
 			int top = signStack.size() - 1;
 			top--;
-			vector<TreeNode> pushend;     //Òª¹æÔ¼µÄ½áµã
-			vector<string> pushend1;   //ÓÃÀ´²éÕÒ²úÉúÊ½ÓÃ
+			vector<TreeNode> pushend;     //è¦è§„çº¦çš„ç»“ç‚¹
+			vector<string> pushend1;   //ç”¨æ¥æŸ¥æ‰¾äº§ç”Ÿå¼ç”¨
 			while (true) {
 				if (top < 0)
 				{
-					ErrorMessage = "ÎŞ·¨Íê³É¹æÔ¼";
+					ErrorMessage = "æ— æ³•å®Œæˆè§„çº¦";
 					printBuffer();
 					return false;
 				}
 				int row1 = findend(getSignStackname(signStack[top]));
 				int col1 = findend(getSignStackname(signStack[top + 1]));
 				int result1 = t_relation[row1][col1];
-				if (result1 == 1)//Èç¹û< Ôò³öÕ»
+				if (result1 == 1)//å¦‚æœ< åˆ™å‡ºæ ˆ
 				{
-					for (int j = signStack.size() - 1; j > top; j--)   //µ¯³ö¹æÔ¼´®
+					for (int j = signStack.size() - 1; j > top; j--)   //å¼¹å‡ºè§„çº¦ä¸²
 					{
 						pushend1.push_back(getSignStackname(signStack[j]));
 						signStack.pop_back();
 					};
-#pragma region ½¨Á¢½Úµã
-					//Ñ°ÕÒ²úÉúÊ½
+#pragma region å»ºç«‹èŠ‚ç‚¹
+					//å¯»æ‰¾äº§ç”Ÿå¼
 					int index = FindGraIndexByvec(pushend1);
-					//ÕÒµ½ÁË²úÉúÊ½,Íê³ÉÏàÓ¦¶¯×÷
+					//æ‰¾åˆ°äº†äº§ç”Ÿå¼,å®Œæˆç›¸åº”åŠ¨ä½œ
 					if (index == -1)
 						break;
-					token temp(grammar[index].getINP(), 0, -1, "·ÇÖÕ½á·û", 0);
+					token temp(grammar[index].getINP(), 0, -1, "éç»ˆç»“ç¬¦", 0);
 					for (int j = CreateTreeStack.size() - 1; j > returnStackendIndex(top); j--)
 					{
 						pushend.push_back(CreateTreeStack[j]);

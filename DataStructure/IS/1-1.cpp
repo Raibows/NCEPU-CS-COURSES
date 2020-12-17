@@ -1,92 +1,92 @@
-#include<iostream>
-#include<malloc.h>
+#include <iostream>
+#include <malloc.h>
 #define MAXSIZE 100
 using namespace std;
 
-typedef struct SeqList{
+typedef struct SeqList
+{
 	int data[MAXSIZE];
-	int length; 
-}* PSeqList;
+	int length;
+} * PSeqList;
 
- 
-
-void panduan(PSeqList L){
-	if(!L){
-		cout<<"±í²»´æÔÚ£¡";
-		return ;
+void panduan(PSeqList L)
+{
+	if (!L)
+	{
+		cout << "è¡¨ä¸å­˜åœ¨ï¼";
+		return;
 	}
-	if(L->length>=MAXSIZE){
-		cout<<"±íÒç³ö£¡";
-	return ;
+	if (L->length >= MAXSIZE)
+	{
+		cout << "è¡¨æº¢å‡ºï¼";
+		return;
 	}
 }
- 
 
-PSeqList Init_SeqList(){
-	PSeqList L=new SeqList;
+PSeqList Init_SeqList()
+{
+	PSeqList L = new SeqList;
 
-	cout<<"ÊäÈëÔ¼Éª·ò»·µÄÈËÊı:";
-	cin>>L->length;
- 
-	cout<<"ÊäÈëÈËÃû£º";
-	for(int i=0;i<L->length;i++){
-		cin>>L->data[i];
+	cout << "è¾“å…¥çº¦ç‘Ÿå¤«ç¯çš„äººæ•°:";
+	cin >> L->length;
+
+	cout << "è¾“å…¥äººåï¼š";
+	for (int i = 0; i < L->length; i++)
+	{
+		cin >> L->data[i];
 	}
- 
+
 	return L;
 }
 
- 
+void Delete_SeqList(PSeqList L, int i)
+{
 
-void Delete_SeqList(PSeqList L,int i){
-	
-	panduan(L);//ÅĞ¶ÏÏßĞÔ±íÊÇ·ñÎª¿Õ
-	
-	if(i<1 || i>L->length+1){
-		cout<<"É¾³ıÊ§°Ü£¡";
+	panduan(L); //åˆ¤æ–­çº¿æ€§è¡¨æ˜¯å¦ä¸ºç©º
+
+	if (i < 1 || i > L->length + 1)
+	{
+		cout << "åˆ é™¤å¤±è´¥ï¼";
 		return;
 	}
 
-	int j=i-1;
-	for(j=i-1;j<L->length;j++){
-		L->data[j]=L->data[j+1];//É¾³ıÁËiÎ»ÖÃ
+	int j = i - 1;
+	for (j = i - 1; j < L->length; j++)
+	{
+		L->data[j] = L->data[j + 1]; //åˆ é™¤äº†iä½ç½®
 	}
 
-	L->length--;//³¤¶È¼õÒ»
+	L->length--; //é•¿åº¦å‡ä¸€
 }
- 
 
-//sÎ»ÖÃ¿ªÊ¼,É¾³ıµÚmÎ»
-void yue_SeqList(PSeqList L,int s,int m){
-	panduan(L);	
-	int j=1;
-	int s1=s-1;
-	
-	cout<<"\nÊä³öÔ¼Éª·òĞòÁĞ£º\n";
+//sä½ç½®å¼€å§‹,åˆ é™¤ç¬¬mä½
+void yue_SeqList(PSeqList L, int s, int m)
+{
+	panduan(L);
+	int j = 1;
+	int s1 = s - 1;
 
-	int i=L->length;
-	for( i=L->length;i>0;i--){
-		s1=(s1+m-1)%i;
-		cout<<"µÚ"<<j<<"¸ö³öÁĞµÄÈËÊÇ£º"<<L->data[s1]<<endl;
-		Delete_SeqList(L,s1+1);
+	cout << "\nè¾“å‡ºçº¦ç‘Ÿå¤«åºåˆ—ï¼š\n";
+
+	int i = L->length;
+	for (i = L->length; i > 0; i--)
+	{
+		s1 = (s1 + m - 1) % i;
+		cout << "ç¬¬" << j << "ä¸ªå‡ºåˆ—çš„äººæ˜¯ï¼š" << L->data[s1] << endl;
+		Delete_SeqList(L, s1 + 1);
 		j++;
 	}
-}	 
+}
 
+int main()
+{
 
-
-int main(){
-
- 
-	PSeqList L=Init_SeqList();
+	PSeqList L = Init_SeqList();
 	int s;
 	int m;
-	cout<<"ÇëÊäÈëÔ¼Éª·ò»·µÄÆğÊ¼ĞòºÅsºÍ¼ÆÊıÖµmµÄÖµ·Ö±ğÊÇ£º";
-	cin>>s>>m;
-	yue_SeqList(L,s,m);
- 
+	cout << "è¯·è¾“å…¥çº¦ç‘Ÿå¤«ç¯çš„èµ·å§‹åºå·så’Œè®¡æ•°å€¼mçš„å€¼åˆ†åˆ«æ˜¯ï¼š";
+	cin >> s >> m;
+	yue_SeqList(L, s, m);
+
 	return 0;
- 
-	}
-
-
+}

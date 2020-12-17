@@ -1,6 +1,6 @@
-#include<iostream>
-#include<stdio.h>
-#include<string>
+#include <iostream>
+#include <stdio.h>
+#include <string>
 using namespace std;
 #define Max 8
 
@@ -11,212 +11,212 @@ typedef struct node
 	string address;
 	node *next;
 	int hxdz;
-}*point;
-	
+} * point;
+
 point HSB[Max];
 
-int dizhi(__int64 k)//³ýÁôÓàÊý·¨
+int dizhi(__int64 k) //é™¤ç•™ä½™æ•°æ³•
 {
-	int sum=0;
+	int sum = 0;
 	int m;
-	while(k!=0)
+	while (k != 0)
 	{
-		sum=sum+k%10;//ÇóºÍ
-		k=k/10;
+		sum = sum + k % 10; //æ±‚å’Œ
+		k = k / 10;
 	}
-	m=sum%7;//²»³¬¹ý11µÄ×î´óÖÊÊý
+	m = sum % 7; //ä¸è¶…è¿‡11çš„æœ€å¤§è´¨æ•°
 	return m;
 }
 
-
-void inhash(point HSB[],__int64 key,string name,string address)//ÐÅÏ¢Ð´Èë¹þÏ£±í
+void inhash(point HSB[], __int64 key, string name, string address) //ä¿¡æ¯å†™å…¥å“ˆå¸Œè¡¨
 {
-	node *p,*s;
+	node *p, *s;
 	int n;
-	n=dizhi(key);
-	if(HSB[n]==NULL)
+	n = dizhi(key);
+	if (HSB[n] == NULL)
 	{
-		p=new node();
-		p->key=key;
-		p->name=name;
-		p->address=address;
-		p->hxdz=n;
-		p->next=NULL;
-		HSB[n]=p;
+		p = new node();
+		p->key = key;
+		p->name = name;
+		p->address = address;
+		p->hxdz = n;
+		p->next = NULL;
+		HSB[n] = p;
 	}
-	else if(HSB[n]!=NULL)//³åÍ»
+	else if (HSB[n] != NULL) //å†²çª
 	{
-		s=HSB[n];
-		while(s->next!=NULL && s->key!=key)
-			s=s->next;
-		if(s->key==key)
+		s = HSB[n];
+		while (s->next != NULL && s->key != key)
+			s = s->next;
+		if (s->key == key)
 		{
-			cout<<s->name <<"ÒÑ´æÔÚ£¡"<<endl;
+			cout << s->name << "å·²å­˜åœ¨ï¼" << endl;
 			return;
 		}
 		else
 		{
-			p=new node();
-			p->key=key;
-			p->name=name;
-			p->address=address;
-			p->hxdz=n;
-			p->next=NULL;
-			s->next=p;
+			p = new node();
+			p->key = key;
+			p->name = name;
+			p->address = address;
+			p->hxdz = n;
+			p->next = NULL;
+			s->next = p;
 		}
 	}
 }
 
-
-void find(point HSB[],__int64 key)//²éÕÒÓëÒÑÖªµç»°ºÅÂëµÄÆ¥ÅäµÄÐÅÏ¢
+void find(point HSB[], __int64 key) //æŸ¥æ‰¾ä¸Žå·²çŸ¥ç”µè¯å·ç çš„åŒ¹é…çš„ä¿¡æ¯
 {
 	int n;
 	node *q;
-	n=dizhi(key);
-	q=HSB[n];
-	while(q!=NULL&&q->key!=key)
-		q=q->next;
-	if(q==NULL)
+	n = dizhi(key);
+	q = HSB[n];
+	while (q != NULL && q->key != key)
+		q = q->next;
+	if (q == NULL)
 	{
-	cout<<"ÎÞ´ËºÅÂë£¡"<<endl;
+		cout << "æ— æ­¤å·ç ï¼" << endl;
 	}
 	else
-	{	cout<<"ÐÕÃû:  ";
-		cout<<q->name;
-		cout<<"µç»°:  ";
-		printf("%I64u",q->key);
-		cout<<"µØÖ·:  ";
-		cout<<q->address;
-		cout<<"¹þÏ£µØÖ·:  ";
-		cout<<q->hxdz<<endl;
+	{
+		cout << "å§“å:  ";
+		cout << q->name;
+		cout << "ç”µè¯:  ";
+		printf("%I64u", q->key);
+		cout << "åœ°å€:  ";
+		cout << q->address;
+		cout << "å“ˆå¸Œåœ°å€:  ";
+		cout << q->hxdz << endl;
 	}
 }
 
-
-void delhash(point HSB[],__int64 key)//É¾³ý¸ø¶¨µÄºÅÂë
+void delhash(point HSB[], __int64 key) //åˆ é™¤ç»™å®šçš„å·ç 
 {
 	int n;
-	n=dizhi(key);
-	if(HSB[n] == NULL)
+	n = dizhi(key);
+	if (HSB[n] == NULL)
 	{
-		cout<<"ÎÞ´ËºÅÂë£¡";
+		cout << "æ— æ­¤å·ç ï¼";
 		return;
 	}
 	else
 	{
-		node *p,*s;
-		s=HSB[n];
-		p=NULL;
-		while(s->next!=NULL && s->key!=key)
+		node *p, *s;
+		s = HSB[n];
+		p = NULL;
+		while (s->next != NULL && s->key != key)
 		{
-			p=s;
-			s=s->next;
+			p = s;
+			s = s->next;
 		}
-		if(s->key==key)
+		if (s->key == key)
 		{
-			cout<<"ÒªÉ¾³ýµÄÐÅÏ¢ÊÇ£º"<<"ÐÕÃû£º"<<s->name <<"  µç»°£º";
-			printf("%I64u",s->key);
-			cout<<"  µØÖ·£º"<<s->address<<endl;
-			cout<<"ÊÇ·ñÉ¾³ý£¿£¡ÊÇÔòÊäÈëY£¬·ñÊäÈëN£º";
+			cout << "è¦åˆ é™¤çš„ä¿¡æ¯æ˜¯ï¼š"
+				 << "å§“åï¼š" << s->name << "  ç”µè¯ï¼š";
+			printf("%I64u", s->key);
+			cout << "  åœ°å€ï¼š" << s->address << endl;
+			cout << "æ˜¯å¦åˆ é™¤ï¼Ÿï¼æ˜¯åˆ™è¾“å…¥Yï¼Œå¦è¾“å…¥Nï¼š";
 			string a;
-			cin>>a;
-			if(a=="Y")
+			cin >> a;
+			if (a == "Y")
 			{
-				if(p==NULL)
-					HSB[n]=s->next;
+				if (p == NULL)
+					HSB[n] = s->next;
 				else
-					p->next=s->next;
+					p->next = s->next;
 				delete s;
-				cout<<"É¾³ý³É¹¦£¡";
+				cout << "åˆ é™¤æˆåŠŸï¼";
 			}
 			else
 				return;
 		}
 		else
-			cout<<"²éÎÞ´ËºÅÂë£¡"<<endl;
+			cout << "æŸ¥æ— æ­¤å·ç ï¼" << endl;
 	}
 }
-
 
 void createhash(point HSB[])
 {
 	__int64 key;
-	string name,address;
-	cout<<"ÒÀ´ÎÊäÈëÐÕÃû µç»°ºÅÂë  µØÖ·£º";
-	cin>>name;
-	scanf("%I64u",&key);
-	cin>>address;
-	inhash(HSB,key,name,address);
+	string name, address;
+	cout << "ä¾æ¬¡è¾“å…¥å§“å ç”µè¯å·ç   åœ°å€ï¼š";
+	cin >> name;
+	scanf("%I64u", &key);
+	cin >> address;
+	inhash(HSB, key, name, address);
 }
-
 
 void shuchuhash(point HSB[])
 {
-	for(int i=0;i<Max;i++)
+	for (int i = 0; i < Max; i++)
 	{
 		node *p;
-		p=HSB[i];
-		while(p!=NULL)
+		p = HSB[i];
+		while (p != NULL)
 		{
-			cout<<"ÐÕÃû:"<<p->name<<"  µç»°:";
-			printf("%I64u",p->key);
-			cout<<"  µØÖ·:"<<p->address;
-			cout<<"  ¹þÏ£µØÖ·:";
-			cout<<p->hxdz<<endl;
-			p=p->next;
+			cout << "å§“å:" << p->name << "  ç”µè¯:";
+			printf("%I64u", p->key);
+			cout << "  åœ°å€:" << p->address;
+			cout << "  å“ˆå¸Œåœ°å€:";
+			cout << p->hxdz << endl;
+			p = p->next;
 		}
 	}
 }
 
-
 void view()
 {
-	
-	cout <<"1.Ìí¼ÓÊý¾Ý"<<endl;
-	cout << "2.²éÕÒÊý¾Ý"<<endl;
-	cout << "3.É¾³ýÊý¾Ý"<<endl;
-	cout << "4.ÏÔÊ¾ËùÓÐÊý¾Ý"<< endl;
+
+	cout << "1.æ·»åŠ æ•°æ®" << endl;
+	cout << "2.æŸ¥æ‰¾æ•°æ®" << endl;
+	cout << "3.åˆ é™¤æ•°æ®" << endl;
+	cout << "4.æ˜¾ç¤ºæ‰€æœ‰æ•°æ®" << endl;
 	int a;
-	cout<<"ÇëÑ¡ÔñÒª½øÐÐ²Ù×÷£º";
-	cin>>a;
-	if (a != 1 && a != 2 && a != 3&&a!=4)
+	cout << "è¯·é€‰æ‹©è¦è¿›è¡Œæ“ä½œï¼š";
+	cin >> a;
+	if (a != 1 && a != 2 && a != 3 && a != 4)
 	{
-		cout <<endl<< "´íÎó£¡ÇëÖØÐÂÊäÈë£¡";
-		scanf("%I64u",a);
+		cout << endl
+			 << "é”™è¯¯ï¼è¯·é‡æ–°è¾“å…¥ï¼";
+		scanf("%I64u", a);
 	}
-	switch(a)
+	switch (a)
 	{
-	case 1:createhash(HSB);
+	case 1:
+		createhash(HSB);
 		break;
-	case 2:__int64 two;
-		cout << "ÊäÈëÒª²éÕÒµÄµç»°ºÅÂë£º";
-		scanf("%I64u",&two);
-		find(HSB,two);
+	case 2:
+		__int64 two;
+		cout << "è¾“å…¥è¦æŸ¥æ‰¾çš„ç”µè¯å·ç ï¼š";
+		scanf("%I64u", &two);
+		find(HSB, two);
 		break;
-	case 3: __int64 three;
-		cout << "ÊäÈëÒªÉ¾³ýµÄµç»°ºÅÂë£º";
-		scanf("%I64u",&three);
-		delhash(HSB,three);
+	case 3:
+		__int64 three;
+		cout << "è¾“å…¥è¦åˆ é™¤çš„ç”µè¯å·ç ï¼š";
+		scanf("%I64u", &three);
+		delhash(HSB, three);
 		break;
-	case 4:shuchuhash(HSB);
+	case 4:
+		shuchuhash(HSB);
 	}
 
-	cout<<endl<<"·µ»Ø²Ëµ¥ÇëÊäÈë0"<<endl;
-	cout<<"ÍË³ö²Ëµ¥ÇëÊäÈëÆäËûÈÎÒâµÄ°´¼ü"<<endl;
+	cout << endl
+		 << "è¿”å›žèœå•è¯·è¾“å…¥0" << endl;
+	cout << "é€€å‡ºèœå•è¯·è¾“å…¥å…¶ä»–ä»»æ„çš„æŒ‰é”®" << endl;
 	int C;
-	cin>>C;
-	if(C==0)
+	cin >> C;
+	if (C == 0)
 	{
-		cout<<endl;
+		cout << endl;
 		view();
 	}
-	
 }
-
 
 void main()
 {
-	cout << "               µç»°ºÅÂë²éÑ¯ÏµÍ³         "<<endl;
+	cout << "               ç”µè¯å·ç æŸ¥è¯¢ç³»ç»Ÿ         " << endl;
 	view();
 	system("pause");
 }

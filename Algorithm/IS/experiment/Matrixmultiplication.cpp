@@ -6,7 +6,7 @@ int m[NUM][NUM],s[NUM][NUM],p[NUM];
 int n;
 
 
-void MatrixChain(int*p,int n,int m[100][100],int s[100][100]) //s ¶Ï¿ªÎ»ÖÃ
+void MatrixChain(int*p,int n,int m[100][100],int s[100][100]) //s æ–­å¼€ä½ç½®
 {
 	for (int i= 1; i<=n; i++) 
 		m[i][i]=0;
@@ -54,17 +54,17 @@ void Traceback(int i, int j, int s[100][100])
 
 int main()
 {
-	cout<<"ÇëÊäÈë¾ØÕóÁ¬³ËµÄ¸öÊın=";
+	cout<<"è¯·è¾“å…¥çŸ©é˜µè¿ä¹˜çš„ä¸ªæ•°n=";
 	cin>>n;
-	cout<<"ÇëÊäÈëµÚÒ»¸ö¾ØÕóĞĞÊıºÍµÚÒ»¸ö¾ØÕóµ½µÚ"<<n<<"¸ö¾ØÕóÁĞÊı£º";
+	cout<<"è¯·è¾“å…¥ç¬¬ä¸€ä¸ªçŸ©é˜µè¡Œæ•°å’Œç¬¬ä¸€ä¸ªçŸ©é˜µåˆ°ç¬¬"<<n<<"ä¸ªçŸ©é˜µåˆ—æ•°ï¼š";
 	for(int i=0;i<=n;i++)
 	{
 		cin>>p[i];
 	}
 	MatrixChain(p,n,m,s);
-	cout<<"×îÓÅÖµÎª£º"<<m[1][n]<<endl;
+	cout<<"æœ€ä¼˜å€¼ä¸ºï¼š"<<m[1][n]<<endl;
 	
-	cout<<"×îÓÅ½âÎª£º"<<endl;
+	cout<<"æœ€ä¼˜è§£ä¸ºï¼š"<<endl;
 	Traceback(1, n,s);
 	cout<<endl;
 

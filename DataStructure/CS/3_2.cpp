@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 /*
 思路如下：
@@ -10,73 +10,85 @@ using namespace std;
     （具体断开与连接很简单不详述）
 调用show函数展示链表所有结点的值
 */
-struct node{
+struct node
+{
     int data;
     node *link;
 };
-class linklist{
+class linklist
+{
 public:
-    linklist(){
-        node *list=new node();
-        list->data=0;
-        list->link=NULL;
+    linklist()
+    {
+        node *list = new node();
+        list->data = 0;
+        list->link = NULL;
     }
     void create();
     void move_max();
     void show();
     node *list;
 };
-void linklist::move_max(){
-    int max=-1;
-    node *tem=new node();
-    tem=list;
-    max=tem->link->data;
+void linklist::move_max()
+{
+    int max = -1;
+    node *tem = new node();
+    tem = list;
+    max = tem->link->data;
     //search for max
-    while(tem->link!=NULL){
-        tem=tem->link;
-        if(max<tem->data){
-            max=tem->data;
+    while (tem->link != NULL)
+    {
+        tem = tem->link;
+        if (max < tem->data)
+        {
+            max = tem->data;
         }
     }
     //link the end with the max
-    node *p=new node();
-    p->data=max;
-    p->link=NULL;
-    tem->link=p;
-    node *pre=new node();
-    pre=list;
-    while(pre->link->data!=max){
-        pre=pre->link;
+    node *p = new node();
+    p->data = max;
+    p->link = NULL;
+    tem->link = p;
+    node *pre = new node();
+    pre = list;
+    while (pre->link->data != max)
+    {
+        pre = pre->link;
     }
     //delete orignal max node
-    node *h=new node();
-    h=pre->link;
-    pre->link=h->link;
+    node *h = new node();
+    h = pre->link;
+    pre->link = h->link;
     delete h;
 }
-void linklist::create(){
-    node *tem=new node();
-    tem=list;
-    char a='0';
-    while(a=cin.get()!='\n'){
-        node *q=new node();
-        tem->link=q;
+void linklist::create()
+{
+    node *tem = new node();
+    tem = list;
+    char a = '0';
+    while (a = cin.get() != '\n')
+    {
+        node *q = new node();
+        tem->link = q;
         cin.unget();
-        cin>>q->data;
-        q->link=NULL;
-        tem=q;
+        cin >> q->data;
+        q->link = NULL;
+        tem = q;
     }
 }
-void linklist::show(){
-    node *tem=new node();
-    tem=list;
-    while(tem->link!=NULL){
-        tem=tem->link;
-        cout<<tem->data<<" ";
+void linklist::show()
+{
+    node *tem = new node();
+    tem = list;
+    while (tem->link != NULL)
+    {
+        tem = tem->link;
+        cout << tem->data << " ";
     }
 }
-int main(){
-    linklist *l=new linklist();
+int main()
+{
+    linklist *l = new linklist();
     l->create();
     l->move_max();
     l->show();

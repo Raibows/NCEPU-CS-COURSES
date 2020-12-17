@@ -10,31 +10,31 @@ import javax.swing.border.TitledBorder;
 
 @SuppressWarnings("serial")
 public class User extends JFrame {
-	private JLabel		l1		= new JLabel("ÓÃ»§ÕËºÅ");
+	private JLabel		l1		= new JLabel("ç”¨æˆ·è´¦å·");
 	private JLabel		l2		= new JLabel();
-	private JLabel		l3		= new JLabel("ÓÃ»§ĞÕÃû");
+	private JLabel		l3		= new JLabel("ç”¨æˆ·å§“å");
 	private JLabel		l4		= new JLabel();
-	private JLabel		l5		= new JLabel("ĞÔ±ğ");
+	private JLabel		l5		= new JLabel("æ€§åˆ«");
 	private JLabel		l6		= new JLabel();
-	private JLabel		l7		= new JLabel("ÃÜÂë");
+	private JLabel		l7		= new JLabel("å¯†ç ");
 	private JLabel		l8		= new JLabel();
-	private	JButton		manu_b1	= new JButton("ÓÃ»§ĞÅÏ¢");
-	private JButton		manu_b2	= new JButton("²é¿´¹ºÎï½á¹û");
-	private JButton		manu_b3	= new JButton("ĞŞ¸ÄĞÅÏ¢");
-	private JButton		manu_b4	= new JButton("²é¿´ÉÌ³Ç");
-	private JButton		manu_b5	= new JButton("ÍË³öµÇÂ¼");
-	private	JButton		b1		= new JButton("ĞŞ¸Ä");
-	private	JButton		b2		= new JButton("È¡Ïû");
-	private	JButton		b3		= new JButton("¹ºÂò");
-	private	JButton		b4		= new JButton("É¾³ı");
-	private	JButton		b5		= new JButton("²éÕÒ");
+	private	JButton		manu_b1	= new JButton("ç”¨æˆ·ä¿¡æ¯");
+	private JButton		manu_b2	= new JButton("æŸ¥çœ‹è´­ç‰©ç»“æœ");
+	private JButton		manu_b3	= new JButton("ä¿®æ”¹ä¿¡æ¯");
+	private JButton		manu_b4	= new JButton("æŸ¥çœ‹å•†åŸ");
+	private JButton		manu_b5	= new JButton("é€€å‡ºç™»å½•");
+	private	JButton		b1		= new JButton("ä¿®æ”¹");
+	private	JButton		b2		= new JButton("å–æ¶ˆ");
+	private	JButton		b3		= new JButton("è´­ä¹°");
+	private	JButton		b4		= new JButton("åˆ é™¤");
+	private	JButton		b5		= new JButton("æŸ¥æ‰¾");
 	private JMenuBar	mb 		= new JMenuBar();
 	private	JTextField	t1		= new JTextField();
 	private	JTextField	t2		= new JTextField();
 	private	JTextField	t3		= new JTextField();
 	private	JTextField	t4		= new JTextField();
 	private JTable 		table	= null;
-	private Object columnName[]	= {"ÉÌÆ·ÕËºÅ", "ÉÌÆ·Ãû", "µ¥¼Û", "ÊıÁ¿", "ÉÌ¼ÒÃû"};
+	private Object columnName[]	= {"å•†å“è´¦å·", "å•†å“å", "å•ä»·", "æ•°é‡", "å•†å®¶å"};
     private Object 		ar[][]	= new Object[80][5];
 	private	int user_id;
 	
@@ -44,16 +44,16 @@ public class User extends JFrame {
 		super(title);
 		user_id = uid;
 		Container	cp	=	this.getContentPane();
-		l1.setFont(new Font("ËÎÌå", Font.BOLD, 20));
-		l3.setFont(new Font("ËÎÌå", Font.BOLD, 20));
-		l5.setFont(new Font("ËÎÌå", Font.BOLD, 20));
-		l7.setFont(new Font("ËÎÌå", Font.BOLD, 20));
-		l8.setFont(new Font("ËÎÌå", Font.BOLD, 20));
-		b1.setFont(new Font("ËÎÌå", Font.BOLD, 20));
-		b2.setFont(new Font("ËÎÌå", Font.BOLD, 20));
-		b3.setFont(new Font("ËÎÌå", Font.BOLD, 20));
-		b4.setFont(new Font("ËÎÌå", Font.BOLD, 20));
-		b5.setFont(new Font("ËÎÌå", Font.BOLD, 20));
+		l1.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
+		l3.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
+		l5.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
+		l7.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
+		l8.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
+		b1.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
+		b2.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
+		b3.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
+		b4.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
+		b5.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
 		
 		mb.add(manu_b1);
 		mb.add(manu_b2);
@@ -69,9 +69,9 @@ public class User extends JFrame {
 		
 		Toolkit kit=Toolkit.getDefaultToolkit();
 		Dimension screen=kit.getScreenSize();
-		int x=screen.width;					// È¡µÃÏÔÊ¾Æ÷´°¿ÚµÄ¿í¶È
+		int x=screen.width;					// å–å¾—æ˜¾ç¤ºå™¨çª—å£çš„å®½åº¦
 		int y=screen.height;
-		setSize(500,650);		// ÈÃÏµÍ³´°¿ÚÆ½ÆÌÕû¸öÏÔÊ¾Æ÷´°¿Ú
+		setSize(500,650);		// è®©ç³»ç»Ÿçª—å£å¹³é“ºæ•´ä¸ªæ˜¾ç¤ºå™¨çª—å£
 	    int xcenter=(x-500)/2;
 	    int ycenter=(y-650)/2;
 	    setLocation(xcenter,ycenter);
@@ -94,25 +94,25 @@ public class User extends JFrame {
 	private class MyActionListener implements  ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			String b = e.getActionCommand();
-			if (b.equals("ÓÃ»§ĞÅÏ¢")) {
+			if (b.equals("ç”¨æˆ·ä¿¡æ¯")) {
 				User.this.view(User.this.user_id);
-			} else if (b.equals("ĞŞ¸Ä")) {
+			} else if (b.equals("ä¿®æ”¹")) {
 				User.this.updateInfo(User.this.user_id);
-			} else if (b.equals("È¡Ïû")) {
+			} else if (b.equals("å–æ¶ˆ")) {
 				User.this.cancel();
-			} else if (b.equals("²é¿´¹ºÎï½á¹û")) {
+			} else if (b.equals("æŸ¥çœ‹è´­ç‰©ç»“æœ")) {
 				User.this.viewCart(User.this.user_id);
-			} else if (b.equals("É¾³ı")) {
+			} else if (b.equals("åˆ é™¤")) {
 				User.this.deleteCart(User.this.user_id);
-			} else if (b.equals("ĞŞ¸ÄĞÅÏ¢")) {
+			} else if (b.equals("ä¿®æ”¹ä¿¡æ¯")) {
 				User.this.update(User.this.user_id);
-			} else if (b.equals("¹ºÂò")) {
+			} else if (b.equals("è´­ä¹°")) {
 				User.this.addToCart(User.this.user_id);
-			} else if (b.equals("²éÕÒ")) {
+			} else if (b.equals("æŸ¥æ‰¾")) {
 				User.this.search();
-			} else if (b.equals("²é¿´ÉÌ³Ç")) {
+			} else if (b.equals("æŸ¥çœ‹å•†åŸ")) {
 				User.this.viewShop();
-			} else if (b.equals("ÍË³öµÇÂ¼")) {
+			} else if (b.equals("é€€å‡ºç™»å½•")) {
 				User.this.logout();
 			}
 		}
@@ -133,17 +133,17 @@ public class User extends JFrame {
                 int sex			= rs.getInt("sex");
                 String usex		= null;
                 if (sex == 0) {
-                	usex = "ÄĞ";
+                	usex = "ç”·";
                 } else {
-                	usex = "Å®";
+                	usex = "å¥³";
                 }
                 
                 l2.setText("" + uid);
-                l2.setFont(new Font("ËÎÌå", Font.BOLD, 20));
+                l2.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
                 l4.setText(uname);
-                l4.setFont(new Font("ËÎÌå", Font.BOLD, 20));
+                l4.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
                 l6.setText(usex);
-                l6.setFont(new Font("ËÎÌå", Font.BOLD, 20));
+                l6.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
 
                 panelCerter.removeAll();
                 panelCerter.add(l1);
@@ -185,19 +185,19 @@ public class User extends JFrame {
                 String upass	= rs.getString("password");
                 String usex		= null;
                 if (sex == 0) {
-                	usex = "ÄĞ";
+                	usex = "ç”·";
                 } else {
-                	usex = "Å®";
+                	usex = "å¥³";
                 }
                 
                 l8.setText("" + uid);
-                t1.setFont(new Font("ËÎÌå", Font.BOLD, 20));
+                t1.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
                 t2.setText(uname);
-                t2.setFont(new Font("ËÎÌå", Font.BOLD, 20));
+                t2.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
                 t3.setText(usex);
-                t3.setFont(new Font("ËÎÌå", Font.BOLD, 20));
+                t3.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
                 t4.setText(upass);
-                t4.setFont(new Font("ËÎÌå", Font.BOLD, 20));
+                t4.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
 
                 panelCerter.removeAll();
                 panelCerter.add(l1);
@@ -253,14 +253,14 @@ public class User extends JFrame {
 				
 				int res1 = pstmt.executeUpdate();
 				if(res1 > 0){
-					System.out.println("¸üĞÂÊı¾İ³É¹¦");
+					System.out.println("æ›´æ–°æ•°æ®æˆåŠŸ");
 					i ++;
 				}
 				
 				if (sex != null) {
-					if (sex.equals("ÄĞ")) {
+					if (sex.equals("ç”·")) {
 						usex = 0;
-					} else if(sex.equals("Å®")) {
+					} else if(sex.equals("å¥³")) {
 						usex = 1;
 					}
 					
@@ -270,7 +270,7 @@ public class User extends JFrame {
 					
 					int res2 = pstmt.executeUpdate();
 					if(res2 > 0){
-						System.out.println("¸üĞÂÊı¾İ³É¹¦");
+						System.out.println("æ›´æ–°æ•°æ®æˆåŠŸ");
 						i ++;
 					}
 				}
@@ -282,14 +282,14 @@ public class User extends JFrame {
 	                
 	                int res3 = pstmt.executeUpdate();
 	    			if(res3 > 0){
-	    				System.out.println("¸üĞÂÊı¾İ³É¹¦");
+	    				System.out.println("æ›´æ–°æ•°æ®æˆåŠŸ");
 	    				i ++;
 	    			}
 				}
 			}
         	
         	if (i > 0) {
-        		JOptionPane.showMessageDialog(null,"ĞŞ¸Ä³É¹¦");
+        		JOptionPane.showMessageDialog(null,"ä¿®æ”¹æˆåŠŸ");
         		panelCerter.removeAll();
         		panelCerter.repaint();
         	}
@@ -367,7 +367,7 @@ public class User extends JFrame {
 	}
 	
 	private void search() {
-		String input = JOptionPane.showInputDialog("²éÕÒÉÌÆ·");
+		String input = JOptionPane.showInputDialog("æŸ¥æ‰¾å•†å“");
 		
 		if(input == null) {
 			User.this.viewShop();
@@ -435,7 +435,7 @@ public class User extends JFrame {
 			int num				= Integer.parseInt(table.getValueAt(count, 3).toString());
 			int cnum			= 0;
 			
-			// ¼ÓÈë¹ºÎï³µ
+			// åŠ å…¥è´­ç‰©è½¦
 			try {
 				MySQLDemo add_con = new MySQLDemo();
 				add_con.connect();
@@ -457,8 +457,8 @@ public class User extends JFrame {
 						int res = smt.executeUpdate();
 						System.out.println(res);
 						if(res > 0){
-		    				System.out.println("¸üĞÂ³É¹¦");
-		    				JOptionPane.showMessageDialog(null,"Ìí¼Ó³É¹¦");
+		    				System.out.println("æ›´æ–°æˆåŠŸ");
+		    				JOptionPane.showMessageDialog(null,"æ·»åŠ æˆåŠŸ");
 		    			}
 						smt.close();
 						
@@ -472,7 +472,7 @@ public class User extends JFrame {
 						smt.setInt(4, 1);
 						
 						if (smt.executeUpdate() > 0) {
-							JOptionPane.showMessageDialog(null,"Ìí¼Ó³É¹¦");
+							JOptionPane.showMessageDialog(null,"æ·»åŠ æˆåŠŸ");
 						}
 						smt.close();
 					}
@@ -485,7 +485,7 @@ public class User extends JFrame {
 				e.printStackTrace();
 			}
 			
-			// ¸üĞÂÉÌ³Ç
+			// æ›´æ–°å•†åŸ
 			try {
 				MySQLDemo add_con = new MySQLDemo();
 				add_con.connect();
@@ -499,7 +499,7 @@ public class User extends JFrame {
 				int res = smt.executeUpdate();
 
 				if(res > 0){
-	    			System.out.println("¸üĞÂ³É¹¦");
+	    			System.out.println("æ›´æ–°æˆåŠŸ");
 	    		}
 				
 				smt.close();
@@ -594,7 +594,7 @@ public class User extends JFrame {
 		if(count >= 0) {
 			int thing_id		= Integer.parseInt(table.getValueAt(count, 0).toString());
 			
-			if(JOptionPane.showConfirmDialog(null, "ÊÇ·ñÉ¾³ı£¿", "É¾³ı", JOptionPane.YES_NO_OPTION) == 0) {
+			if(JOptionPane.showConfirmDialog(null, "æ˜¯å¦åˆ é™¤ï¼Ÿ", "åˆ é™¤", JOptionPane.YES_NO_OPTION) == 0) {
 				try {
 					MySQLDemo delete_con = new MySQLDemo();
 					delete_con.connect();
@@ -604,8 +604,8 @@ public class User extends JFrame {
 					int 			res = sql.executeUpdate(delete);
 					
 					if(res > 0){
-						System.out.println("É¾³ı³É¹¦");
-						JOptionPane.showMessageDialog(null,"É¾³ı³É¹¦£¡");
+						System.out.println("åˆ é™¤æˆåŠŸ");
+						JOptionPane.showMessageDialog(null,"åˆ é™¤æˆåŠŸï¼");
 					}
 					
 					sql.close();
@@ -624,7 +624,7 @@ public class User extends JFrame {
 						int 			res = sql.executeUpdate(delete);
 						
 						if(res > 0){
-							System.out.println("É¾³ı³É¹¦");
+							System.out.println("åˆ é™¤æˆåŠŸ");
 						}
 						
 						sql.close();
@@ -662,8 +662,8 @@ public class User extends JFrame {
 	}
 	
 	private void logout() {
-		JOptionPane.showMessageDialog(null,"Ğ»Ğ»¹âÁÙ£¡");
+		JOptionPane.showMessageDialog(null,"è°¢è°¢å…‰ä¸´ï¼");
 		User.this.dispose();
-		new Login("»¶Ó­¹âÁÙ");
+		new Login("æ¬¢è¿å…‰ä¸´");
 	}
 }

@@ -17,27 +17,27 @@ int main()
 	};
 	int k;
 	int y;
-	cout << "         »¶Ó­À´µ½×Ö·û´®/ÎÄ¼þ¼ÓÃÜÏµÍ³£¡         " << endl;
+	cout << "         æ¬¢è¿Žæ¥åˆ°å­—ç¬¦ä¸²/æ–‡ä»¶åŠ å¯†ç³»ç»Ÿï¼         " << endl;
 	cout << "***********************************************" << endl;
 	do {
-		cout << "Ñ¡Ôñ·½·¨:\n1.RC4  \n2.AES  \n3.MD5  " << endl;
+		cout << "é€‰æ‹©æ–¹æ³•:\n1.RC4  \n2.AES  \n3.MD5  " << endl;
 		cout << "***********************************************" << endl;
 		cin >> k;
 		if (k == 1)//RC4
 		{
 			int l;
-			cout << "ÇëÑ¡Ôñ¼Ó/½âÃÜÀàÐÍ£º1.×Ö·û´®  2.ÎÄ¼þ £¬ÊäÈëÆäËû·µ»ØÉÏÒ»²½" << endl;
+			cout << "è¯·é€‰æ‹©åŠ /è§£å¯†ç±»åž‹ï¼š1.å­—ç¬¦ä¸²  2.æ–‡ä»¶ ï¼Œè¾“å…¥å…¶ä»–è¿”å›žä¸Šä¸€æ­¥" << endl;
 			cin >> l;
 
 			if (l == 1)
 			{
-				cout << "ÇëÊäÈëÃÜÔ¿" << endl;
+				cout << "è¯·è¾“å…¥å¯†é’¥" << endl;
 				unsigned char key[1000];
 				cin >> key;
 				RC4 rc4;
 				unsigned char  revalue1[1000], revalue2[1000];
 				unsigned char in[1000];
-				cout << "ÇëÊäÈëÃ÷/ÃÜÎÄ" << endl;
+				cout << "è¯·è¾“å…¥æ˜Ž/å¯†æ–‡" << endl;
 				cin >> in;
 				unsigned long outlength;
 				int i;
@@ -48,23 +48,23 @@ int main()
 			}
 			else if (l == 2)
 			{
-				cout << "ÇëÊäÈëÃÜÔ¿" << endl;
+				cout << "è¯·è¾“å…¥å¯†é’¥" << endl;
 				unsigned char key[1000];
 				cin >> key;
 				RC4 rc4;
 				int lxdyf;
 				//char yflxd[20];
 				char f1[200], f2[200];
-				cout << "ÇëÊäÈë¼Ó/½âÃÜÎÄ¼þÂ·¾¶" << endl;
+				cout << "è¯·è¾“å…¥åŠ /è§£å¯†æ–‡ä»¶è·¯å¾„" << endl;
 				cin >> f1;
-				cout << "ÇëÊäÈë¼Ó/½âÃÜºó£¬½á¹û´æ·ÅÎÄ¼þÂ·¾¶" << endl;
+				cout << "è¯·è¾“å…¥åŠ /è§£å¯†åŽï¼Œç»“æžœå­˜æ”¾æ–‡ä»¶è·¯å¾„" << endl;
 				cin >> f2;
 				lxdyf = rc4.RC4File(f1, f2, (char*)key);
 				if (lxdyf == 1)
-					cout << "¼Ó/½âÃÜÍê³É" << endl;
+					cout << "åŠ /è§£å¯†å®Œæˆ" << endl;
 				/*else
 				{
-					cout << "¼Ó/½âÃÜÊ§°Ü" << endl;
+					cout << "åŠ /è§£å¯†å¤±è´¥" << endl;
 					//_itoa_s(lxdyf, yflxd, 10);
 					// MessageBox(NULL, yflxd, "Mistake",MB_OK|MB_ICONINFORMATION);
 				}*/
@@ -76,14 +76,14 @@ int main()
 		}
 		else if (k == 2)
 		{
-			cout << "ÇëÊäÈë:\n1.Ñ¡Ôñ¼ÓÃÜ" << endl;
-			cout << "2.Ñ¡Ôñ½âÃÜ" << endl;
+			cout << "è¯·è¾“å…¥:\n1.é€‰æ‹©åŠ å¯†" << endl;
+			cout << "2.é€‰æ‹©è§£å¯†" << endl;
 			cout << "***********************************************" << endl;
 			cin >> y;
-			if (y == 1)//AES¼ÓÃÜ
+			if (y == 1)//AESåŠ å¯†
 			{
 				int x;
-				cout << "ÇëÑ¡Ôñ¼ÓÃÜÀàÐÍ£º\n1.×Ö·û´®  \n2.ÎÄ¼þ" << endl;
+				cout << "è¯·é€‰æ‹©åŠ å¯†ç±»åž‹ï¼š\n1.å­—ç¬¦ä¸²  \n2.æ–‡ä»¶" << endl;
 				cout << "***********************************************" << endl;
 				cin >> x;
 				long lSize;
@@ -92,7 +92,7 @@ int main()
 				string str;
 				if (x == 1) 
 				{
-					cout << "ÇëÊäÈëÃ÷ÎÄ£º" << endl;
+					cout << "è¯·è¾“å…¥æ˜Žæ–‡ï¼š" << endl;
 					cin >> str;
 					c = (unsigned char*)(str.c_str());
 					lSize = str.length();
@@ -100,14 +100,14 @@ int main()
 				else 
 				{
 					char f1[200];
-					cout << "ÇëÊäÈëÐèÒª¼ÓÃÜµÄÎÄ¼þÂ·¾¶£º" << endl;
+					cout << "è¯·è¾“å…¥éœ€è¦åŠ å¯†çš„æ–‡ä»¶è·¯å¾„ï¼š" << endl;
 					cin >> f1;
 					FILE* fp1;
 					errno_t err;
 					err = fopen_s(&fp1, f1, "rb");
 					if (err != 0)
 					{
-						cout << "´ò¿ªÔ´ÎÄ¼þÊ§°Ü£¡" << endl;
+						cout << "æ‰“å¼€æºæ–‡ä»¶å¤±è´¥ï¼" << endl;
 						exit(1);
 					}
 					fseek(fp1, 0, SEEK_END);
@@ -116,13 +116,13 @@ int main()
 					c = (unsigned char*)malloc(sizeof(char) * lSize);
 					if (c == NULL)
 					{
-						cout << "·ÖÅäÄÚ´æÊ§°Ü£¡" << endl;
+						cout << "åˆ†é…å†…å­˜å¤±è´¥ï¼" << endl;
 						exit(2);
 					}
 					size_t result = fread(c, 1, lSize, fp1);
 					if (result != lSize)
 					{
-						fputs("¶ÁÈ¡Ê§°Ü£¡", stderr);
+						fputs("è¯»å–å¤±è´¥ï¼", stderr);
 						exit(3);
 					}
 					fclose(fp1);
@@ -131,7 +131,7 @@ int main()
 				long a = lSize / 16 + 1;
 				do {
 					string key;
-					cout << "ÇëÊäÈëÃÜÔ¿(16×Ö½Ú)£º" << endl;
+					cout << "è¯·è¾“å…¥å¯†é’¥(16å­—èŠ‚)ï¼š" << endl;
 					cin >> key;
 					if (key.length() != 16)
 						continue;
@@ -146,7 +146,7 @@ int main()
 				int z;
 				m = new u1byte[a * 16];
 
-				cout << "ÇëÑ¡Ôñ¹¤×÷Ä£Ê½£º[1]ECB  [2]CBC  [3]CFB" << endl;
+				cout << "è¯·é€‰æ‹©å·¥ä½œæ¨¡å¼ï¼š[1]ECB  [2]CBC  [3]CFB" << endl;
 				cin >> z;
 				if (z == 1)
 				{
@@ -164,65 +164,65 @@ int main()
 				}
 				if (x == 1)
 				{
-					cout << "ÃÜÎÄÎª£º";
+					cout << "å¯†æ–‡ä¸ºï¼š";
 					cout << m<<endl;
 				
 					/*cout << "***********************************************" << endl;
-					cout << "Ñ¡Ôñ·½·¨:\n1.RC4  \n2.AES  \n3.MD5  \n4.DES" << endl;
+					cout << "é€‰æ‹©æ–¹æ³•:\n1.RC4  \n2.AES  \n3.MD5  \n4.DES" << endl;
 					cout << "***********************************************" << endl;
 					cin >> k;*/
 				}
 				else
 				{
 					char f2[200];
-					cout << "ÇëÊäÈë¼ÓÃÜºó£¬½á¹û´æ·ÅÃÜÎÄµÄÎÄ¼þÂ·¾¶£º" << endl;
+					cout << "è¯·è¾“å…¥åŠ å¯†åŽï¼Œç»“æžœå­˜æ”¾å¯†æ–‡çš„æ–‡ä»¶è·¯å¾„ï¼š" << endl;
 					cin >> f2;
 					FILE* fp1;
 					errno_t err;
 					err = fopen_s(&fp1, f2, "wb");
 					if (err != 0)
 					{
-						cout << "´ò¿ªÄ¿±êÎÄ¼þÊ§°Ü£¡" << endl;
+						cout << "æ‰“å¼€ç›®æ ‡æ–‡ä»¶å¤±è´¥ï¼" << endl;
 						exit(1);
 					}
 					size_t result = fwrite(m, 1, a * 16, fp1);
 					if (result != a * 16)
 					{
-						fputs("´æ´¢Ê§°Ü£¡", stderr);
+						fputs("å­˜å‚¨å¤±è´¥ï¼", stderr);
 						exit(3);
 					}
 					fclose(fp1);
-					cout << "´æ·Å³É¹¦£¡\n";
+					cout << "å­˜æ”¾æˆåŠŸï¼\n";
 					cout << "***********************************************" << endl;
 				}
 				
 			}
-			else if (y == 2)//AES½âÃÜ
+			else if (y == 2)//AESè§£å¯†
 			{
 				int x;
-				cout << "ÇëÑ¡Ôñ½âÃÜÀàÐÍ£º\n1.×Ö·û´®  \n2.ÎÄ¼þ" << endl;
+				cout << "è¯·é€‰æ‹©è§£å¯†ç±»åž‹ï¼š\n1.å­—ç¬¦ä¸²  \n2.æ–‡ä»¶" << endl;
 				cout << "***********************************************" << endl;
 				cin >> x;
 				long lSize;
 				unsigned char* c;
 				AES aes;
 				string str;
-				if (x == 1) {//AES½âÃÜ×Ö·û´®
-					cout << "ÇëÊäÈëÐèÒª½âÃÜµÄÃÜÎÄ£º" << endl;
+				if (x == 1) {//AESè§£å¯†å­—ç¬¦ä¸²
+					cout << "è¯·è¾“å…¥éœ€è¦è§£å¯†çš„å¯†æ–‡ï¼š" << endl;
 					cin >> str;
 					c = (unsigned char*)(str.c_str());
 					lSize = str.length();
 				}
-				else {//AES½âÃÜÎÄ¼þ
+				else {//AESè§£å¯†æ–‡ä»¶
 					char f1[200];
-					cout << "ÇëÊäÈëÐèÒª½âÃÜµÄÎÄ¼þÂ·¾¶£º" << endl;
+					cout << "è¯·è¾“å…¥éœ€è¦è§£å¯†çš„æ–‡ä»¶è·¯å¾„ï¼š" << endl;
 					cin >> f1;
 					FILE* fp1;
 					errno_t err;
 					err = fopen_s(&fp1, f1, "rb");
 					if (err != 0)
 					{
-						cout << "´ò¿ªÔ­ÎÄ¼þÊ§°Ü£¡" << endl;
+						cout << "æ‰“å¼€åŽŸæ–‡ä»¶å¤±è´¥ï¼" << endl;
 						exit(1);
 					}
 					fseek(fp1, 0, SEEK_END);
@@ -231,13 +231,13 @@ int main()
 					c = (unsigned char*)malloc(sizeof(char) * lSize);
 					if (c == NULL)
 					{
-						cout << "·ÖÅäÄÚ´æÊ§°Ü£¡" << endl;
+						cout << "åˆ†é…å†…å­˜å¤±è´¥ï¼" << endl;
 						exit(2);
 					}
 					size_t result = fread(c, 1, lSize, fp1);
 					if (result != lSize)
 					{
-						fputs("¶ÁÈ¡Ê§°Ü£¡", stderr);
+						fputs("è¯»å–å¤±è´¥ï¼", stderr);
 						exit(3);
 					}
 					fclose(fp1);
@@ -245,7 +245,7 @@ int main()
 				long a = lSize / 16;
 				do {
 					string key;
-					cout << "ÇëÊäÈëÃÜÔ¿(16×Ö½Ú)£º" << endl;
+					cout << "è¯·è¾“å…¥å¯†é’¥(16å­—èŠ‚)ï¼š" << endl;
 					cin >> key;
 					if (key.length() != 16)
 						continue;
@@ -260,7 +260,7 @@ int main()
 				int z;
 				m = new u1byte[a * 16];
 				cout << "***********************************************" << endl;
-				cout << "ÇëÑ¡Ôñ¹¤×÷Ä£Ê½£º[1]ECB  [2]CBC  [3]CFB" << endl;
+				cout << "è¯·é€‰æ‹©å·¥ä½œæ¨¡å¼ï¼š[1]ECB  [2]CBC  [3]CFB" << endl;
 				cout << "***********************************************" << endl;
 				cin >> z;
 				if (z == 1)
@@ -281,12 +281,12 @@ int main()
 				
 				if (x == 1)
 				{
-					cout << "ÃÜÎÄÎª£º";
+					cout << "å¯†æ–‡ä¸ºï¼š";
 					
 					cout << m<<endl;
 				
 					/*cout << "***********************************************" << endl;
-					cout << "Ñ¡Ôñ·½·¨:\n1.RC4  \n2.AES  \n3.MD5  \n4.DES" << endl;
+					cout << "é€‰æ‹©æ–¹æ³•:\n1.RC4  \n2.AES  \n3.MD5  \n4.DES" << endl;
 					cout << "***********************************************" << endl;
 
 					cin >> k;*/
@@ -294,25 +294,25 @@ int main()
 				else
 				{
 					char f2[200];
-					cout << "ÇëÊäÈë½âÃÜºó£¬½á¹û´æ·ÅÃ÷ÎÄµÄÎÄ¼þÂ·¾¶£º" << endl;
+					cout << "è¯·è¾“å…¥è§£å¯†åŽï¼Œç»“æžœå­˜æ”¾æ˜Žæ–‡çš„æ–‡ä»¶è·¯å¾„ï¼š" << endl;
 					cin >> f2;
 					FILE* fp1;
 					errno_t err;
 					err = fopen_s(&fp1, f2, "wb");
 					if (err != 0)
 					{
-						cout << "´ò¿ªÄ¿±êÎÄ¼þÊ§°Ü£¡" << endl;
+						cout << "æ‰“å¼€ç›®æ ‡æ–‡ä»¶å¤±è´¥ï¼" << endl;
 						exit(1);
 					}
 					size_t result = fwrite(m, 1, a, fp1);
 					if (result != a)
 					{
 						size_t result = fwrite(m, 1, strlen((char*)m), fp1);
-						/*fputs("´æ´¢Ê§°Ü£¡", stderr);
+						/*fputs("å­˜å‚¨å¤±è´¥ï¼", stderr);
 						exit(3);*/
 					}
 					fclose(fp1);
-					cout << "´æ·Å³É¹¦£¡\n";
+					cout << "å­˜æ”¾æˆåŠŸï¼\n";
 					cout << "***********************************************" << endl;
 					
 				}
@@ -326,10 +326,10 @@ int main()
 		else if (k == 3)//md5
 		{
 			int x;
-			cout << "ÇëÑ¡Ôñ¼ÓÃÜÀàÐÍ£º\n1.×Ö·û´®  \n2.ÎÄ¼þ" << endl;
+			cout << "è¯·é€‰æ‹©åŠ å¯†ç±»åž‹ï¼š\n1.å­—ç¬¦ä¸²  \n2.æ–‡ä»¶" << endl;
 			cin >> x;
 			RC4 rc4;
-			if (x == 1)//md5¼ÓÃÜ×Ö·û´®
+			if (x == 1)//md5åŠ å¯†å­—ç¬¦ä¸²
 			{
 				unsigned char* inputData;
 				char* inp = (char*)malloc(sizeof(char) * 1024);
@@ -339,11 +339,11 @@ int main()
 				//int len;
 				MD5 md5;
 
-				cout << "ÇëÊäÈëÒª¼ÓÃÜµÄ×Ö·û´®£º\n";
+				cout << "è¯·è¾“å…¥è¦åŠ å¯†çš„å­—ç¬¦ä¸²ï¼š\n";
 				cin>>inputData;
 				if ((hashstr = (unsigned char*)malloc(17)) == NULL)
 				{
-					cout << "Ã»ÓÐ×ã¹»µÄÄÚ´æ£¡";
+					cout << "æ²¡æœ‰è¶³å¤Ÿçš„å†…å­˜ï¼";
 					exit(1);
 				}
 
@@ -364,24 +364,24 @@ int main()
 
 				}
 
-				cout << "¹þÏ£ÖµÎª£º";
+				cout << "å“ˆå¸Œå€¼ä¸ºï¼š";
 				cout << str;
 				cout << endl;
 				free(hashstr);
 				cout << "***********************************************" << endl;
 			}
-			else if (x == 2)////md5¼ÓÃÜÎÄ¼þ
+			else if (x == 2)////md5åŠ å¯†æ–‡ä»¶
 			{
 				int lxdyf;
 
 				unsigned char f1[200];
 				unsigned char* output;
 				MD5 md5;
-				cout << "ÇëÊäÈëÐèÒª¼ÓÃÜµÄÎÄ¼þÂ·¾¶£º" << endl;
+				cout << "è¯·è¾“å…¥éœ€è¦åŠ å¯†çš„æ–‡ä»¶è·¯å¾„ï¼š" << endl;
 				cin >> f1;
 				if ((output = (unsigned char*)malloc(17)) == NULL)
 				{
-					cout << "Ã»ÓÐ×ã¹»µÄÄÚ´æ£¡";
+					cout << "æ²¡æœ‰è¶³å¤Ÿçš„å†…å­˜ï¼";
 					exit(1);
 				}
 				lxdyf = md5.MD5File(f1, output);
@@ -399,8 +399,8 @@ int main()
 
 				if (lxdyf == 1)
 				{
-					cout << "¼ÓÃÜÍê³É£¡" << endl;
-					cout << "¹þÏ£ÖµÎª£º";
+					cout << "åŠ å¯†å®Œæˆï¼" << endl;
+					cout << "å“ˆå¸Œå€¼ä¸ºï¼š";
 					cout << str << endl;
 					cout << "***********************************************" << endl;
 					char f2[200];
@@ -409,30 +409,30 @@ int main()
 					for (i = 0;i < str.length();i++)
 						p[i] = str[i];
 					p[i] = '\0';
-					cout << "ÇëÊäÈë¼ÓÃÜ½á¹û´æ·ÅÂ·¾¶" << endl;
+					cout << "è¯·è¾“å…¥åŠ å¯†ç»“æžœå­˜æ”¾è·¯å¾„" << endl;
 					cin >> f2;
 					FILE* fp1;
 					errno_t err;
 					err = fopen_s(&fp1, f2, "wb");
 					if (err != 0)
 					{
-						cout << "´ò¿ªÄ¿±êÎÄ¼þÊ§°Ü" << endl;
+						cout << "æ‰“å¼€ç›®æ ‡æ–‡ä»¶å¤±è´¥" << endl;
 						exit(1);
 					}
 					size_t result = fwrite(p, 1, 32, fp1);
 					if (result != 32)
 					{
-						fputs("´æ´¢Ê§°Ü£¡", stderr);
+						fputs("å­˜å‚¨å¤±è´¥ï¼", stderr);
 						exit(3);
 					}
 					fclose(fp1);
-					cout << "´æ·Å³É¹¦£¡" << endl;
+					cout << "å­˜æ”¾æˆåŠŸï¼" << endl;
 					cout << "***********************************************" << endl;
 				}
 
 				else
 				{
-					cout << "¼Ó/½âÃÜÊ§°Ü£¡" << endl;
+					cout << "åŠ /è§£å¯†å¤±è´¥ï¼" << endl;
 				}
 				free(output);
 			}

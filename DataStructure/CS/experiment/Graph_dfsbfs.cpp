@@ -1,52 +1,62 @@
 //line 84 undirected graph
 
-#include<iostream>
-#include<string>
-#include<queue>
+#include <iostream>
+#include <string>
+#include <queue>
 using namespace std;
-class EdgeNode{
+class EdgeNode
+{
 public:
     int adjvex;
     double weight;
     EdgeNode *next;
-    EdgeNode(int a,double b);
+    EdgeNode(int a, double b);
     void createlink(EdgeNode *a);
 };
-EdgeNode::EdgeNode(int a,double b){
-    adjvex=a;
-    weight=b;
-    next=NULL;
+EdgeNode::EdgeNode(int a, double b)
+{
+    adjvex = a;
+    weight = b;
+    next = NULL;
 }
-void EdgeNode::createlink(EdgeNode *a){
-    next=a;
+void EdgeNode::createlink(EdgeNode *a)
+{
+    next = a;
 }
 
-class VertexNode{
+class VertexNode
+{
 public:
     VertexNode();
     string data;
     EdgeNode *next;
     void init(string a);
-    void createlink(EdgeNode *a);  //if it does not have the first edgenode ,return 1;else return 0;
+    void createlink(EdgeNode *a); //if it does not have the first edgenode ,return 1;else return 0;
 };
-VertexNode::VertexNode(){
-    next=NULL;
+VertexNode::VertexNode()
+{
+    next = NULL;
 }
-void VertexNode::createlink(EdgeNode *a){
-    if(next==NULL){
-        next=a;
-    }else{
-        EdgeNode *tem=new EdgeNode(-1,-1);
-        tem=next;
-        while(tem->next!=NULL){
-            tem=tem->next;
+void VertexNode::createlink(EdgeNode *a)
+{
+    if (next == NULL)
+    {
+        next = a;
+    }
+    else
+    {
+        EdgeNode *tem = new EdgeNode(-1, -1);
+        tem = next;
+        while (tem->next != NULL)
+        {
+            tem = tem->next;
         }
-        tem->next=a;
+        tem->next = a;
     }
 }
 
-
-class AdjList{
+class AdjList
+{
 public:
     int *visited;
     int vertexnum;
@@ -55,98 +65,119 @@ public:
     AdjList();
     int find(string a);
 };
-AdjList::AdjList(){
-    //cout<<"ÇëÒÀ´ÎÊäÈë¶¥µãÊý£¬±ßÊý"<<endl;
-    cin>>vertexnum>>sidenum;
-    visited=new int[vertexnum];
-    list=new VertexNode[vertexnum];
-    for(int i=0;i<vertexnum;i++){
-        //cout<<"ÇëÊäÈëµÚ"<<(i+1)<<"¸ö¶¥µã"<<endl;
-        cin>>list[i].data;
+AdjList::AdjList()
+{
+    //cout<<"è¯·ä¾æ¬¡è¾“å…¥é¡¶ç‚¹æ•°ï¼Œè¾¹æ•°"<<endl;
+    cin >> vertexnum >> sidenum;
+    visited = new int[vertexnum];
+    list = new VertexNode[vertexnum];
+    for (int i = 0; i < vertexnum; i++)
+    {
+        //cout<<"è¯·è¾“å…¥ç¬¬"<<(i+1)<<"ä¸ªé¡¶ç‚¹"<<endl;
+        cin >> list[i].data;
     }
-    for(int i=0;i<sidenum;i++){
-        string tem1,tem2;
+    for (int i = 0; i < sidenum; i++)
+    {
+        string tem1, tem2;
         double weight;
-        //cout<<endl<<"ÇëÊäÈëµÚ"<<(i+1)<<"¸ö±ßµÄÐÅÏ¢"<<endl;
-        //cout<<"ÇëÊäÈëÆðµã";
-        cin>>tem1;
-        //cout<<"ÇëÊäÈëÖÕµã";
-        cin>>tem2;
-        //cout<<"ÇëÊäÈëÈ¨Öµ";
+        //cout<<endl<<"è¯·è¾“å…¥ç¬¬"<<(i+1)<<"ä¸ªè¾¹çš„ä¿¡æ¯"<<endl;
+        //cout<<"è¯·è¾“å…¥èµ·ç‚¹";
+        cin >> tem1;
+        //cout<<"è¯·è¾“å…¥ç»ˆç‚¹";
+        cin >> tem2;
+        //cout<<"è¯·è¾“å…¥æƒå€¼";
         //cin>>weight;
-        int temp1=find(tem1);
-        int temp2=find(tem2);
-        EdgeNode *hh=new EdgeNode(temp2,weight=0); //for test weight=0
+        int temp1 = find(tem1);
+        int temp2 = find(tem2);
+        EdgeNode *hh = new EdgeNode(temp2, weight = 0); //for test weight=0
         list[temp1].createlink(hh);
-        EdgeNode *tt=new EdgeNode(temp1,weight=0); //undirected graph
+        EdgeNode *tt = new EdgeNode(temp1, weight = 0); //undirected graph
         list[temp2].createlink(tt);
     }
-    cout<<"created successfully"<<endl;
+    cout << "created successfully" << endl;
 }
-int AdjList::find(string a){
-    for(int i=0;i<vertexnum;i++){
-        if(list[i].data==a){
+int AdjList::find(string a)
+{
+    for (int i = 0; i < vertexnum; i++)
+    {
+        if (list[i].data == a)
+        {
             return i;
         }
     }
-    cout<<"Î´ÕÒµ½ÃûÎª"<<a<<"µÄ¶¥µã"<<endl;
+    cout << "æœªæ‰¾åˆ°åä¸º" << a << "çš„é¡¶ç‚¹" << endl;
     return -1;
 }
 
-
-void dfs(int a,AdjList *b){
-    cout<<b->list[a].data<<" ";
-    b->visited[a]=1;
+void dfs(int a, AdjList *b)
+{
+    cout << b->list[a].data << " ";
+    b->visited[a] = 1;
     EdgeNode *tem;
-    tem=b->list[a].next;
-    while(tem!=NULL){
-        if(b->visited[tem->adjvex]!=1){
-            dfs(tem->adjvex,b);
+    tem = b->list[a].next;
+    while (tem != NULL)
+    {
+        if (b->visited[tem->adjvex] != 1)
+        {
+            dfs(tem->adjvex, b);
         }
-        tem=tem->next;
+        tem = tem->next;
     }
-    
-    for(int i=0;i<b->vertexnum;i++){//fei
-        if(b->visited[i]!=1){
-            dfs(i,b);
+
+    for (int i = 0; i < b->vertexnum; i++)
+    { //fei
+        if (b->visited[i] != 1)
+        {
+            dfs(i, b);
         }
     }
 }
-void bfs(int a,AdjList *b){
+void bfs(int a, AdjList *b)
+{
     queue<int> tem;
     tem.push(a);
-    while(1){
+    while (1)
+    {
         EdgeNode *hh;
-        hh=b->list[a].next;        
-        while(hh!=NULL){
-            if(b->visited[hh->adjvex]!=-1){
+        hh = b->list[a].next;
+        while (hh != NULL)
+        {
+            if (b->visited[hh->adjvex] != -1)
+            {
                 tem.push(hh->adjvex);
             }
-            hh=hh->next;
+            hh = hh->next;
         }
-        if(b->visited[a]!=-1){      
-            cout<<b->list[a].data<<" ";
-            b->visited[a]=-1;
+        if (b->visited[a] != -1)
+        {
+            cout << b->list[a].data << " ";
+            b->visited[a] = -1;
         }
         tem.pop();
-        if(!tem.empty()){
-            a=tem.front();
-        }else{
+        if (!tem.empty())
+        {
+            a = tem.front();
+        }
+        else
+        {
             break;
         }
     }
-    
-    for(int i=0;i<b->vertexnum;i++){ //fei
-        if(b->visited[i]!=-1){
-            bfs(i,b);
+
+    for (int i = 0; i < b->vertexnum; i++)
+    { //fei
+        if (b->visited[i] != -1)
+        {
+            bfs(i, b);
         }
     }
 }
 
-int main(){
-    AdjList *test=new AdjList();
-    dfs(0,test);
-    cout<<endl;
-    bfs(0,test);
+int main()
+{
+    AdjList *test = new AdjList();
+    dfs(0, test);
+    cout << endl;
+    bfs(0, test);
     return 0;
 }

@@ -1,4 +1,4 @@
-﻿namespace book
+namespace book
 {
     partial class Form1
     {

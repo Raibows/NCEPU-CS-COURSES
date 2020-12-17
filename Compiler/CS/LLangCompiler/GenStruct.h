@@ -2,7 +2,7 @@
 #include <sstream>
 
 
-//int ×ªstring×¨ÓÃº¯Êı
+//int è½¬stringä¸“ç”¨å‡½æ•°
 void int2str(const int &int_temp, string &string_temp)
 {
 	stringstream stream;
@@ -10,28 +10,28 @@ void int2str(const int &int_temp, string &string_temp)
 	stream >> string_temp;    
 }
 
-//²úÉúËÄÔªÊ½
+//äº§ç”Ÿå››å…ƒå¼
 struct GenStruct
 {
 	int label;
 	string op;
-	int code;     //µÚÒ»ÔªËØ
-	string addr1="_"; //µÚ¶şÔªËØ 
-	string addr2="_"; //µÚÈıÔªËØ
-	string result="0";//µÚËÄÔªËØ
-	int out_port = 0;  //¼ÇÂ¼¸ÃËÄÔªÊ½ÊÇ·ñÎªÒ»¸ö»ù±¾¿éµÄÈë¿Ú£¬ÊÇÔòÎª1£¬·ñÔòÎª0¡£
+	int code;     //ç¬¬ä¸€å…ƒç´ 
+	string addr1="_"; //ç¬¬äºŒå…ƒç´  
+	string addr2="_"; //ç¬¬ä¸‰å…ƒç´ 
+	string result="0";//ç¬¬å››å…ƒç´ 
+	int out_port = 0;  //è®°å½•è¯¥å››å…ƒå¼æ˜¯å¦ä¸ºä¸€ä¸ªåŸºæœ¬å—çš„å…¥å£ï¼Œæ˜¯åˆ™ä¸º1ï¼Œå¦åˆ™ä¸º0ã€‚
 	void ConvertOpToCode(string);
 	GenStruct(int l){ label = l; }
 	GenStruct(int l,string op,string a1,string a2,string res){
 		label = l, this->op=op, ConvertOpToCode(op), addr1 = a1, addr2 = a2, result = res;
 	}
 };
-vector<GenStruct> genStructs;  //ËÄÔªÊ½¼¯ºÏ
+vector<GenStruct> genStructs;  //å››å…ƒå¼é›†åˆ
 
 
 
 
-//½«Á½¼¯ºÏºÏ²¢·µ»Ø
+//å°†ä¸¤é›†åˆåˆå¹¶è¿”å›
 vector<string> merge(vector<string> vec1, vector<string>vec2)
 {
 	vector<string>vec3;
@@ -40,18 +40,18 @@ vector<string> merge(vector<string> vec1, vector<string>vec2)
 	return vec3;
 }
 
-//»ØÌîº¯Êı
+//å›å¡«å‡½æ•°
 void backpatch(vector<string> arg1, string arg2)
 {
 	for (int i = 0; i < arg1.size(); i++)
 	{
-		int index =stoi(arg1[i]);      //string ×ªint
+		int index =stoi(arg1[i]);      //string è½¬int
 		genStructs[index].result = arg2;
 	}
 }
 
 
-//Éú³ÉËÄÔªÊ½
+//ç”Ÿæˆå››å…ƒå¼
 void CreateGen(string op ,string al, string a2, string res)  
 {
 	GenStruct t(genStructs.size(),op,al,a2,res);
@@ -72,7 +72,7 @@ void printGens()
 
 
 int NewTempStruct_length = 0;
-//²úÉúÒ»¸öÁÙÊ±±äÁ¿
+//äº§ç”Ÿä¸€ä¸ªä¸´æ—¶å˜é‡
 string NewTempStruct()
 {
 	string s;
@@ -104,12 +104,12 @@ void GenStruct::ConvertOpToCode(string op)
 
 
 
-void setOut_port(int index) //ÉèÖÃËÄÔªÊ½Èë¿Ú
+void setOut_port(int index) //è®¾ç½®å››å…ƒå¼å…¥å£
 {
 	if (index >= genStructs.size()) return;
 	genStructs[index].out_port = 1;
 }
-void setOut_port(string idx) //ÉèÖÃËÄÔªÊ½Èë¿Ú
+void setOut_port(string idx) //è®¾ç½®å››å…ƒå¼å…¥å£
 {
 	int index =stoi(idx);
 	setOut_port(index);
@@ -119,10 +119,10 @@ void setOut_port(string idx) //ÉèÖÃËÄÔªÊ½Èë¿Ú
 
 
 
-//½«ËÄÔªÊ½ÖĞ×ªÒÆµ½ËÄÔªÊ½¼¯ºÏÖĞµÄÖ¸¶¨Î»ÖÃ
+//å°†å››å…ƒå¼ä¸­è½¬ç§»åˆ°å››å…ƒå¼é›†åˆä¸­çš„æŒ‡å®šä½ç½®
 void InsertGentoIndex(string sel, string desti)
 {
-	//³ıÁËlabel++£¬ËûµÄµÚËÄÔªËØÈç¹ûÔÚÆäÖĞ»¹Òª++
+	//é™¤äº†label++ï¼Œä»–çš„ç¬¬å››å…ƒç´ å¦‚æœåœ¨å…¶ä¸­è¿˜è¦++
 	int self = stoi(sel);
 	self--;
 	int destin = stoi(desti);

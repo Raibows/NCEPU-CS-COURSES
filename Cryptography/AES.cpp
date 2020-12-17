@@ -105,7 +105,7 @@ long AES::untianchong(unsigned char* c, long length)
 
 }
 
-void gen_tabs(void)//¼ÆËãÂÖ³£Êı
+void gen_tabs(void)//è®¡ç®—è½®å¸¸æ•°
 {
 	u4byte  i, t;
 	u1byte  p, q;  
@@ -225,7 +225,7 @@ void gen_tabs(void)//¼ÆËãÂÖ³£Êı
     t ^= e_key[8 * i + 7]; e_key[8 * i + 15] = t;   \
 }
 
-void AES::set_key(const u1byte in_key[], const u4byte key_len)//À©Õ¹ÃÜÔ¿
+void AES::set_key(const u1byte in_key[], const u4byte key_len)//æ‰©å±•å¯†é’¥
 {
 	u4byte  i, t, u, v, w;
 
@@ -286,7 +286,7 @@ void AES::set_key(const u1byte in_key[], const u4byte key_len)//À©Õ¹ÃÜÔ¿
     f_rl(bo, bi, 3, k)
 
 //void rijndael::encrypt(const u1byte in_blk[16], u1byte out_blk[16])
-void AES::encrypt(const u1byte in_blk[16], u1byte out_blk[16])//¼ÓÃÜ
+void AES::encrypt(const u1byte in_blk[16], u1byte out_blk[16])//åŠ å¯†
 {
 	u4byte  b0[4], b1[4], * kp;
 
@@ -309,10 +309,10 @@ void AES::encrypt(const u1byte in_blk[16], u1byte out_blk[16])//¼ÓÃÜ
 	f_nround(b1, b0, kp); f_nround(b0, b1, kp);
 	f_nround(b1, b0, kp); f_nround(b0, b1, kp);
 	f_nround(b1, b0, kp); f_nround(b0, b1, kp);
-	f_nround(b1, b0, kp); f_lround(b0, b1, kp);//10ÂÖ
+	f_nround(b1, b0, kp); f_lround(b0, b1, kp);//10è½®
 
 	u4byte_out(out_blk, b0[0]); u4byte_out(out_blk + 4, b0[1]);
-	u4byte_out(out_blk + 8, b0[2]); u4byte_out(out_blk + 12, b0[3]);//ÃÜÎÄ
+	u4byte_out(out_blk + 8, b0[2]); u4byte_out(out_blk + 12, b0[3]);//å¯†æ–‡
 }
 
 // decrypt a block of text  
@@ -331,7 +331,7 @@ void AES::encrypt(const u1byte in_blk[16], u1byte out_blk[16])//¼ÓÃÜ
     i_rl(bo, bi, 3, k)
 
 //void rijndael::decrypt(const u1byte in_blk[16], u1byte out_blk[16])
-void AES::decrypt(const u1byte in_blk[16], u1byte out_blk[16])//½âÃÜ
+void AES::decrypt(const u1byte in_blk[16], u1byte out_blk[16])//è§£å¯†
 {
 	u4byte  b0[4], b1[4], * kp;
 
@@ -359,45 +359,45 @@ void AES::decrypt(const u1byte in_blk[16], u1byte out_blk[16])//½âÃÜ
 	i_nround(b1, b0, kp); i_lround(b0, b1, kp);
 
 	u4byte_out(out_blk, b0[0]); u4byte_out(out_blk + 4, b0[1]);
-	u4byte_out(out_blk + 8, b0[2]); u4byte_out(out_blk + 12, b0[3]);//Ã÷ÎÄ
+	u4byte_out(out_blk + 8, b0[2]); u4byte_out(out_blk + 12, b0[3]);//æ˜æ–‡
 }
 
 
-void AES::encryptECB(unsigned char* c, long length, u1byte* m)//ecbÄ£Ê½¼ÓÃÜ£¬mÎªÃÜÎÄ
+void AES::encryptECB(unsigned char* c, long length, u1byte* m)//ecbæ¨¡å¼åŠ å¯†ï¼Œmä¸ºå¯†æ–‡
 {
-	u1byte c_block[16], out_block[16];//Ã÷ÃÜÎÄ¾ØÕó
+	u1byte c_block[16], out_block[16];//æ˜å¯†æ–‡çŸ©é˜µ
 	for (int i = 0; i < length; i++)
 	{
 		for (int j = 0; j < 16; j++)
 		{
-			c_block[j] = c[i * 16 + j];//³õÊ¼»¯Ã÷ÎÄ¾ØÕó
+			c_block[j] = c[i * 16 + j];//åˆå§‹åŒ–æ˜æ–‡çŸ©é˜µ
 		}
-		encrypt(c_block, out_block);//¼ÓÃÜ
+		encrypt(c_block, out_block);//åŠ å¯†
 		for (int w = 0; w < 16; w++)
 		{
-			m[i * 16 + w] = out_block[w];//ÃÜÎÄ
+			m[i * 16 + w] = out_block[w];//å¯†æ–‡
 		}
 	}
 }
 
-void AES::encryptCBC(unsigned char* c, long length, u1byte* m)//cbcÄ£Ê½¼ÓÃÜ
+void AES::encryptCBC(unsigned char* c, long length, u1byte* m)//cbcæ¨¡å¼åŠ å¯†
 {
 	char ci[16];
 	for (int i = 0; i < 16; i++)
-		ci[i] = 0;//³õÊ¼ÏòÁ¿È«Áã
+		ci[i] = 0;//åˆå§‹å‘é‡å…¨é›¶
 	u1byte temp[16], out_block[16];
 	for (int i = 0; i < length; i++)
 	{
 		for (int j = 0; j < 16; j++)
 		{
-			temp[j] = c[i * 16 + j] ^ ci[j];//Ã÷ÎÄÓë³õÊ¼ÏòÁ¿Òì»òºó½øĞĞ¼ÓÃÜ
+			temp[j] = c[i * 16 + j] ^ ci[j];//æ˜æ–‡ä¸åˆå§‹å‘é‡å¼‚æˆ–åè¿›è¡ŒåŠ å¯†
 		}
-		encrypt(temp, out_block);//¼ÓÃÜ
+		encrypt(temp, out_block);//åŠ å¯†
 
 		for (int w = 0; w < 16; w++)
 		{
-			ci[w] = out_block[w];//¸üĞÂ³õÊ¼ÏòÁ¿
-			m[i * 16 + w] = out_block[w];//ÃÜÎÄ
+			ci[w] = out_block[w];//æ›´æ–°åˆå§‹å‘é‡
+			m[i * 16 + w] = out_block[w];//å¯†æ–‡
 		}
 	}
 
@@ -406,17 +406,17 @@ void AES::encryptCFB(unsigned char* c, long length, u1byte* m)
 {
 	u1byte R[16];
 	for (int i = 0; i < 16; i++)
-		R[i] = 0;//ÒÆÎ»¼Ä´æÆ÷³õÊ¼»¯£¬È«Áã
+		R[i] = 0;//ç§»ä½å¯„å­˜å™¨åˆå§‹åŒ–ï¼Œå…¨é›¶
 	u1byte c_block[16], out_block[16];
 	for (int i = 0; i < length * 16; i++)
 	{
-		encrypt(R, out_block);//¶ÔÒÆÎ»¼Ä´æÆ÷ÄÚÈİ¼ÓÃÜ
-		m[i] = out_block[0] ^ c[i];//¼ÓÃÜºóÄÚÈİÓëÃ÷ÎÄÒì»òÉú³ÉÃÜÎÄ
+		encrypt(R, out_block);//å¯¹ç§»ä½å¯„å­˜å™¨å†…å®¹åŠ å¯†
+		m[i] = out_block[0] ^ c[i];//åŠ å¯†åå†…å®¹ä¸æ˜æ–‡å¼‚æˆ–ç”Ÿæˆå¯†æ–‡
 		for (int w = 0; w < 15; w++)
 		{
 			R[w] = R[w + 1];
 		}
-		R[15] = m[i];//ÒÆÎ»£¬²¢½«ÃÜÎÄ·ÅÔÚ×îºóÃæ
+		R[15] = m[i];//ç§»ä½ï¼Œå¹¶å°†å¯†æ–‡æ”¾åœ¨æœ€åé¢
 	}
 }
 void AES::decryptECB(unsigned char* c, long length, u1byte* m)

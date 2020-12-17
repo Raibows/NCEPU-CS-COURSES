@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp4
+namespace WindowsFormsApp4
 {
     partial class Form1
     {

@@ -6,7 +6,7 @@
 #define grammar_length 37
 using namespace std;
 
-//ÅĞ¶Ï×Ö·û´®ÊÇ·ñÊÇ´óĞ´
+//åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦æ˜¯å¤§å†™
 bool isUpper(string str)
 {
 	bool flag = true;
@@ -22,12 +22,12 @@ bool isUpper(string str)
 	return flag;
 }
 
-//·Ö¸îº¯Êı
+//åˆ†å‰²å‡½æ•°
 std::vector<std::string> split(std::string str, std::string pattern)
 {
 	std::string::size_type pos;
 	std::vector<std::string> result;
-	str += pattern;//À©Õ¹×Ö·û´®ÒÔ·½±ã²Ù×÷
+	str += pattern;//æ‰©å±•å­—ç¬¦ä¸²ä»¥æ–¹ä¾¿æ“ä½œ
 	int size = str.size();
 
 	for (int i = 0; i < size; i++)
@@ -44,7 +44,7 @@ std::vector<std::string> split(std::string str, std::string pattern)
 }
 
 
-//ÎÄ·¨ÊôĞÔ
+//æ–‡æ³•å±æ€§
 class Grammar
 {
 public:
@@ -85,9 +85,9 @@ public:
 	}*/
 	vector<string> getisEnd() { return isEnd; }
 private:
-	int id; //ÎÄ·¨ĞòºÅ
-	char * INP;  //²úÉúÊ½×ó²¿·Ö
-	char * OUP;//²úÉúÊ½ÓÒ²¿·Ö
+	int id; //æ–‡æ³•åºå·
+	char * INP;  //äº§ç”Ÿå¼å·¦éƒ¨åˆ†
+	char * OUP;//äº§ç”Ÿå¼å³éƒ¨åˆ†
 	vector<string> notEnd;
 	vector<string> isEnd;
 	/*
@@ -106,15 +106,15 @@ Grammar::~Grammar()
 }
 
 
-//token½á¹¹Ìå
+//tokenç»“æ„ä½“
 typedef struct token
 {
 	int label;
 	string name;
 	int code;
 	string type;
-	int addr;    //·ûºÅ±íÎ»ÖÃ
-	int linenum;     //ĞĞºÅ
+	int addr;    //ç¬¦å·è¡¨ä½ç½®
+	int linenum;     //è¡Œå·
 	token(string n, int c, int a, string t, int l) { name = n; code = c; addr = a; type = t; linenum = l; }
 	token() {}
 } token;
@@ -123,7 +123,7 @@ typedef struct token
 vector<token> token2;
 
 
-//¶ÁÈ¡token±í
+//è¯»å–tokenè¡¨
 void readToken()
 {
 	string alltext[100];
@@ -152,20 +152,20 @@ void readToken()
 
 
 
-//ÎÄ·¨¸³Öµ¶¨Òå
+//æ–‡æ³•èµ‹å€¼å®šä¹‰
 Grammar  grammar[] = {
 	Grammar(0, "W", "# P #"),
-	Grammar(1, "P", "program id L"),     //³ÌĞò£¬±êÊ¶·û£¬³ÌĞòÌå
-	Grammar(2, "L", "S ; L"),           //SÓï¾ä  , L Óï¾ä±í£¬ A¸³ÖµÓï¾ä£¬B ²¼¶û±í´ïÊ½£¬EËãÊõ±í´ïÊ½
+	Grammar(1, "P", "program id L"),     //ç¨‹åºï¼Œæ ‡è¯†ç¬¦ï¼Œç¨‹åºä½“
+	Grammar(2, "L", "S ; L"),           //Sè¯­å¥  , L è¯­å¥è¡¨ï¼Œ Aèµ‹å€¼è¯­å¥ï¼ŒB å¸ƒå°”è¡¨è¾¾å¼ï¼ŒEç®—æœ¯è¡¨è¾¾å¼
 	Grammar(2, "L", "S"),
 	Grammar(3, "S", "if B then S"),
 	Grammar(3, "S", "if B then L else S"),
 	Grammar(3, "S", "while B do S"),
 	Grammar(3, "S", "begin L end"),
 	Grammar(3, "S", "var D"),
-	Grammar(3, "S", "?"),       //s->¿Õ 
+	Grammar(3, "S", "?"),       //s->ç©º 
 	Grammar(3, "S", "A"),
-	Grammar(4, "D", "id : K ;"),        //D ÉùÃ÷Óï¾ä  £¬ id±êÊ¶·û £¬KÊı¾İÀàĞÍ 
+	Grammar(4, "D", "id : K ;"),        //D å£°æ˜è¯­å¥  ï¼Œ idæ ‡è¯†ç¬¦ ï¼ŒKæ•°æ®ç±»å‹ 
 	Grammar(5, "K", "integer"),
 	Grammar(5, "K", "bool"),
 	Grammar(5, "K", "real"),
@@ -195,7 +195,7 @@ Grammar  grammar[] = {
 
 
 
-//ÅĞ¶ÏÊÇ·ñÊÇ·ÇÖÕ½á·û
+//åˆ¤æ–­æ˜¯å¦æ˜¯éç»ˆç»“ç¬¦
 bool isInNotend(vector<string> s, string str)
 {
 	bool flag = false;
@@ -211,7 +211,7 @@ bool isInNotend(vector<string> s, string str)
 }
 
 
-//¸ù¾İ·ÇÖÕ½á×Ö·û´®ÕÒµ½¶ÔÓ¦ÎÄ·¨
+//æ ¹æ®éç»ˆç»“å­—ç¬¦ä¸²æ‰¾åˆ°å¯¹åº”æ–‡æ³•
 int FindGraIndexByvec(vector<string>t)
 {
 	for (int i = 0; i < grammar_length; i++)
@@ -220,15 +220,15 @@ int FindGraIndexByvec(vector<string>t)
 		if (s.size() != t.size()) continue;
 		int size = s.size();
 		bool flag = true;
-		for (int j = 0; j < size; j++)  //tÖĞµÄÔªËØºÍsÖĞÔªËØÃ¿¸ö½øĞĞ±È½Ï
+		for (int j = 0; j < size; j++)  //tä¸­çš„å…ƒç´ å’Œsä¸­å…ƒç´ æ¯ä¸ªè¿›è¡Œæ¯”è¾ƒ
 		{
 			if (!isInNotend(s, t[j])) {
 				flag = false; break;  //
 			}
 		}
-		if (!flag) continue; //Èç¹ûÕÒµ½²»Æ¥ÅäµÄ£¬ÏÂÒ»¸öÎÄ·¨
+		if (!flag) continue; //å¦‚æœæ‰¾åˆ°ä¸åŒ¹é…çš„ï¼Œä¸‹ä¸€ä¸ªæ–‡æ³•
 		flag = true;
-		for (int j = 0; j < size; j++)  //tÖĞµÄÔªËØºÍsÖĞÔªËØÃ¿¸ö½øĞĞ±È½Ï
+		for (int j = 0; j < size; j++)  //tä¸­çš„å…ƒç´ å’Œsä¸­å…ƒç´ æ¯ä¸ªè¿›è¡Œæ¯”è¾ƒ
 		{
 			if (!isInNotend(t, s[j])) {
 				flag = false; break;  //

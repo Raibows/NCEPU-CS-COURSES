@@ -6,12 +6,12 @@
 using namespace std;
 
 int temp = 0;
-int total = 0;    //´íÎóĞÅÏ¢×ÜÊı
+int total = 0;    //é”™è¯¯ä¿¡æ¯æ€»æ•°
 int line = 0;
-int k = 0;   //´Ê¸öÊı
-int l; //ÔÚ·ûºÅ±íÖĞµÄÎ»ÖÃ
+int k = 0;   //è¯ä¸ªæ•°
+int l; //åœ¨ç¬¦å·è¡¨ä¸­çš„ä½ç½®
 
-//ÅĞ¶ÏÔÚ·ûºÅ±íÊÇ·ñ´æÔÚ
+//åˆ¤æ–­åœ¨ç¬¦å·è¡¨æ˜¯å¦å­˜åœ¨
 bool isexist(string word, int Length) {
 	for (int i = 0; i < Length; i++) {
 		if (symble[i].name == word) {
@@ -22,7 +22,7 @@ bool isexist(string word, int Length) {
 	return false;
 }
 
-//¹Ø¼ü×Ö
+//å…³é”®å­—
 int isKeyword(string s)
 {
 	int i = 0;
@@ -38,14 +38,14 @@ int isKeyword(string s)
 				i++;
 			}
 
-			return 18;	//±êÊ¶·û
+			return 18;	//æ ‡è¯†ç¬¦
 		}
 
 	}
 	return -1;
 }
 
-//Ëã·û
+//ç®—ç¬¦
 int isOperator(string s)
 {
 	int i = 0;
@@ -64,7 +64,7 @@ int isOperator(string s)
 	return -1;
 }
 
-//½ç·û
+//ç•Œç¬¦
 int isDelimeter(string s)
 {
 	int i = 0;
@@ -83,7 +83,7 @@ int isDelimeter(string s)
 	return -1;
 }
 
-//³£Êı
+//å¸¸æ•°
 int isConstants(string &s, int n)
 {
 	int i = 0;
@@ -100,7 +100,7 @@ int isConstants(string &s, int n)
 			wronginfo[total].number = total + 1;
 			wronginfo[total].name = s;
 			wronginfo[total].location = n + 1;
-			wronginfo[total].type = "´íÎóµ¥´Ê£¨Êı×Ö¿ªÍ·µÄÊı×Ö¡¢×ÖÄ¸´®£©";
+			wronginfo[total].type = "é”™è¯¯å•è¯ï¼ˆæ•°å­—å¼€å¤´çš„æ•°å­—ã€å­—æ¯ä¸²ï¼‰";
 			total++;
 			for (int k = 0; k < i; k++)
 			{
@@ -116,7 +116,7 @@ int isConstants(string &s, int n)
 			wronginfo[total].number = total + 1;
 			wronginfo[total].name = s;
 			wronginfo[total].location = n + 1;
-			wronginfo[total].type = "´íÎóµ¥´Ê£¨ÊµÊıµÄĞ¡Êı²¿·Ö³öÏÖ×ÖÄ¸£©";
+			wronginfo[total].type = "é”™è¯¯å•è¯ï¼ˆå®æ•°çš„å°æ•°éƒ¨åˆ†å‡ºç°å­—æ¯ï¼‰";
 			total++;
 			for (int k = 0; k < i; k++)
 			{
@@ -131,7 +131,7 @@ int isConstants(string &s, int n)
 			wronginfo[total].number = total + 1;
 			wronginfo[total].name = s;
 			wronginfo[total].location = n + 1;
-			wronginfo[total].type = "´íÎóµ¥´Ê£¨Á½¸öĞ¡Êıµã£©";
+			wronginfo[total].type = "é”™è¯¯å•è¯ï¼ˆä¸¤ä¸ªå°æ•°ç‚¹ï¼‰";
 			total++;
 			for (int k = 0; k < i; k++)
 			{
@@ -162,7 +162,7 @@ int isConstants(string &s, int n)
 
 
 
-//µÃµ½·ûºÅ±íºÍtoken
+//å¾—åˆ°ç¬¦å·è¡¨å’Œtoken
 void getToken() {
 	for (; alltext[line] != ""; line++)
 	{
@@ -186,11 +186,11 @@ void getToken() {
 						{
 							tokens[k].name = word;
 							tokens[k].code = isKeyword(word);
-							tokens[k].type = "±êÊ¶·û";
+							tokens[k].type = "æ ‡è¯†ç¬¦";
 							tokens[k].linenum = line;
 							if (!isexist(word, l)) {
 								symble[l].name = word;
-								symble[l].type = "±êÊ¶·û";
+								symble[l].type = "æ ‡è¯†ç¬¦";
 								symble[l].number = l;
 								tokens[k].addr = l;
 								l++;
@@ -204,7 +204,7 @@ void getToken() {
 						else {
 							tokens[k].name = word;
 							tokens[k].code = isKeyword(word);
-							tokens[k].type = "¹Ø¼ü×Ö";
+							tokens[k].type = "å…³é”®å­—";
 							tokens[k].linenum = line;
 							k++;
 						}
@@ -224,11 +224,11 @@ void getToken() {
 					{
 						tokens[k].name = word;
 						tokens[k].code = 19;
-						tokens[k].type = "ÕûÊı";
+						tokens[k].type = "æ•´æ•°";
 						tokens[k].linenum = line;
 						if (!isexist(word, l)) {
 							symble[l].name = word;
-							symble[l].type = "ÕûÊı";
+							symble[l].type = "æ•´æ•°";
 							symble[l].number = l;
 							tokens[k].addr = l;
 							l++;
@@ -243,11 +243,11 @@ void getToken() {
 					{
 						tokens[k].name = word;
 						tokens[k].code = 20;
-						tokens[k].type = "ÊµÊı";
+						tokens[k].type = "å®æ•°";
 						tokens[k].linenum = line;
 						if (!isexist(word, l)) {
 							symble[l].name = word;
-							symble[l].type = "ÊµÊı";
+							symble[l].type = "å®æ•°";
 							symble[l].number = l;
 							tokens[k].addr = l;
 							l++;
@@ -270,7 +270,7 @@ void getToken() {
 						i = i + 1;
 						tokens[k].name = word;
 						tokens[k].code = isOperator(word);
-						tokens[k].type = "Ëã·û";
+						tokens[k].type = "ç®—ç¬¦";
 						tokens[k].linenum = line;
 						k++;
 					}
@@ -278,7 +278,7 @@ void getToken() {
 					{
 						tokens[k].name = word;
 						tokens[k].code = isDelimeter(word);
-						tokens[k].type = "½ç·û";
+						tokens[k].type = "ç•Œç¬¦";
 						tokens[k].linenum = line;
 						k++;
 					}
@@ -286,7 +286,7 @@ void getToken() {
 					{
 						tokens[k].name = word;
 						tokens[k].code = isOperator(word);
-						tokens[k].type = "Ëã·û";
+						tokens[k].type = "ç®—ç¬¦";
 						tokens[k].linenum = line;
 						k++;
 
@@ -294,7 +294,7 @@ void getToken() {
 					else {
 						tokens[k].name = word;
 						tokens[k].code = 100;
-						tokens[k].type = "·Ç·¨×Ö·û";
+						tokens[k].type = "éæ³•å­—ç¬¦";
 						tokens[k].linenum = line;
 						k++;
 					}
@@ -311,7 +311,7 @@ void readtext(string url)
 	infile.open(url.data());
 	if (!infile)
 	{
-		cout << "²»´æÔÚ´ËÎÄ¼ş£¬ÇëÖØĞÂÊäÈë!" << endl;
+		cout << "ä¸å­˜åœ¨æ­¤æ–‡ä»¶ï¼Œè¯·é‡æ–°è¾“å…¥!" << endl;
 		string url;
 		cin >> url;
 		readtext(url);
@@ -325,12 +325,12 @@ void readtext(string url)
 			i++;
 		}
 		infile.close();
-		cout << "¶ÁÈë³ÌĞòÈçÏÂ£º" << endl;
+		cout << "è¯»å…¥ç¨‹åºå¦‚ä¸‹ï¼š" << endl;
 		for (int i = 0; alltext[i] != ""; i++)
 		{
 			cout << alltext[i] << endl;
 		}
-		cout << "´Ê·¨·ÖÎöÈçÏÂ" << endl;
+		cout << "è¯æ³•åˆ†æå¦‚ä¸‹" << endl;
 		getToken();
 	}
 }
@@ -349,7 +349,7 @@ void writeToken()
 	OutFile.close();
 
 	j = 0;
-	cout << "tokenÎÄ¼şÉú³É³É¹¦" << endl;
+	cout << "tokenæ–‡ä»¶ç”ŸæˆæˆåŠŸ" << endl;
 	ofstream OutFile1("D:/symble.txt");
 	while (symble[j].name != "")
 	{
@@ -358,7 +358,7 @@ void writeToken()
 		j++;
 	}
 	OutFile1.close();
-	cout << "symbleÎÄ¼şÉú³É³É¹¦" << endl;
+	cout << "symbleæ–‡ä»¶ç”ŸæˆæˆåŠŸ" << endl;
 
 	ofstream OutFile2("D:/wrong.txt");
 	for (int i = 0; i < total; i++)
@@ -371,7 +371,7 @@ void writeToken()
 	ofstream OutFile3("D:/wrong.txt");
 	for (int i = 0; i < total; i++)
 	{
-		cout << "´íÎóĞÅÏ¢:" << endl;
+		cout << "é”™è¯¯ä¿¡æ¯:" << endl;
 		cout << wronginfo[i].number << "  " << wronginfo[i].location << "  " << wronginfo[i].name << "  " << wronginfo[i].type << endl;
 		OutFile3 << wronginfo[i].number << "  " << wronginfo[i].location << "  " << wronginfo[i].name << "  " << wronginfo[i].type;
 		OutFile3 << "\r\n";
@@ -392,12 +392,12 @@ void writeToken1()
 	}
 	OutFile.close();
 	j = 0;
-	cout << "tokenÎÄ¼şÉú³É³É¹¦" << endl;
+	cout << "tokenæ–‡ä»¶ç”ŸæˆæˆåŠŸ" << endl;
 }
 /*
 int main() {
 	string url;
-	cout << "ÇëÊäÈëÔ´³ÌĞòÎÄ¼şÂ·¾¶: " << endl;    //D:/1.txt
+	cout << "è¯·è¾“å…¥æºç¨‹åºæ–‡ä»¶è·¯å¾„: " << endl;    //D:/1.txt
 	cin >> url;
 	readtext(url);
 	writeToken();

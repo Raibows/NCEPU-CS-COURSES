@@ -2,6 +2,6 @@ package Pin;
 
 public class Shopping {
 	public	static	void main(String args[]) {
-		new Login("超市管理系统");
+		new Login("瓒呭競绠＄悊绯荤粺");
 	}
 }

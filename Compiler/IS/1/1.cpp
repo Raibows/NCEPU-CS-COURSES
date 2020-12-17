@@ -16,9 +16,9 @@ string keyword_list[15] = { "BEGIN", "IF", "THEN", "ELSE", "END", "+", "*", "**"
 							 "(", ")", "int", "real", ";", "=", ":=" };
 string identity[1000] = {};
 string buffer = "";
-char ch; //¶ÁÈëµÄ×Ö·û
-char strToken[20] = "";//¶ÁÈëµÄ×Ö·û´®
-int num = 1;//±àÂëµÄÊı×Ö£¨ÎªÁËµİÔö£©
+char ch; //è¯»å…¥çš„å­—ç¬¦
+char strToken[20] = "";//è¯»å…¥çš„å­—ç¬¦ä¸²
+int num = 1;//ç¼–ç çš„æ•°å­—ï¼ˆä¸ºäº†é€’å¢ï¼‰
 int row = 1;
 int add = 0;
 int pointer = -1;
@@ -31,7 +31,7 @@ void getNextChar()
 	ch = input[pointer];
 }
 
-//¼ì²échµÄ×Ö·ûÊÇ·ñÎª¿Õ°×·û¡¢»Ø³µ»òÕßÖÆ±í·û£¬ÈôÊÇ£¬Ôò·´¸´µ÷ÓÃgetNextChar ()£¬Ö±ÖÁchÖĞ¶ÁÈëÒ»·ÇÉÏÊö·ûºÅ
+//æ£€æŸ¥chçš„å­—ç¬¦æ˜¯å¦ä¸ºç©ºç™½ç¬¦ã€å›è½¦æˆ–è€…åˆ¶è¡¨ç¬¦ï¼Œè‹¥æ˜¯ï¼Œåˆ™åå¤è°ƒç”¨getNextChar ()ï¼Œç›´è‡³chä¸­è¯»å…¥ä¸€éä¸Šè¿°ç¬¦å·
 void getbc()
 {
 	while (ch == ' ' || ch == '\t')
@@ -40,9 +40,9 @@ void getbc()
 	}
 }
 
-//¸øµ¥´Ê·ûºÅÉè¶¨ÖÖ±ğ±àÂë
+//ç»™å•è¯ç¬¦å·è®¾å®šç§åˆ«ç¼–ç 
 void initialization() {
-	//¸ø¹Ø¼ü×ÖÉè¶¨ÖÖ±ğ±àÂë
+	//ç»™å…³é”®å­—è®¾å®šç§åˆ«ç¼–ç 
 	for (int i = 0; i < 15; i++) {
 		keywords[i].str = keyword_list[i];
 		if (i < 5)
@@ -58,19 +58,19 @@ void initialization() {
 }
 
 
-//ÅĞ¶ÏchÊÇ·ñÎª×ÖÄ¸
+//åˆ¤æ–­chæ˜¯å¦ä¸ºå­—æ¯
 bool isLetter(char ch)
 {
 	return isalpha(ch);
 }
 
-//ÅĞ¶ÏchÊÇ·ñÎªÊı×Ö
+//åˆ¤æ–­chæ˜¯å¦ä¸ºæ•°å­—
 bool isDigit(char ch)
 {
 	return isdigit(ch);
 }
 
-//ÅĞ¶ÏchÊÇ·ñÎªÏÂ»®Ïß
+//åˆ¤æ–­chæ˜¯å¦ä¸ºä¸‹åˆ’çº¿
 bool isUnderline(char ch)
 {
 	if (ch == '_')
@@ -79,20 +79,20 @@ bool isUnderline(char ch)
 		return 0;
 }
 
-//½«ÊäÈëµÄ×Ö·ûchÁ¬½Óµ½strToken
+//å°†è¾“å…¥çš„å­—ç¬¦chè¿æ¥åˆ°strToken
 void concat()
 {
 	char* tmp = &ch;
 	strcat(strToken, tmp);
 }
 
-//°ÑËÑË÷Ö¸Õë»Øµ÷Ò»¸ö×Ö·ûÎ»ÖÃ
+//æŠŠæœç´¢æŒ‡é’ˆå›è°ƒä¸€ä¸ªå­—ç¬¦ä½ç½®
 void retract()
 {
 	pointer--;
 }
 
-//¶ÔÓÚstrTokenÖĞµÄ×Ö·û´®ÅĞ¶ÏËüÊÇ·ñÎª±£Áô×Ö£¬ÈôËüÊÇ±£Áô×ÖÔò·µ»Ø0£¬·ñÔò·µ»Ø-1
+//å¯¹äºstrTokenä¸­çš„å­—ç¬¦ä¸²åˆ¤æ–­å®ƒæ˜¯å¦ä¸ºä¿ç•™å­—ï¼Œè‹¥å®ƒæ˜¯ä¿ç•™å­—åˆ™è¿”å›0ï¼Œå¦åˆ™è¿”å›-1
 int reserve_string(char* str) {
 	for (int i = 0; i < 15; i++) {
 		if (str == keywords[i].str)
@@ -104,7 +104,7 @@ int reserve_string(char* str) {
 	return -1;
 }
 
-//ÈôËüÊÇ±£Áô×ÖÔò·µ»Ø±àÂë
+//è‹¥å®ƒæ˜¯ä¿ç•™å­—åˆ™è¿”å›ç¼–ç 
 int getSCode(char* str)
 {
 	for (int i = 0; i < 15; i++) {
@@ -115,7 +115,7 @@ int getSCode(char* str)
 	}
 }
 
-//ÅĞ¶Ï±êÊ¶·ûÊÇ·ñÒÑ¾­´æÔÚ
+//åˆ¤æ–­æ ‡è¯†ç¬¦æ˜¯å¦å·²ç»å­˜åœ¨
 bool isExist(char* str)
 {
 	for (int i = 0; i < add; i++)
@@ -125,7 +125,7 @@ bool isExist(char* str)
 	return false;
 }
 
-//ĞÂ±êÊ¶·ûÏÂ±ê
+//æ–°æ ‡è¯†ç¬¦ä¸‹æ ‡
 int getAdd(char* str)
 {
 	int temp = 0;
@@ -136,7 +136,7 @@ int getAdd(char* str)
 	return temp;
 }
 
-//³ö´í´¦Àí
+//å‡ºé”™å¤„ç†
 void error(int type, string Token)
 {
 	switch (type) {
@@ -144,10 +144,10 @@ void error(int type, string Token)
 		cout << "Error at Line " << row << ": Illegal floating point number \"" << Token << "\".";
 		break;
 	}
-	exit(0);//Å×³ö´íÎó²¢ÖÕÖ¹³ÌĞòÔËĞĞ
+	exit(0);//æŠ›å‡ºé”™è¯¯å¹¶ç»ˆæ­¢ç¨‹åºè¿è¡Œ
 }
 
-//ÅĞ¶ÏÊÇ·ñÊÇintÀàĞÍ
+//åˆ¤æ–­æ˜¯å¦æ˜¯intç±»å‹
 void digit_case() {
 	while (isDigit(ch))
 	{
@@ -158,7 +158,7 @@ void digit_case() {
 	buffer += "line" + to_string(row) + ":(7, " + strToken + ")" + "\n";
 }
 
-//´Ê·¨·ÖÎö
+//è¯æ³•åˆ†æ
 void LexiscalAnalyzer()
 {
 	int code = 0;
@@ -301,7 +301,7 @@ void LexiscalAnalyzer()
 
 int main()
 {
-	printf("%s", "ÇëÊäÈëÔ´´úÂë£º\n");
+	printf("%s", "è¯·è¾“å…¥æºä»£ç ï¼š\n");
 	initialization();
 	string temp;
 	getline(cin, temp);
@@ -318,7 +318,7 @@ int main()
 	
 	cout << buffer;
 
-	printf("%s", "·ûºÅ±íÎª£º \n");
+	printf("%s", "ç¬¦å·è¡¨ä¸ºï¼š \n");
 	printf("%s", "name\tadd\n");
 
 	for (int i = 0; i < add; i++)

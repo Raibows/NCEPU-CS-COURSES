@@ -4,7 +4,7 @@ using namespace std;
 const int maxn = 2005;
 int c[maxn][maxn], n, m, k, T;
 void init(){
-    ///‘§¥¶¿ÌC(i,j)
+    ///È¢ÑÂ§ÑÁêÜC(i,j)
     c[0][0]=1;
     for(int i=1;i<maxn;i++){
         c[i][0]=1%k;
@@ -12,14 +12,14 @@ void init(){
             c[i][j]=modk(c[i-1][j]+c[i-1][j-1]);
         }
     }
-    ///¥¶¿ÌC(i,j) «∑ÒŒ™k µƒ±∂ ˝
+    ///Â§ÑÁêÜC(i,j)ÊòØÂê¶‰∏∫k ÁöÑÂÄçÊï∞
     for(int i=0;i<maxn;i++){
         for(int j=0;j<=i;j++){
             if(c[i][j]==0) c[i][j]=1;
             else c[i][j]=0;
         }
     }
-    ///Ω´∂˛Œ¨ ˝◊ÈC¥¶¿Ì≥…«¯”Ú«∞◊∫∫Õ
+    ///Â∞Ü‰∫åÁª¥Êï∞ÁªÑCÂ§ÑÁêÜÊàêÂå∫ÂüüÂâçÁºÄÂíå
     for(int i=1;i<maxn;i++){
         int s=0;
         for(int j=0;j<maxn;j++){

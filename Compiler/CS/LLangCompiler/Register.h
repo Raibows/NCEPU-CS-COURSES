@@ -1,11 +1,11 @@
 #include<vector>
 
 
-//¼Ä´æÆ÷½á¹¹Ìå
+//å¯„å­˜å™¨ç»“æ„ä½“
 struct registers
 {
-	string	name;     //¼Ä´æÆ÷Ãû³Æ
-	vector<string> Rvalue;     //¼Ä´æÆ÷´æ·ÅµÄÖµ
+	string	name;     //å¯„å­˜å™¨åç§°
+	vector<string> Rvalue;     //å¯„å­˜å™¨å­˜æ”¾çš„å€¼
 	registers(string n) { name = n; }
 	registers() {};
 	void clearPush(string n)       //
@@ -13,7 +13,7 @@ struct registers
 		Rvalue.clear();
 		Rvalue.push_back(n);
 	}
-	bool isinReg(string n)     //ÅĞ¶ÏÊÇ·ñÔÚ¼Ä´æÆ÷
+	bool isinReg(string n)     //åˆ¤æ–­æ˜¯å¦åœ¨å¯„å­˜å™¨
 	{
 		bool flag = false;
 		for (int i = 0; i < Rvalue.size(); i++)
@@ -27,7 +27,7 @@ struct registers
 vector<registers> regs = { registers("BX"),registers("DX")};
 
 
-//·ÖÅä¼Ä´æÆ÷
+//åˆ†é…å¯„å­˜å™¨
 registers findreg(string arg, int &index,int l)
 {
 	
@@ -66,7 +66,7 @@ registers findreg(string arg, int &index,int l)
 	
 }
 
-//ÅĞ¶ÏÔÚ²»ÔÚRVALUEÀï
+//åˆ¤æ–­åœ¨ä¸åœ¨RVALUEé‡Œ
 bool isExistRvalue(string arg)
 {
 	for (int i = 0; i < regs.size(); i++)

@@ -1,80 +1,79 @@
 #include <iostream>
 using namespace std;
 
-typedef struct Node 
+typedef struct Node
 {
 	int data;
 	struct Node *next;
-} *Pnode;
+} * Pnode;
 
 Pnode CreateList(int n)
 {
-	Pnode head=new Node;
-	Pnode p=new Node;
-	head->next=p;
-	cout<<"ÇëÊäÈëÈËÃû:";
+	Pnode head = new Node;
+	Pnode p = new Node;
+	head->next = p;
+	cout << "è¯·è¾“å…¥äººå:";
 	int k;
-	cin>>k;
-	p->data=k;
-	int i=1;
-	for(i=1;i<n;i++)
+	cin >> k;
+	p->data = k;
+	int i = 1;
+	for (i = 1; i < n; i++)
 	{
-		cin>>k;
-		Pnode q=new Node;
-		q->data=k;
-		p->next=q;
-		p=q;
+		cin >> k;
+		Pnode q = new Node;
+		q->data = k;
+		p->next = q;
+		p = q;
 	}
-	p->next=head->next;   
+	p->next = head->next;
 	return head;
 }
 
-void panduan(Pnode head){
-	if(!head->next){
-		cout<<"±í²»´æÔÚ£¡";
-		return ;
+void panduan(Pnode head)
+{
+	if (!head->next)
+	{
+		cout << "è¡¨ä¸å­˜åœ¨ï¼";
+		return;
 	}
 }
 
-void yue_node(Pnode head,int s,int m,int n){
-	panduan (head);
-	Pnode p=head->next;
-	Pnode q=head;
-	int k=1;
-	for(int j=1;j<s;j++)
+void yue_node(Pnode head, int s, int m, int n)
+{
+	panduan(head);
+	Pnode p = head->next;
+	Pnode q = head;
+	int k = 1;
+	for (int j = 1; j < s; j++)
 	{
-		p=p->next;
-		q=q->next;
+		p = p->next;
+		q = q->next;
 	}
-		
-	
-	for(int w=0;w<n;w++)
-	{
-		for(int r=1;r<m;r++)
-		{
-			p=p->next;
-			q=q->next;
-		}
-		cout<<"µÚ"<<k<<"¸ö³öÁĞµÄÊÇ:";
-		cout<<p->data<<"\n";
-		k++;
-		q->next=p->next;//½áµãÉ¾³ı
-		p=p->next;//pÖ¸ÏòÉ¾³ı½áµãµÄºóÒ»½Úµã
-	}
-}	 
 
+	for (int w = 0; w < n; w++)
+	{
+		for (int r = 1; r < m; r++)
+		{
+			p = p->next;
+			q = q->next;
+		}
+		cout << "ç¬¬" << k << "ä¸ªå‡ºåˆ—çš„æ˜¯:";
+		cout << p->data << "\n";
+		k++;
+		q->next = p->next; //ç»“ç‚¹åˆ é™¤
+		p = p->next;	   //pæŒ‡å‘åˆ é™¤ç»“ç‚¹çš„åä¸€èŠ‚ç‚¹
+	}
+}
 
 void main()
 {
-	int n,m,s;
+	int n, m, s;
 
-	cout<<"ÊäÈë×ÜÈËÊı£º";
-	cin>>n;
-	Pnode head=CreateList(n);
-	cout<<"ÇëÊäÈëÔ¼Éª·ò»·µÄÆğÊ¼ĞòºÅsºÍ¼ÆÊıÖµmµÄÖµ·Ö±ğÊÇ£º";
-	cin>>s>>m;
+	cout << "è¾“å…¥æ€»äººæ•°ï¼š";
+	cin >> n;
+	Pnode head = CreateList(n);
+	cout << "è¯·è¾“å…¥çº¦ç‘Ÿå¤«ç¯çš„èµ·å§‹åºå·så’Œè®¡æ•°å€¼mçš„å€¼åˆ†åˆ«æ˜¯ï¼š";
+	cin >> s >> m;
 
-
-    yue_node(head,s,m,n);
-
+	yue_node(head, s, m, n);
 }

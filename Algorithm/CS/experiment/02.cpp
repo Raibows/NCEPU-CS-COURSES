@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 /*
-用分治求树高
+鐢ㄥ垎娌绘眰鏍戦珮
 */
 template <class T>
 struct Node{

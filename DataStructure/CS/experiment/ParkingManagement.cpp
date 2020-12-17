@@ -1,37 +1,44 @@
-// ConsoleApplication10.cpp: ∂®“Âøÿ÷∆Ã®”¶”√≥Ã–Úµƒ»Îø⁄µ„°£
+// ConsoleApplication10.cpp: ÂÆö‰πâÊéßÂà∂Âè∞Â∫îÁî®Á®ãÂ∫èÁöÑÂÖ•Âè£ÁÇπ„ÄÇ
 //#include "stdafx.h"
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 using namespace std;
-const float fee = 10;  //10 yuan per minute
-const int all = 2;   //parkinglot max is 2
-class node {
+const float fee = 10; //10 yuan per minute
+const int all = 2;	  //parkinglot max is 2
+class node
+{
 public:
 	node(string x);
 	~node();
 	string license;
 	node *next;
 };
-node::~node() {
+node::~node()
+{
 }
-node::node(string x) {
+node::node(string x)
+{
 	next = NULL;
 	license = x;
 }
-class car {
+class car
+{
 public:
 	void init(string license, int arriving_time);
 	~car();
 	string license;
 	int arriving_time; //unit minutes
 };
-void car::init(string a, int b) {
+void car::init(string a, int b)
+{
 	license = a;
 	arriving_time = b;
 }
-car::~car() {
+car::~car()
+{
 }
-class stack {
+class stack
+{
 public:
 	stack();
 	~stack();
@@ -41,42 +48,54 @@ public:
 	void stack_push(string a, int b);
 	void stack_pop();
 	car *get_top();
-	car * num;
+	car *num;
 	int top;
 };
-stack::stack() {
+stack::stack()
+{
 	num = new car[all];
 	top = -1;
 }
-stack::~stack() {
+stack::~stack()
+{
 }
-bool stack::stack_isempty() {
+bool stack::stack_isempty()
+{
 	return top == -1 ? true : false;
 }
-bool stack::stack_isfull() {
+bool stack::stack_isfull()
+{
 	return top == (all - 1) ? true : false;
 }
-void stack::stack_push(string a, int b) {
-	if (stack_isfull()) {
+void stack::stack_push(string a, int b)
+{
+	if (stack_isfull())
+	{
 		cout << "the stack is full" << endl;
 	}
-	else {
+	else
+	{
 		top++;
 		num[top].init(a, b);
 	}
 }
-void stack::stack_pop() {
-	if (stack_isempty()) {
+void stack::stack_pop()
+{
+	if (stack_isempty())
+	{
 		cout << "the stack is empty";
 	}
-	else {
+	else
+	{
 		top--;
 	}
 }
-bool stack::stack_find(string x) {
+bool stack::stack_find(string x)
+{
 	int k = 0;
-	for (int i = 0; i <= top; i++) {
-		if (num[i].license==x)
+	for (int i = 0; i <= top; i++)
+	{
+		if (num[i].license == x)
 		{
 			k = 1;
 			break;
@@ -84,7 +103,8 @@ bool stack::stack_find(string x) {
 	}
 	return k == 1 ? true : false;
 }
-car *stack::get_top() {
+car *stack::get_top()
+{
 	if (stack_isempty())
 	{
 		cout << "this stack is empty";
@@ -94,7 +114,8 @@ car *stack::get_top() {
 		return &num[top];
 	}
 }
-class queue {
+class queue
+{
 public:
 	queue();
 	~queue();
@@ -106,23 +127,28 @@ public:
 	void queue_in(string x);
 	node *queue_out();
 };
-queue::queue() {
+queue::queue()
+{
 	rear = new node("0");
 	front = new node("0");
 	front->next = rear;
 	number = 0;
 }
-queue::~queue() {
+queue::~queue()
+{
 }
-bool queue::queue_isempty() {
-	return  number == 0 ? true : false;
+bool queue::queue_isempty()
+{
+	return number == 0 ? true : false;
 }
-bool queue::queue_find(string x) {
+bool queue::queue_find(string x)
+{
 	node *tem = new node("0");
 	int k = 0;
 	tem = front->next;
-	for (int i = 0; i <number; i++) {
-		if (tem->license==x)
+	for (int i = 0; i < number; i++)
+	{
+		if (tem->license == x)
 		{
 			k = 1;
 			break;
@@ -131,15 +157,18 @@ bool queue::queue_find(string x) {
 	}
 	return k == 1 ? true : false;
 }
-void queue::queue_in(string x) {
+void queue::queue_in(string x)
+{
 	rear->license = x;
 	node *tem = new node("0");
 	rear->next = tem;
 	rear = tem;
 	number++;
 }
-node *queue::queue_out() {
-	if (queue_isempty()) {
+node *queue::queue_out()
+{
+	if (queue_isempty())
+	{
 		cout << "the queue is empty";
 	}
 	else
@@ -151,61 +180,67 @@ node *queue::queue_out() {
 		return tem;
 	}
 }
-void tips() {
-	cout << "≤Ÿ◊˜Ã· æ:A±Ì æ≥µ¡æµΩ¥Ô D±Ì æ≥µ¡æ¿Îø™ P≤Èø¥µ±«∞Õ£≥µ≥°Õ£≥µ◊‹ ˝ W≤Èø¥µ±«∞±„µ¿Õ£≥µ◊‹ ˝ S≤Èø¥À˘”––≈œ¢ EÕÀ≥ˆ≥Ã–Ú" << endl;
+void tips()
+{
+	cout << "Êìç‰ΩúÊèêÁ§∫:AË°®Á§∫ËΩ¶ËæÜÂà∞Ëææ DË°®Á§∫ËΩ¶ËæÜÁ¶ªÂºÄ PÊü•ÁúãÂΩìÂâçÂÅúËΩ¶Âú∫ÂÅúËΩ¶ÊÄªÊï∞ WÊü•ÁúãÂΩìÂâç‰æøÈÅìÂÅúËΩ¶ÊÄªÊï∞ SÊü•ÁúãÊâÄÊúâ‰ø°ÊÅØ EÈÄÄÂá∫Á®ãÂ∫è" << endl;
 }
-int arriving() {
-	cout << "«Î ‰»ÎµΩ¥Ô ±º‰£®»’£∫ ±£∫∑÷£©" << endl;
+int arriving()
+{
+	cout << "ËØ∑ËæìÂÖ•Âà∞ËææÊó∂Èó¥ÔºàÊó•ÔºöÊó∂ÔºöÂàÜÔºâ" << endl;
 	int day = 0;
 	int hour = 0;
 	int minute = 0;
 	int time = 0;
-	cout << "»’∆⁄£∫";
+	cout << "Êó•ÊúüÔºö";
 	cin >> day;
-	cout << "–° ±£∫";
+	cout << "Â∞èÊó∂Ôºö";
 	cin >> hour;
-	cout << "∑÷÷”£∫";
+	cout << "ÂàÜÈíüÔºö";
 	cin >> minute;
 	time = day * 24 * 60 + hour * 60 + minute;
 	return time;
 }
-void show(stack *a, queue *b) {
+void show(stack *a, queue *b)
+{
 	cout << endl;
-	cout << "±æÕ£≥µ≥°…Ëº∆Õ£≥µ◊‹ ˝”–" << all << "¡æ≥µ" << endl;
-	cout << "±æÕ£≥µ≥° ’∑—±Í◊ºŒ™" << fee << "‘™√ø∑÷÷”" << endl;
+	cout << "Êú¨ÂÅúËΩ¶Âú∫ËÆæËÆ°ÂÅúËΩ¶ÊÄªÊï∞Êúâ" << all << "ËæÜËΩ¶" << endl;
+	cout << "Êú¨ÂÅúËΩ¶Âú∫Êî∂Ë¥πÊ†áÂáÜ‰∏∫" << fee << "ÂÖÉÊØèÂàÜÈíü" << endl;
 	cout << endl;
-	cout << "µ±«∞Õ£≥µ≥°”–" << (a->top + 1) << "¡æ≥µ" << endl;
-	for (int i = 0; i <= a->top; i++) {
-		cout << "≥µ¡æ" << (i + 1) << ": " << a->num[i].license << " Ω¯≥° ±º‰£∫" << a->num[i].arriving_time << "±Í◊º∑÷÷”" << endl;
+	cout << "ÂΩìÂâçÂÅúËΩ¶Âú∫Êúâ" << (a->top + 1) << "ËæÜËΩ¶" << endl;
+	for (int i = 0; i <= a->top; i++)
+	{
+		cout << "ËΩ¶ËæÜ" << (i + 1) << ": " << a->num[i].license << " ËøõÂú∫Êó∂Èó¥Ôºö" << a->num[i].arriving_time << "Ê†áÂáÜÂàÜÈíü" << endl;
 	}
 	cout << endl;
-	cout << "µ±«∞±„µ¿”–" << b->number << "¡æ≥µ" << endl;
+	cout << "ÂΩìÂâç‰æøÈÅìÊúâ" << b->number << "ËæÜËΩ¶" << endl;
 	node *tem = new node("0");
 	tem = b->front->next;
 	for (int i = 0; i < b->number; i++)
 	{
-		cout << "≥µ¡æ" << (i + 1) << ": " << tem->license;
+		cout << "ËΩ¶ËæÜ" << (i + 1) << ": " << tem->license;
 		cout << endl;
 		tem = tem->next;
 	}
 	cout << endl;
 }
-int main() {
-	cout << "                                                ª∂”≠ π”√Õ£≥µ≥°π‹¿ÌœµÕ≥\n";
-	cout << "***********************************************¥ÀÕ£≥µ≥°…Ëº∆Õ£≥µ◊‹ ˝Œ™" << all << "¡æ************************************************" << endl;
-	cout << "*********************************************¥ÀÕ£≥µ≥° ’∑—∑—”√Œ™" << fee << "‘™√ø∑÷÷”***********************************************" << endl;
+int main()
+{
+	cout << "                                                Ê¨¢Ëøé‰ΩøÁî®ÂÅúËΩ¶Âú∫ÁÆ°ÁêÜÁ≥ªÁªü\n";
+	cout << "***********************************************Ê≠§ÂÅúËΩ¶Âú∫ËÆæËÆ°ÂÅúËΩ¶ÊÄªÊï∞‰∏∫" << all << "ËæÜ************************************************" << endl;
+	cout << "*********************************************Ê≠§ÂÅúËΩ¶Âú∫Êî∂Ë¥πË¥πÁî®‰∏∫" << fee << "ÂÖÉÊØèÂàÜÈíü***********************************************" << endl;
 	cout << "************************************************************************************************************************\n";
-	stack *parkinglot = new stack();  //Õ£≥µ≥°’ª
-	stack *temp = new stack();  //¡Ÿ ±’ª
-	queue *accessroad = new queue();  //±„µ¿
+	stack *parkinglot = new stack(); //ÂÅúËΩ¶Âú∫Ê†à
+	stack *temp = new stack();		 //‰∏¥Êó∂Ê†à
+	queue *accessroad = new queue(); //‰æøÈÅì
 	string judge1;
-	while (1) {
+	while (1)
+	{
 		judge1 = "-1";
 		tips();
 		cin >> judge1;
 		if (judge1 == "E")
 		{
-			cout << "≥Ã–ÚΩ´Ω· ¯" << endl;
+			cout << "Á®ãÂ∫èÂ∞ÜÁªìÊùü" << endl;
 			exit(1);
 		}
 		else if (judge1 == "S")
@@ -214,95 +249,99 @@ int main() {
 		}
 		else if (judge1 == "P")
 		{
-			cout << "µ±«∞Õ£≥µ≥°”–" << (parkinglot->top + 1) << "¡æ≥µ" << endl;
+			cout << "ÂΩìÂâçÂÅúËΩ¶Âú∫Êúâ" << (parkinglot->top + 1) << "ËæÜËΩ¶" << endl;
 		}
 		else if (judge1 == "W")
 		{
-			cout << "µ±«∞±„µ¿”–" << accessroad->number << "¡æ≥µ" << endl;
+			cout << "ÂΩìÂâç‰æøÈÅìÊúâ" << accessroad->number << "ËæÜËΩ¶" << endl;
 		}
 		else if (judge1 == "A")
 		{
 			if (parkinglot->stack_isfull())
 			{
 
-				cout << "µ±«∞Õ£≥µ≥°“—¬˙£¨ƒ˙µƒ≥µ¡æΩ´Õ£»Î±„µ¿µ»∫Ú£°" << endl;
-				cout << "«Î ‰»Î≥µ≈∆∫≈";
+				cout << "ÂΩìÂâçÂÅúËΩ¶Âú∫Â∑≤Êª°ÔºåÊÇ®ÁöÑËΩ¶ËæÜÂ∞ÜÂÅúÂÖ•‰æøÈÅìÁ≠âÂÄôÔºÅ" << endl;
+				cout << "ËØ∑ËæìÂÖ•ËΩ¶ÁâåÂè∑";
 				string tem = "0";
 				cin >> tem;
-				if (parkinglot->stack_find(tem) || accessroad->queue_find(tem)) {
-					cout << "≥µ≈∆∫≈Œ™" << tem << "µƒ∆˚≥µ“—æ≠¥Ê‘⁄”⁄Õ£≥µ≥°ªÚ±„µ¿,«Î÷ÿ–¬ ‰»Î’˝»∑µƒ≥µ≈∆∫≈£°»Á–Ë∏¸œÍœ∏–≈œ¢£¨«Î∞¥S≤Èø¥Õ£≥µ≥°»´≤ø–≈œ¢" << endl;
+				if (parkinglot->stack_find(tem) || accessroad->queue_find(tem))
+				{
+					cout << "ËΩ¶ÁâåÂè∑‰∏∫" << tem << "ÁöÑÊ±ΩËΩ¶Â∑≤ÁªèÂ≠òÂú®‰∫éÂÅúËΩ¶Âú∫Êàñ‰æøÈÅì,ËØ∑ÈáçÊñ∞ËæìÂÖ•Ê≠£Á°ÆÁöÑËΩ¶ÁâåÂè∑ÔºÅÂ¶ÇÈúÄÊõ¥ËØ¶ÁªÜ‰ø°ÊÅØÔºåËØ∑ÊåâSÊü•ÁúãÂÅúËΩ¶Âú∫ÂÖ®ÈÉ®‰ø°ÊÅØ" << endl;
 				}
 				else
 				{
 					accessroad->queue_in(tem);
-					cout << "ƒ˙ƒø«∞‘⁄±„µ¿≈≈¡–µ⁄" << accessroad->number << "Œª" << endl;
+					cout << "ÊÇ®ÁõÆÂâçÂú®‰æøÈÅìÊéíÂàóÁ¨¨" << accessroad->number << "‰Ωç" << endl;
 				}
 			}
 			else
 			{
-				cout << "«Î ‰»Î≥µ≈∆∫≈";
+				cout << "ËØ∑ËæìÂÖ•ËΩ¶ÁâåÂè∑";
 				string tem = "0";
 				cin >> tem;
-				if (parkinglot->stack_find(tem)) {
-					cout << "≥µ≈∆∫≈Œ™" << tem << "µƒ∆˚≥µ“—æ≠¥Ê‘⁄”⁄Õ£≥µ≥°,«Î÷ÿ–¬ ‰»Î’˝»∑µƒ≥µ≈∆∫≈£°»Á–Ë∏¸œÍœ∏–≈œ¢£¨«Î∞¥S≤Èø¥Õ£≥µ≥°»´≤ø–≈œ¢" << endl;
+				if (parkinglot->stack_find(tem))
+				{
+					cout << "ËΩ¶ÁâåÂè∑‰∏∫" << tem << "ÁöÑÊ±ΩËΩ¶Â∑≤ÁªèÂ≠òÂú®‰∫éÂÅúËΩ¶Âú∫,ËØ∑ÈáçÊñ∞ËæìÂÖ•Ê≠£Á°ÆÁöÑËΩ¶ÁâåÂè∑ÔºÅÂ¶ÇÈúÄÊõ¥ËØ¶ÁªÜ‰ø°ÊÅØÔºåËØ∑ÊåâSÊü•ÁúãÂÅúËΩ¶Âú∫ÂÖ®ÈÉ®‰ø°ÊÅØ" << endl;
 				}
 				else
 				{
 					parkinglot->stack_push(tem, arriving());
-					cout << "Õ£≥µ≥…π¶£°" << endl;
+					cout << "ÂÅúËΩ¶ÊàêÂäüÔºÅ" << endl;
 				}
 			}
 		}
 		else if (judge1 == "D")
 		{
-			cout << "«Î ‰»Î¿Îø™∆˚≥µµƒ≥µ≈∆∫≈" << endl;
+			cout << "ËØ∑ËæìÂÖ•Á¶ªÂºÄÊ±ΩËΩ¶ÁöÑËΩ¶ÁâåÂè∑" << endl;
 			string tem = "0";
 			cin >> tem;
-			if (parkinglot->stack_find(tem)) {
+			if (parkinglot->stack_find(tem))
+			{
 				while (parkinglot->get_top()->license != tem)
 				{
 					temp->stack_push(parkinglot->get_top()->license, parkinglot->get_top()->arriving_time);
 					parkinglot->stack_pop();
 				}
-				cout << "«Î ‰»Î¿Îø™ ±º‰£®»’£∫ ±£∫∑÷£©" << endl;
+				cout << "ËØ∑ËæìÂÖ•Á¶ªÂºÄÊó∂Èó¥ÔºàÊó•ÔºöÊó∂ÔºöÂàÜÔºâ" << endl;
 				int day = 0;
 				int hour = 0;
 				int minute = 0;
 				int time = 0;
-				cout << "»’∆⁄£∫";
+				cout << "Êó•ÊúüÔºö";
 				cin >> day;
-				cout << "–° ±£∫";
+				cout << "Â∞èÊó∂Ôºö";
 				cin >> hour;
-				cout << "∑÷÷”£∫";
+				cout << "ÂàÜÈíüÔºö";
 				cin >> minute;
 				time = day * 24 * 60 + hour * 60 + minute;
 				time = (time - parkinglot->get_top()->arriving_time);
 				float cost = time * fee;
-				cout << "∆˚≥µ≥µ≈∆∫≈Œ™" << parkinglot->get_top()->license << "π≤Õ£≥µ" << time << "∑÷÷”,”¶ ’»°∑—”√" << cost << "‘™" << endl;
+				cout << "Ê±ΩËΩ¶ËΩ¶ÁâåÂè∑‰∏∫" << parkinglot->get_top()->license << "ÂÖ±ÂÅúËΩ¶" << time << "ÂàÜÈíü,Â∫îÊî∂ÂèñË¥πÁî®" << cost << "ÂÖÉ" << endl;
 				parkinglot->stack_pop();
 				while (!temp->stack_isempty())
 				{
 					parkinglot->stack_push(temp->get_top()->license, temp->get_top()->arriving_time);
 					temp->stack_pop();
 				}
-				if (!accessroad->queue_isempty())  //µ±±„µ¿≤ªŒ™ø’£¨”–≥µ ±
+				if (!accessroad->queue_isempty()) //ÂΩì‰æøÈÅì‰∏ç‰∏∫Á©∫ÔºåÊúâËΩ¶Êó∂
 				{
 					node *tem = new node("0");
 					tem = accessroad->queue_out();
 					parkinglot->stack_push(tem->license, time);
-					cout << "“Ú±„µ¿”–≥µ£¨«“Õ£≥µ≥°”–ø’Œª£¨π ≈≈∂”◊Ó«∞≥µ≈∆∫≈Œ™" << tem->license << "µƒ∆˚≥µ”⁄" << day << "»’" << hour << " ±" << minute << "∑÷Õ£»ÎÕ£≥µ≥°" << endl;
+					cout << "Âõ†‰æøÈÅìÊúâËΩ¶Ôºå‰∏îÂÅúËΩ¶Âú∫ÊúâÁ©∫‰ΩçÔºåÊïÖÊéíÈòüÊúÄÂâçËΩ¶ÁâåÂè∑‰∏∫" << tem->license << "ÁöÑÊ±ΩËΩ¶‰∫é" << day << "Êó•" << hour << "Êó∂" << minute << "ÂàÜÂÅúÂÖ•ÂÅúËΩ¶Âú∫" << endl;
 					delete tem;
 				}
 			}
 			else
 			{
-				cout << "≥µ≈∆∫≈Œ™" << tem << "µƒ∆˚≥µƒø«∞≤ª‘⁄Õ£≥µ≥°£¨»Á–Ë∏¸œÍœ∏–≈œ¢£¨«Î∞¥S≤Èø¥Õ£≥µ≥°»´≤ø–≈œ¢" << endl;
-				if (accessroad->queue_find(tem)) {
-					cout << "≥µ≈∆∫≈Œ™" << tem << "µƒ∆˚≥µƒø«∞‘⁄±„µ¿£¨»Á–Ë∏¸œÍœ∏–≈œ¢£¨«Î∞¥S≤Èø¥Õ£≥µ≥°»´≤ø–≈œ¢" << endl;
+				cout << "ËΩ¶ÁâåÂè∑‰∏∫" << tem << "ÁöÑÊ±ΩËΩ¶ÁõÆÂâç‰∏çÂú®ÂÅúËΩ¶Âú∫ÔºåÂ¶ÇÈúÄÊõ¥ËØ¶ÁªÜ‰ø°ÊÅØÔºåËØ∑ÊåâSÊü•ÁúãÂÅúËΩ¶Âú∫ÂÖ®ÈÉ®‰ø°ÊÅØ" << endl;
+				if (accessroad->queue_find(tem))
+				{
+					cout << "ËΩ¶ÁâåÂè∑‰∏∫" << tem << "ÁöÑÊ±ΩËΩ¶ÁõÆÂâçÂú®‰æøÈÅìÔºåÂ¶ÇÈúÄÊõ¥ËØ¶ÁªÜ‰ø°ÊÅØÔºåËØ∑ÊåâSÊü•ÁúãÂÅúËΩ¶Âú∫ÂÖ®ÈÉ®‰ø°ÊÅØ" << endl;
 				}
 				else
 				{
-					cout << "≥µ≈∆∫≈Œ™" << tem << "µƒ∆˚≥µƒø«∞≤ª‘⁄±„µ¿£¨»Á–Ë∏¸œÍœ∏–≈œ¢£¨«Î∞¥S≤Èø¥Õ£≥µ≥°»´≤ø–≈œ¢" << endl;
+					cout << "ËΩ¶ÁâåÂè∑‰∏∫" << tem << "ÁöÑÊ±ΩËΩ¶ÁõÆÂâç‰∏çÂú®‰æøÈÅìÔºåÂ¶ÇÈúÄÊõ¥ËØ¶ÁªÜ‰ø°ÊÅØÔºåËØ∑ÊåâSÊü•ÁúãÂÅúËΩ¶Âú∫ÂÖ®ÈÉ®‰ø°ÊÅØ" << endl;
 				}
 			}
 		}

@@ -1,60 +1,53 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int visited[100]={0};
-int Visited[100]={0};
+int visited[100] = {0};
+int Visited[100] = {0};
 typedef struct Edge
 {
 	int loc;
 	struct Edge *next;
-}*point;
+} * point;
 
 typedef struct VNode
-{   
+{
 	int vertex;
 	struct Edge *link;
-}*Node;
+} * Node;
 struct VNode a[10];
 
-static int n,e;
-
+static int n, e;
 
 void create(struct VNode a[])
 {
-	
-	cout<<" ‰»ÎÕºµƒ∂•µ„ ˝∫Õ±ﬂ ˝£∫";
-	cin>>n>>e;
-	for(int i=1;i<=n;i++)//≥ı ºªØ¡⁄Ω”±Ì
-	{
-		a[i].vertex=i;
-		a[i].link=NULL;
 
+	cout << "ËæìÂÖ•ÂõæÁöÑÈ°∂ÁÇπÊï∞ÂíåËæπÊï∞Ôºö";
+	cin >> n >> e;
+	for (int i = 1; i <= n; i++) //ÂàùÂßãÂåñÈÇªÊé•Ë°®
+	{
+		a[i].vertex = i;
+		a[i].link = NULL;
 	}
-	for(int j=0;j<e;j++)
+	for (int j = 0; j < e; j++)
 	{
-		cout<<" ‰»Î∂•µ„∂‘£∫";// ‰»Îœ»”“∫Û◊Û  
-		int vert,adj;
-		cin>>vert>>adj;
+		cout << "ËæìÂÖ•È°∂ÁÇπÂØπÔºö"; //ËæìÂÖ•ÂÖàÂè≥ÂêéÂ∑¶
+		int vert, adj;
+		cin >> vert >> adj;
 		point p;
-		p=new Edge;
-		p->loc=adj;
-		p->next=a[vert].link;
-		a[vert].link=p;
-
-
-
+		p = new Edge;
+		p->loc = adj;
+		p->next = a[vert].link;
+		a[vert].link = p;
 	}
 }
 
-
-
- void dfs(struct VNode a[], int V0)
+void dfs(struct VNode a[], int V0)
 {
 	point p;
 	if (visited[V0] == 0)
 	{
 		cout << a[V0].vertex << endl;
 		visited[V0] = 1;
-	}//¥¶¿Ìπ¬¡¢∂•µ„µƒŒ Ã‚
+	} //Â§ÑÁêÜÂ≠§Á´ãÈ°∂ÁÇπÁöÑÈóÆÈ¢ò
 	p = a[V0].link;
 	while (p != NULL)
 	{
@@ -62,22 +55,23 @@ void create(struct VNode a[])
 		{
 			dfs(a, p->loc);
 		}
-		p = p->next;//p±ÿ–Î¥´≤Œ
+		p = p->next; //pÂøÖÈ°ª‰º†ÂèÇ
 	}
 }
 
- void bfs(struct VNode a[], int V0)
+void bfs(struct VNode a[], int V0)
 {
 	int Q[100];
 	if (Visited[V0] == 0)
 	{
 		cout << V0 << endl;
 		Visited[V0] = 1;
-	}//¥¶¿Ìπ¬¡¢∂•µ„µƒŒ Ã‚
+	} //Â§ÑÁêÜÂ≠§Á´ãÈ°∂ÁÇπÁöÑÈóÆÈ¢ò
 	int f = 0, r = 0;
 	point p = new Edge;
 	p = a[V0].link;
-	do {
+	do
+	{
 		while (p != NULL)
 		{
 			if (Visited[p->loc] == 0)
@@ -99,31 +93,32 @@ void create(struct VNode a[])
 
 void show(struct VNode a[])
 {
-		for(int i=1;i<=n;i++){
-		cout<<a[i].vertex<<"->";
+	for (int i = 1; i <= n; i++)
+	{
+		cout << a[i].vertex << "->";
 		point q;
 		q = new Edge;
-		q=a[i].link;
-		while(q!=NULL){
-			cout<<q->loc<<"->";
-			q=q->next;
+		q = a[i].link;
+		while (q != NULL)
+		{
+			cout << q->loc << "->";
+			q = q->next;
 		}
-		cout<<endl;
+		cout << endl;
 	}
 }
-
 
 int main()
 {
 	create(a);
-	 show(a);
+	show(a);
 	for (int i = 1; i <= n; i++)
 	{
 		visited[i] = 0;
 	}
-	cout << "∞¥…Ó∂»±È¿˙" << endl;
+	cout << "ÊåâÊ∑±Â∫¶ÈÅçÂéÜ" << endl;
 	point p = new Edge;
-	for (int j = 1; j <= n; j++)//¥¶¿Ìπ¬¡¢∂•µ„µƒŒ Ã‚
+	for (int j = 1; j <= n; j++) //Â§ÑÁêÜÂ≠§Á´ãÈ°∂ÁÇπÁöÑÈóÆÈ¢ò
 	{
 		dfs(a, j);
 	}
@@ -131,11 +126,10 @@ int main()
 	{
 		Visited[k] = 0;
 	}
-	cout << "∞¥π„∂»±È¿˙" << endl;
-	for (int l = 1; l <= n; l++)//¥¶¿Ìπ¬¡¢∂•µ„µƒŒ Ã‚
+	cout << "ÊåâÂπøÂ∫¶ÈÅçÂéÜ" << endl;
+	for (int l = 1; l <= n; l++) //Â§ÑÁêÜÂ≠§Á´ãÈ°∂ÁÇπÁöÑÈóÆÈ¢ò
 	{
 		bfs(a, l);
 	}
 	return 0;
 }
-

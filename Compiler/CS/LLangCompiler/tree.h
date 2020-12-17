@@ -6,7 +6,7 @@
 #include "GenStruct.h"
 using namespace std;
 
-//µÃµ½ºóÃæµÄµØÖ·
+//å¾—åˆ°åé¢çš„åœ°å€
 string getNextquad()
 {
 	string s;
@@ -16,7 +16,7 @@ string getNextquad()
 
 typedef token DataType;
 
-//Óï·¨Ê÷½Úµã½á¹¹Ìå
+//è¯­æ³•æ ‘èŠ‚ç‚¹ç»“æ„ä½“
 struct TreeNode
 {
 	TreeNode()
@@ -28,22 +28,22 @@ struct TreeNode
 		child = NULL;
 	}
 	DataType data;
-	TreeNode * sibling; //ÓÒĞÖµÜ½áµã
-	TreeNode * child;   //×ó×Ó½áµã
+	TreeNode * sibling; //å³å…„å¼Ÿç»“ç‚¹
+	TreeNode * child;   //å·¦å­ç»“ç‚¹
 	string nextquad;
 	string fristnextquad;
-	string value;  //´ú±íµÄÖµ,²úÉúÊ½µÚËÄÔªËØÈçT1£¬T2
+	string value;  //ä»£è¡¨çš„å€¼,äº§ç”Ÿå¼ç¬¬å››å…ƒç´ å¦‚T1ï¼ŒT2
 	vector<string>nextlist;
-	vector<string>truelist; //Õæ³ö¿Ú¼¯
-	vector<string>falselist; //³ö¿Ú¼¯
+	vector<string>truelist; //çœŸå‡ºå£é›†
+	vector<string>falselist; //å‡ºå£é›†
 };
 
 
-// ´æ´¢ÀàĞÍÎª TreeNode*
+// å­˜å‚¨ç±»å‹ä¸º TreeNode*
 typedef TreeNode *DataStack;
 
 
-//Ê÷¶¨Òå
+//æ ‘å®šä¹‰
 class Tree
 {
 private:
@@ -64,7 +64,7 @@ public:
 };
 
 
-//¸¨ÖúÀàÕ»
+//è¾…åŠ©ç±»æ ˆ
 class Stack
 {
 private:
@@ -100,7 +100,7 @@ public:
 };
 
 
-//ÆÕÍ¨Ê÷·½·¨ÊµÏÖ
+//æ™®é€šæ ‘æ–¹æ³•å®ç°
 #pragma region classTreeMethod
 
 Tree::Tree(const DataType &data)
@@ -114,7 +114,7 @@ Tree::~Tree()
 	Destroy(root);
 }
 
-//½¨Ò»¸ö¸ù½ÚµãÊ÷
+//å»ºä¸€ä¸ªæ ¹èŠ‚ç‚¹æ ‘
 void Tree::Init(const DataType &data)
 {
 	root = new TreeNode;
@@ -124,7 +124,7 @@ void Tree::Init(const DataType &data)
 }
 
 
-//Ê÷µÄÏú»Ù
+//æ ‘çš„é”€æ¯
 void Tree::Destroy(TreeNode * p)
 {
 	if (p == NULL)
@@ -138,12 +138,12 @@ void Tree::Destroy(TreeNode * p)
 }
 
 
-//Ìí¼ÓÒ»¸ö×Ó½Úµã
+//æ·»åŠ ä¸€ä¸ªå­èŠ‚ç‚¹
 TreeNode * Tree::InsertChild(TreeNode * p, DataType data)
 {
 	if (p->child)
 	{
-		return p->child; //ÒÑÓĞ×Ó½áµã
+		return p->child; //å·²æœ‰å­ç»“ç‚¹
 	}
 	TreeNode *pNew = new TreeNode;
 	pNew->data = data;
@@ -153,19 +153,19 @@ TreeNode * Tree::InsertChild(TreeNode * p, DataType data)
 
 
 
-//Ìí¼ÓĞÖµÜ½Úµã£¨treenodeÀà£©
+//æ·»åŠ å…„å¼ŸèŠ‚ç‚¹ï¼ˆtreenodeç±»ï¼‰
 TreeNode * InsertSibling(TreeNode * p, TreeNode * data)
 {
 	if (p->sibling)
 	{
-		return p->sibling;//ÒÑÓĞĞÖµÜ½áµã
+		return p->sibling;//å·²æœ‰å…„å¼Ÿç»“ç‚¹
 	}
 	p->sibling = data;
 	return p->sibling;
 }
 
 
-//¼ÓÉÏËùÓĞ×Ó½Úµã
+//åŠ ä¸Šæ‰€æœ‰å­èŠ‚ç‚¹
 TreeNode * InsertAllChild(TreeNode * p, vector<TreeNode> data)
 {
 
@@ -192,7 +192,7 @@ TreeNode * InsertAllChild(TreeNode * p, vector<TreeNode> data)
 }
 
 
-//´´½¨Ò»¸öĞÂµÄÊ÷½Úµã£¨tokenÀà£©
+//åˆ›å»ºä¸€ä¸ªæ–°çš„æ ‘èŠ‚ç‚¹ï¼ˆtokenç±»ï¼‰
 TreeNode *CreateTreeNode(DataType data)
 {
 	TreeNode *pNew = new TreeNode;
@@ -203,8 +203,8 @@ TreeNode *CreateTreeNode(DataType data)
 #pragma endregion
 
 
-//ÓïÒå¶¯×÷±í£¨´´½¨ËÄÔªÊ½£©
-void GrammarAction(TreeNode  *pNew, vector<TreeNode> pushend, int index) // index´ú±íÆäÎÄ·¨Ë÷Òı pushend´ú±í¸÷¸ö½áµã  pNew ¸ù½áµã
+//è¯­ä¹‰åŠ¨ä½œè¡¨ï¼ˆåˆ›å»ºå››å…ƒå¼ï¼‰
+void GrammarAction(TreeNode  *pNew, vector<TreeNode> pushend, int index) // indexä»£è¡¨å…¶æ–‡æ³•ç´¢å¼• pushendä»£è¡¨å„ä¸ªç»“ç‚¹  pNew æ ¹ç»“ç‚¹
 {
 
 	string value1;
@@ -227,7 +227,7 @@ void GrammarAction(TreeNode  *pNew, vector<TreeNode> pushend, int index) // inde
 		backpatch(pushend[pushend.size() - 2].truelist, pushend[pushend.size() - 2].nextquad);
 		pNew->nextlist = merge(pushend[0].nextlist, pushend[pushend.size() - 2].falselist);
 		break;
-	case 5://if B then L else S,then ÒªÌø×ªµ½ elseºóÃæ
+	case 5://if B then L else S,then è¦è·³è½¬åˆ° elseåé¢
 		int2str(stoi(pushend[2].nextquad) + 1, backpatchfalse);
 		backpatch(pushend[pushend.size() - 2].truelist, pushend[pushend.size() - 2].nextquad);
 		backpatch(pushend[pushend.size() - 2].falselist, backpatchfalse);

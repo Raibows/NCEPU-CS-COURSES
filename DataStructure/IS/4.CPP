@@ -1,42 +1,41 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-#define MaxNum 100  //×î´óÖµ
-static int Visited[MaxNum] = { 0 };
-static int visited[MaxNum] = { 0 };
+#define MaxNum 100 //ï¿½ï¿½ï¿½Öµ
+static int Visited[MaxNum] = {0};
+static int visited[MaxNum] = {0};
 
-// ±ß±í±í½Úµã
-typedef struct node  
+// ï¿½ß±ï¿½ï¿½ï¿½ï¿½Úµï¿½
+typedef struct node
 {
 	int adjvex;
-	node* next;
-}EdgeNode;
+	node *next;
+} EdgeNode;
 
-//¶¥µã±í½Úµã
-typedef struct 
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
+typedef struct
 {
 	int vertex;
 	EdgeNode *link;
-}VertexNode;
+} VertexNode;
 
 typedef VertexNode AdjList[MaxNum];
 
-//½¨Á¢Í¼
+//ï¿½ï¿½ï¿½ï¿½Í¼
 static int n, e;
 void create(AdjList &ga)
 {
 
-	cout << "ÊäÈëÍ¼µÄ¶¥µãÊýºÍ±ßÊý£º";
+	cout << "ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í±ï¿½ï¿½ï¿½ï¿½ï¿½";
 	cin >> n >> e;
-	for (int i = 1; i<=n; i++)
+	for (int i = 1; i <= n; i++)
 	{
-		ga[i].vertex	= i;
-		ga[i].link		= NULL;
-
+		ga[i].vertex = i;
+		ga[i].link = NULL;
 	}
-	for (int j = 0; j<e; j++)
+	for (int j = 0; j < e; j++)
 	{
-		cout << "ÊäÈë¶¥µã¶Ô£º";
+		cout << "ï¿½ï¿½ï¿½ë¶¥ï¿½ï¿½Ô£ï¿½";
 		int vert, adj;
 		cin >> vert >> adj;
 
@@ -45,25 +44,26 @@ void create(AdjList &ga)
 
 		p->adjvex = adj;
 		p->next = ga[vert].link;
-		ga[vert].link=p;
+		ga[vert].link = p;
 
 		EdgeNode *q;
 		q = new EdgeNode;
 		q->adjvex = vert;
 		q->next = ga[adj].link;
-		ga[adj].link=q;
-
+		ga[adj].link = q;
 	}
 }
 
-void show(AdjList &ga)//Õ¹Ê¾Í¼
+void show(AdjList &ga) //Õ¹Ê¾Í¼
 {
-	for (int i =1; i<=n; i++) {
+	for (int i = 1; i <= n; i++)
+	{
 		cout << ga[i].vertex << "->";
 		EdgeNode *q;
 		q = new EdgeNode;
 		q = ga[i].link;
-		while (q != NULL) {
+		while (q != NULL)
+		{
 			cout << q->adjvex << "->";
 			q = q->next;
 		}
@@ -71,7 +71,7 @@ void show(AdjList &ga)//Õ¹Ê¾Í¼
 	}
 }
 
-//Éî¶È±éÀú
+//ï¿½ï¿½È±ï¿½ï¿½ï¿½
 void dfs(AdjList &ga, int v0)
 {
 	Visited[v0] = 1;
@@ -82,19 +82,19 @@ void dfs(AdjList &ga, int v0)
 	{
 		if (Visited[p->adjvex] == 0)
 			dfs(ga, p->adjvex);
-		p = p->next;   
+		p = p->next;
 	}
 }
 
-// ¹ã¶È±éÀú
+// ï¿½ï¿½È±ï¿½ï¿½ï¿½
 void bfs(AdjList &ga, int v0)
 {
-	int Q[MaxNum];//½¨Ò»¸ö¶Ó
+	int Q[MaxNum]; //ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½
 	visited[v0] = 1;
 	cout << ga[v0].vertex << " ";
 
 	int f, r;
-	f = r = 0;//¶ÓÎª¿Õ
+	f = r = 0; //ï¿½ï¿½Îªï¿½ï¿½
 
 	EdgeNode *p;
 	p = new EdgeNode;
@@ -106,7 +106,7 @@ void bfs(AdjList &ga, int v0)
 		{
 			int v;
 			v = p->adjvex;
-			if (visited[v] == 0)//ÈôvÎ´±»·ÃÎÊ£¬vÈë¶Ó
+			if (visited[v] == 0) //ï¿½ï¿½vÎ´ï¿½ï¿½ï¿½ï¿½ï¿½Ê£ï¿½vï¿½ï¿½ï¿½
 			{
 				r++;
 				Q[r] = v;
@@ -116,7 +116,7 @@ void bfs(AdjList &ga, int v0)
 			p = p->next;
 		}
 
-		if (f != r)//Èô¶Ó²»¿Õ£¬¶ÔÍ·³ö¶Ó
+		if (f != r) //ï¿½ï¿½ï¿½Ó²ï¿½ï¿½Õ£ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½ï¿½
 		{
 			f++;
 			p = ga[Q[f]].link;
@@ -124,18 +124,17 @@ void bfs(AdjList &ga, int v0)
 	} while ((p != NULL) || (f != r));
 }
 
-
 void main()
 {
 	AdjList ga;
 	create(ga);
 	show(ga);
 	int V;
-	cout << "ÊäÈëÉî¶È±éÀúÆðµã£º";
+	cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È±ï¿½ï¿½ï¿½ï¿½ï¿½ã£º";
 	cin >> V;
 	dfs(ga, V);
 	cout << endl;
-	cout << "ÊäÈë¹ã¶È±éÀúÆðµã£º";
+	cout << "ï¿½ï¿½ï¿½ï¿½ï¿½È±ï¿½ï¿½ï¿½ï¿½ï¿½ã£º";
 	int v;
 	cin >> v;
 	bfs(ga, v);

@@ -1,24 +1,30 @@
 //BINARY TREE
 //storage in binary list
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-//node 
-template <class N>class node{
+//node
+template <class N>
+class node
+{
 public:
     node(N a);
     N data;
     node *lchild;
     node *rchild;
 };
-template<class N> node<N>::node(N a){
-    data=a;
-    lchild=NULL;
-    rchild=NULL;
+template <class N>
+node<N>::node(N a)
+{
+    data = a;
+    lchild = NULL;
+    rchild = NULL;
 }
 
 //tree
-template<class T>class tree{
+template <class T>
+class tree
+{
 public:
     tree();
     ~tree();
@@ -29,73 +35,96 @@ public:
     void help_init(node<T> *point);
     node<T> *root;
 };
-template<class T>tree<T>::tree(){
-    cout<<"ÇëÒÀ´ÎÊäÈë½áµãÊý¾Ý£¬×ó×ÓÊ÷Êý¾Ý£¬ÓÒ×ÓÊ÷Êý¾Ý£¬Èô×ÓÊ÷Îª¿Õ£¬ÇëÊäÈë0"<<endl;
+template <class T>
+tree<T>::tree()
+{
+    cout << "è¯·ä¾æ¬¡è¾“å…¥ç»“ç‚¹æ•°æ®ï¼Œå·¦å­æ ‘æ•°æ®ï¼Œå³å­æ ‘æ•°æ®ï¼Œè‹¥å­æ ‘ä¸ºç©ºï¼Œè¯·è¾“å…¥0" << endl;
     T temp;
-    cout<<"ÇëÊäÈë¸ù½Úµã";
-    cin>>temp;
-    root=new node<T>(temp);
+    cout << "è¯·è¾“å…¥æ ¹èŠ‚ç‚¹";
+    cin >> temp;
+    root = new node<T>(temp);
     help_init(root);
-    cout<<"created successfully!"<<endl;
-} 
-template<class T>void tree<T>::help_init(node<T> *point){
-    T ltemp,rtemp;
-    //cout<<"ÇëÊäÈë½ÚµãÖµÎª"<<point->data<<"µÄ×ó×ÓÊ÷";
-    cin>>ltemp;
-    if(ltemp!=0){
-        node<T> *ltem=new node<T>(ltemp);
-        point->lchild=ltem;
-        help_init(ltem);
-    }else{
-        //cout<<"½ÚµãÖµÎª"<<point->data<<"µÄ×ó×ÓÊ÷½«Îª¿ÕÊ÷"<<endl;
-    }
-    //cout<<"ÇëÊäÈë½ÚµãÖµÎª"<<point->data<<"µÄÓÒ×ÓÊ÷";
-    cin>>rtemp;
-    if(rtemp!=0){
-        node<T> *rtem=new node<T>(rtemp);
-        point->rchild=rtem;
-        help_init(rtem);
-    }else{
-        //cout<<"½ÚµãÖµÎª"<<point->data<<"µÄÓÒ×ÓÊ÷½«Îª¿ÕÊ÷"<<endl;
-    }   
+    cout << "created successfully!" << endl;
 }
-template<class T>void tree<T>::traverse(){
+template <class T>
+void tree<T>::help_init(node<T> *point)
+{
+    T ltemp, rtemp;
+    //cout<<"è¯·è¾“å…¥èŠ‚ç‚¹å€¼ä¸º"<<point->data<<"çš„å·¦å­æ ‘";
+    cin >> ltemp;
+    if (ltemp != 0)
+    {
+        node<T> *ltem = new node<T>(ltemp);
+        point->lchild = ltem;
+        help_init(ltem);
+    }
+    else
+    {
+        //cout<<"èŠ‚ç‚¹å€¼ä¸º"<<point->data<<"çš„å·¦å­æ ‘å°†ä¸ºç©ºæ ‘"<<endl;
+    }
+    //cout<<"è¯·è¾“å…¥èŠ‚ç‚¹å€¼ä¸º"<<point->data<<"çš„å³å­æ ‘";
+    cin >> rtemp;
+    if (rtemp != 0)
+    {
+        node<T> *rtem = new node<T>(rtemp);
+        point->rchild = rtem;
+        help_init(rtem);
+    }
+    else
+    {
+        //cout<<"èŠ‚ç‚¹å€¼ä¸º"<<point->data<<"çš„å³å­æ ‘å°†ä¸ºç©ºæ ‘"<<endl;
+    }
+}
+template <class T>
+void tree<T>::traverse()
+{
     //preorder traverse
-    cout<<"ÏÈÐò±éÀú£º";
+    cout << "å…ˆåºéåŽ†ï¼š";
     preorder(root);
     //inorder traverse
-    cout<<endl<<"ÖÐÐò±éÀú£º";
+    cout << endl
+         << "ä¸­åºéåŽ†ï¼š";
     inorder(root);
     //postorder traverse
-    cout<<endl<<"ºóÐò±éÀú£º";
+    cout << endl
+         << "åŽåºéåŽ†ï¼š";
     postorder(root);
 }
-template<class T>void tree<T>::preorder(node<T> *point){
-    if(point!=NULL){
-        cout<<point->data<<" ";
+template <class T>
+void tree<T>::preorder(node<T> *point)
+{
+    if (point != NULL)
+    {
+        cout << point->data << " ";
         preorder(point->lchild);
         preorder(point->rchild);
     }
 }
-template<class T>void tree<T>::inorder(node<T> *point){
-    if(point!=NULL){
+template <class T>
+void tree<T>::inorder(node<T> *point)
+{
+    if (point != NULL)
+    {
         inorder(point->lchild);
-        cout<<point->data<<" ";
+        cout << point->data << " ";
         inorder(point->rchild);
     }
 }
-template<class T>void tree<T>::postorder(node<T> *point){
-    if(point!=NULL){
+template <class T>
+void tree<T>::postorder(node<T> *point)
+{
+    if (point != NULL)
+    {
         postorder(point->lchild);
         postorder(point->rchild);
-        cout<<point->data<<" ";
+        cout << point->data << " ";
     }
 }
 
-
 //below is main function
-int main(){
-    tree<int> *testtree=new tree<int>();
+int main()
+{
+    tree<int> *testtree = new tree<int>();
     testtree->traverse();
     return 0;
 }

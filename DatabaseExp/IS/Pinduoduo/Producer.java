@@ -14,14 +14,14 @@ import javax.swing.border.TitledBorder;
 
 @SuppressWarnings("serial")
 public class Producer extends JFrame {
-	private	JButton		manu_b1	= new JButton("²é¿´ÉÌÆ·");
-	private JButton		manu_b2	= new JButton("Ôö¼ÓÉÌÆ·");
-	private JButton		manu_b3	= new JButton("É¾³ıÉÌÆ·");
-	private JButton		manu_b5	= new JButton("ĞŞ¸ÄÉÌÆ·");
-	private JButton		manu_b4	= new JButton("ÍË³öµÇÂ¼");
-	private JMenuBar	mb 		= new JMenuBar();//´´½¨²Ëµ¥À¸
+	private	JButton		manu_b1	= new JButton("æŸ¥çœ‹å•†å“");
+	private JButton		manu_b2	= new JButton("å¢åŠ å•†å“");
+	private JButton		manu_b3	= new JButton("åˆ é™¤å•†å“");
+	private JButton		manu_b5	= new JButton("ä¿®æ”¹å•†å“");
+	private JButton		manu_b4	= new JButton("é€€å‡ºç™»å½•");
+	private JMenuBar	mb 		= new JMenuBar();//åˆ›å»ºèœå•æ 
 	private JTable 		table	= null;
-	private Object columnName[]	= {"ÉÌÆ·ÕËºÅ", "ÉÌÆ·Ãû", "µ¥¼Û", "ÊıÁ¿", "ÉÌ¼ÒÃû"};
+	private Object columnName[]	= {"å•†å“è´¦å·", "å•†å“å", "å•ä»·", "æ•°é‡", "å•†å®¶å"};
     private Object 		ar[][]	= new Object[80][5];
 	private	int producer_id;
 	
@@ -46,9 +46,9 @@ public class Producer extends JFrame {
 		
 		Toolkit kit=Toolkit.getDefaultToolkit();
 		Dimension screen=kit.getScreenSize();
-		int x=screen.width;					// È¡µÃÏÔÊ¾Æ÷´°¿ÚµÄ¿í¶È
+		int x=screen.width;					// å–å¾—æ˜¾ç¤ºå™¨çª—å£çš„å®½åº¦
 		int y=screen.height;
-		setSize(500,650);		// ÈÃÏµÍ³´°¿ÚÆ½ÆÌÕû¸öÏÔÊ¾Æ÷´°¿Ú
+		setSize(500,650);		// è®©ç³»ç»Ÿçª—å£å¹³é“ºæ•´ä¸ªæ˜¾ç¤ºå™¨çª—å£
 	    int xcenter=(x-500)/2;
 	    int ycenter=(y-650)/2;
 	    setLocation(xcenter,ycenter);
@@ -67,20 +67,20 @@ public class Producer extends JFrame {
 	private class MyActionListener implements  ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			String b = e.getActionCommand();
-			if (b.equals("²é¿´ÉÌÆ·")) {
+			if (b.equals("æŸ¥çœ‹å•†å“")) {
 				Producer.this.viewThing(producer_id);
-			} else if (b.equals("Ôö¼ÓÉÌÆ·")) {
+			} else if (b.equals("å¢åŠ å•†å“")) {
 				Producer.this.addThing(producer_id);
-			} else if (b.equals("É¾³ıÉÌÆ·")) {
+			} else if (b.equals("åˆ é™¤å•†å“")) {
 				Producer.this.delete();
-			} else if (b.equals("ĞŞ¸ÄÉÌÆ·")) {
+			} else if (b.equals("ä¿®æ”¹å•†å“")) {
 				Producer.this.alter(producer_id);
-			}else if (b.equals("ÍË³öµÇÂ¼")) {
+			}else if (b.equals("é€€å‡ºç™»å½•")) {
 				Producer.this.logout();;
 			}
 		}
 	}
-	//ÊÓÍ¼
+	//è§†å›¾
 	private void viewThing(int pid) {
     	MySQLDemo view_con = new MySQLDemo();
 		view_con.connect();
@@ -123,8 +123,8 @@ public class Producer extends JFrame {
 			table.setRowHeight(20);
 	    	JScrollPane scrollpane = new JScrollPane(table);
 	    	panelCerter.add(scrollpane);
-	    	scrollpane.setBounds(2, 2, 490, 590);//ÒÆ¶¯×é¼ş²¢µ÷ÕûÆä´óĞ¡£¬x,y,kuan,chang
-			panelCerter.repaint();//ÖØ»æ×é¼ş
+	    	scrollpane.setBounds(2, 2, 490, 590);//ç§»åŠ¨ç»„ä»¶å¹¶è°ƒæ•´å…¶å¤§å°ï¼Œx,y,kuan,chang
+			panelCerter.repaint();//é‡ç»˜ç»„ä»¶
 		
 			view_con.closed();
 		} catch (SQLException e) {
@@ -136,7 +136,7 @@ public class Producer extends JFrame {
 		
 		if(table==null)
 		{
-			JOptionPane.showMessageDialog(null,"ÇëÏÈµã»÷²é¿´ÉÌÆ·°´Å¥£¡");
+			JOptionPane.showMessageDialog(null,"è¯·å…ˆç‚¹å‡»æŸ¥çœ‹å•†å“æŒ‰é’®ï¼");
 		}else{
 			try{
 			int count = table.getSelectedRow();
@@ -168,8 +168,8 @@ public class Producer extends JFrame {
 			int res1 = smt.executeUpdate();
 
 			if(res1 > 0){
-    			System.out.println("¸üĞÂ³É¹¦");
-    			JOptionPane.showMessageDialog(null,"ĞŞ¸Ä³É¹¦£¡");
+    			System.out.println("æ›´æ–°æˆåŠŸ");
+    			JOptionPane.showMessageDialog(null,"ä¿®æ”¹æˆåŠŸï¼");
     		}
 			
 			smt.close();
@@ -180,20 +180,20 @@ public class Producer extends JFrame {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}catch (NumberFormatException e) {
-			JOptionPane.showMessageDialog(null,"Çëµã»÷ÒªĞŞ¸ÄµÄÉÌÆ·ĞÅÏ¢£¡");
+			JOptionPane.showMessageDialog(null,"è¯·ç‚¹å‡»è¦ä¿®æ”¹çš„å•†å“ä¿¡æ¯ï¼");
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null,"Çëµã»÷±íÀ¸ĞŞ¸ÄÉÌÆ·£¡");
+			JOptionPane.showMessageDialog(null,"è¯·ç‚¹å‡»è¡¨æ ä¿®æ”¹å•†å“ï¼");
 		}finally {
 			
 			Producer.this.viewThing(pid);
 		}
 		}
 	}
-	//Ìí¼Ó
+	//æ·»åŠ 
 	private void addThing(int pid) {
 		if(table==null)
 		{
-			JOptionPane.showMessageDialog(null,"ÇëÏÈµã»÷²é¿´ÉÌÆ·°´Å¥£¡");
+			JOptionPane.showMessageDialog(null,"è¯·å…ˆç‚¹å‡»æŸ¥çœ‹å•†å“æŒ‰é’®ï¼");
 		}
 		else{
 			
@@ -219,8 +219,8 @@ public class Producer extends JFrame {
 				smt.setInt(3, price);
 				smt.setInt(4, num);
 				smt.setInt(5, pid);
-				if (smt.executeUpdate() > 0) {//executeUpdateµÄ·µ»ØÖµÊÇÒ»¸öÕûÊı£¬Ö¸Ê¾ÊÜÓ°ÏìµÄĞĞÊı
-					JOptionPane.showMessageDialog(null,"Ìí¼Ó³É¹¦");
+				if (smt.executeUpdate() > 0) {//executeUpdateçš„è¿”å›å€¼æ˜¯ä¸€ä¸ªæ•´æ•°ï¼ŒæŒ‡ç¤ºå—å½±å“çš„è¡Œæ•°
+					JOptionPane.showMessageDialog(null,"æ·»åŠ æˆåŠŸ");
 					Producer.this.viewThing(pid);
 					
 					smt.close();
@@ -229,18 +229,18 @@ public class Producer extends JFrame {
 				
 			}//end if
 			else {
-				JOptionPane.showMessageDialog(null,"ÉÌÆ·ÒÑ¾­´æÔÚ,½ûÖ¹Ìí¼Ó,ÇëÖØĞÂÊäÈë£¡");
+				JOptionPane.showMessageDialog(null,"å•†å“å·²ç»å­˜åœ¨,ç¦æ­¢æ·»åŠ ,è¯·é‡æ–°è¾“å…¥ï¼");
 				Producer.this.viewThing(pid);
 			}
 			
 			add_con.closed();
 		} catch (SQLException e) {
 			e.printStackTrace();
-			//JOptionPane.showMessageDialog(null,"Çëµã»÷±íÀ¸Ìí¼ÓÉÌÆ·£¡");
+			//JOptionPane.showMessageDialog(null,"è¯·ç‚¹å‡»è¡¨æ æ·»åŠ å•†å“ï¼");
 		}catch (NumberFormatException e) {
-			JOptionPane.showMessageDialog(null,"ÇëÍêÕûÌí¼ÓÉÌÆ·ĞÅÏ¢£¡");
+			JOptionPane.showMessageDialog(null,"è¯·å®Œæ•´æ·»åŠ å•†å“ä¿¡æ¯ï¼");
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null,"Çëµã»÷±íÀ¸Ìí¼ÓÉÌÆ·£¡");
+			JOptionPane.showMessageDialog(null,"è¯·ç‚¹å‡»è¡¨æ æ·»åŠ å•†å“ï¼");
 		}
 		}
 	}
@@ -262,18 +262,18 @@ public class Producer extends JFrame {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			//JOptionPane.showMessageDialog(null,"Çëµã»÷±íÀ¸Ìí¼ÓÉÌÆ·£¡");
+			//JOptionPane.showMessageDialog(null,"è¯·ç‚¹å‡»è¡¨æ æ·»åŠ å•†å“ï¼");
 			
 			
 		} finally {
 			return num;
 		}
 	}
-	//ĞŞ¸Ä
+	//ä¿®æ”¹
 	private void delete() {
 		if(table==null)
 		{
-			JOptionPane.showMessageDialog(null,"ÇëÏÈµã»÷²é¿´ÉÌÆ·°´Å¥£¡");
+			JOptionPane.showMessageDialog(null,"è¯·å…ˆç‚¹å‡»æŸ¥çœ‹å•†å“æŒ‰é’®ï¼");
 		}
 		else{
 			try {
@@ -292,22 +292,22 @@ public class Producer extends JFrame {
 						int 			res = sql.executeUpdate(delete);
 					
 						if(res > 0){
-						System.out.println("É¾³ı³É¹¦");
-						JOptionPane.showMessageDialog(null,"É¾³ı³É¹¦£¡");
+						System.out.println("åˆ é™¤æˆåŠŸ");
+						JOptionPane.showMessageDialog(null,"åˆ é™¤æˆåŠŸï¼");
 						}
 					
 					sql.close();
 					delete_con.closed();
 				} else {
-					JOptionPane.showMessageDialog(null,"²»ÄÜÉ¾³ı£¡");
+					JOptionPane.showMessageDialog(null,"ä¸èƒ½åˆ é™¤ï¼");
 				}
 				
 			} }catch (SQLException e) {
 				e.printStackTrace();
 			} catch (NumberFormatException e) {
-				JOptionPane.showMessageDialog(null,"ÇëÑ¡ÔñÒªÉ¾³ıµÄÉÌÆ·£¡");
+				JOptionPane.showMessageDialog(null,"è¯·é€‰æ‹©è¦åˆ é™¤çš„å•†å“ï¼");
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null,"Çëµã»÷±íÀ¸É¾³ıÉÌÆ·£¡");
+				JOptionPane.showMessageDialog(null,"è¯·ç‚¹å‡»è¡¨æ åˆ é™¤å•†å“ï¼");
 			}finally {
 				Producer.this.viewThing(Producer.this.producer_id);
 			}
@@ -338,8 +338,8 @@ public class Producer extends JFrame {
 	}
 	
 	private void logout() {
-		JOptionPane.showMessageDialog(null,"Ğ»Ğ»¹âÁÙ£¬×£ÄúÉúÒâĞËÂ¡£¡");
+		JOptionPane.showMessageDialog(null,"è°¢è°¢å…‰ä¸´ï¼Œç¥æ‚¨ç”Ÿæ„å…´éš†ï¼");
 		Producer.this.dispose();
-		new Login("»¶Ó­¹âÁÙ");
+		new Login("æ¬¢è¿å…‰ä¸´");
 	}
 }

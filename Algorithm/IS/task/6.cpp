@@ -7,11 +7,11 @@ int main()
 {
     scanf("%d",&n);
     for(int i=1;i<=n;i++)scanf("%d",&a[i]);
-    int level=1;//²ãÊý
+    int level=1;//å±‚æ•°
     ll MAX=a[1];
-    ll ans=1;//µÚÒ»²ã
-    int num=1;//¸Ã²ãµÄ½ÚµãÊý
-    int pos=2;//ÏÂÒ»²ã¿ªÍ·Ö¸ÕëÎ»ÖÃ
+    ll ans=1;//ç¬¬ä¸€å±‚
+    int num=1;//è¯¥å±‚çš„èŠ‚ç‚¹æ•°
+    int pos=2;//ä¸‹ä¸€å±‚å¼€å¤´æŒ‡é’ˆä½ç½®
     for(;;)
     {
         level++;

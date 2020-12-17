@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 typedef struct tnode
 {
@@ -6,22 +6,20 @@ typedef struct tnode
 	struct tnode *Lchild;
 	struct tnode *Rchild;
 
-}*point;
-
-
-
+} * point;
 
 void CreateBtr(point &a)
 {
 	int x;
-	cout << "ÊäÈë½áµãÖµ" << endl;
+	cout << "è¾“å…¥ç»“ç‚¹å€¼" << endl;
 	cin >> x;
 	if (x == 0)
 	{
 		a = NULL;
 		return;
 	}
-	else {
+	else
+	{
 		point q = new tnode;
 		q->data = x;
 		a = q;
@@ -30,48 +28,46 @@ void CreateBtr(point &a)
 	}
 }
 
-
-void Preorder(point &t)//ÏÈĞò±éÀú
+void Preorder(point &t) //å…ˆåºéå†
 {
-	if(t)
+	if (t)
 	{
-		cout<<t->data<<" ";
+		cout << t->data << " ";
 		Preorder(t->Lchild);
 		Preorder(t->Rchild);
 	}
 }
-void inorder(point &t)//ÖĞĞò±éÀú
+void inorder(point &t) //ä¸­åºéå†
 {
-	if(t)
+	if (t)
 	{
 		inorder(t->Lchild);
-		cout<<t->data<<" ";
+		cout << t->data << " ";
 		inorder(t->Rchild);
 	}
 }
-void postorder(point &t)//ºóĞò±éÀú
+void postorder(point &t) //ååºéå†
 {
-	if(t)
+	if (t)
 	{
 		postorder(t->Lchild);
 		postorder(t->Rchild);
-		cout<<t->data<<" ";
+		cout << t->data << " ";
 	}
 }
-
 
 int main()
 {
 	point b = new tnode;
 	CreateBtr(b);
-	cout<<"ÏÈĞò±éÀúÊä³öÎª£º";
+	cout << "å…ˆåºéå†è¾“å‡ºä¸ºï¼š";
 	Preorder(b);
-	cout<<"\n";
-	cout<<"ÖĞĞò±éÀúÊä³öÎª£º";
+	cout << "\n";
+	cout << "ä¸­åºéå†è¾“å‡ºä¸ºï¼š";
 	inorder(b);
-	cout<<"\n";
-	cout<<"ºóĞò±éÀúÊä³öÎª£º";
+	cout << "\n";
+	cout << "ååºéå†è¾“å‡ºä¸ºï¼š";
 	postorder(b);
-	cout<<"\n";
+	cout << "\n";
 	return 0;
 }

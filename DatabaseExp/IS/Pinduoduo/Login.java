@@ -15,15 +15,15 @@ public class Login extends JFrame {
 	private	JPanel	panelCerter	=	new JPanel();
 	private	JPanel	panelSouth	=	new JPanel();
 	
-	private	JLabel		l		=	new JLabel("<html><font color=red size='7'><i>³¬ÊĞ¹ÜÀíÏµÍ³</i></font>", SwingConstants.CENTER);
-	private	JLabel		label1	=	new JLabel("ÊäÈëÓÃ»§    ", SwingConstants.CENTER);
-	private	JLabel		label2	=	new JLabel("ÓÃ»§ÃÜÂë    ", SwingConstants.CENTER);
+	private	JLabel		l		=	new JLabel("<html><font color=red size='7'><i>è¶…å¸‚ç®¡ç†ç³»ç»Ÿ</i></font>", SwingConstants.CENTER);
+	private	JLabel		label1	=	new JLabel("è¾“å…¥ç”¨æˆ·    ", SwingConstants.CENTER);
+	private	JLabel		label2	=	new JLabel("ç”¨æˆ·å¯†ç     ", SwingConstants.CENTER);
 	private	JTextField		t1	=	new JTextField(18);
 	private	JPasswordField	p1	=	new JPasswordField(18);
-	private	JButton		b1		=	new JButton("µÇÂ¼");
-	private	JButton		b2		=	new JButton("×¢²á");
-	private	JRadioButton	rb1	=	new JRadioButton("ÓÃ»§", true);
-	private	JRadioButton	rb2	=	new JRadioButton("ÉÌ¼Ò");
+	private	JButton		b1		=	new JButton("ç™»å½•");
+	private	JButton		b2		=	new JButton("æ³¨å†Œ");
+	private	JRadioButton	rb1	=	new JRadioButton("ç”¨æˆ·", true);
+	private	JRadioButton	rb2	=	new JRadioButton("å•†å®¶");
 	private ButtonGroup	group	=	new ButtonGroup();
 	
 	public Login(String title){
@@ -66,7 +66,7 @@ public class Login extends JFrame {
 	private class MyActionListener implements  ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			String b = e.getActionCommand();
-			if (b.equals("µÇÂ¼")) {
+			if (b.equals("ç™»å½•")) {
 				MySQLDemo login_con = new MySQLDemo();
 				login_con.connect();
 				
@@ -84,11 +84,11 @@ public class Login extends JFrame {
 						{
 							 String uname	= rs.getString("user_name");
 							 int user_id			= rs.getInt("user_id");
-							 JOptionPane.showMessageDialog(null,"µÇÂ¼³É¹¦");
+							 JOptionPane.showMessageDialog(null,"ç™»å½•æˆåŠŸ");
 							 Login.this.dispose();
 							 new User(uname, user_id);
 				         }else{
-								JOptionPane.showMessageDialog(null,"ÇëÊäÈëÕıÈ·µÄÕËºÅºÍÃÜÂë£¡","ÌáÊ¾£¡", JOptionPane.YES_NO_OPTION);
+								JOptionPane.showMessageDialog(null,"è¯·è¾“å…¥æ­£ç¡®çš„è´¦å·å’Œå¯†ç ï¼","æç¤ºï¼", JOptionPane.YES_NO_OPTION);
 								
 								t1.setText("");
 								p1.setText("");
@@ -105,12 +105,12 @@ public class Login extends JFrame {
 							{
 							 	String uname	= rs.getString("producer_name");
 								int producer_id			= rs.getInt("producer_id");
-							 JOptionPane.showMessageDialog(null,"µÇÂ¼³É¹¦");
+							 JOptionPane.showMessageDialog(null,"ç™»å½•æˆåŠŸ");
 							 Login.this.dispose();
 							 
 							 new Producer(uname, producer_id);
 				            }else{
-								JOptionPane.showMessageDialog(null,"ÇëÊäÈëÕıÈ·µÄÕËºÅºÍÃÜÂë£¡","ÌáÊ¾£¡", JOptionPane.YES_NO_OPTION);
+								JOptionPane.showMessageDialog(null,"è¯·è¾“å…¥æ­£ç¡®çš„è´¦å·å’Œå¯†ç ï¼","æç¤ºï¼", JOptionPane.YES_NO_OPTION);
 								
 								t1.setText("");
 								p1.setText("");
@@ -123,7 +123,7 @@ public class Login extends JFrame {
 					login_con.closed();
 				}
 			} else {
-				new Sign("×¢²á"); 
+				new Sign("æ³¨å†Œ"); 
 			}
 		}
 	}

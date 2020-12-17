@@ -1,199 +1,195 @@
-#include<stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include<iostream>
-#include<malloc.h>
+#include <iostream>
+#include <malloc.h>
 using namespace std;
-#define MAXSIZE 14					//ÈÃÎ»³¡µØ×î¶à³µÊı
-#define n 3							//Í£³µ³¡ÖĞ×î¶àÍ£³µÊı
-#define fee 10						//Ò»Ğ¡Ê±Í£³µÊ®¿éÇ®
+#define MAXSIZE 14 //è®©ä½åœºåœ°æœ€å¤šè½¦æ•°
+#define n 3		   //åœè½¦åœºä¸­æœ€å¤šåœè½¦æ•°
+#define fee 10	   //ä¸€å°æ—¶åœè½¦åå—é’±
 
-struct car{							 //¶¨Òå³µÁ¾µÄ½á¹¹Ìå
-char bb;							//½øÈëÓëÀë¿ªĞÅÏ¢
-int num;							//³µÅÆºÅ
-int time;							//½øÈë»òÀë¿ªÊ±¼ä
+struct car
+{			  //å®šä¹‰è½¦è¾†çš„ç»“æ„ä½“
+	char bb;  //è¿›å…¥ä¸ç¦»å¼€ä¿¡æ¯
+	int num;  //è½¦ç‰Œå·
+	int time; //è¿›å…¥æˆ–ç¦»å¼€æ—¶é—´
 };
 
-typedef struct stack1				//¶¨ÒåÕ»½á¹¹Ìå£¨Í£³µ³¡£©
+typedef struct stack1 //å®šä¹‰æ ˆç»“æ„ä½“ï¼ˆåœè½¦åœºï¼‰
 {
-int top;							//¶¨ÒåÕ»´óĞ¡
-struct car G[n];					//¶¨ÒåÕ»ÔªËØ
-}SqStack;
+	int top;		 //å®šä¹‰æ ˆå¤§å°
+	struct car G[n]; //å®šä¹‰æ ˆå…ƒç´ 
+} SqStack;
 
-struct rangweicar					//¶¨ÒåÈÃÎ»³µÁ¾µÄ½á¹¹Ìå
+struct rangweicar //å®šä¹‰è®©ä½è½¦è¾†çš„ç»“æ„ä½“
 {
 	int num;
 	int time;
 };
 
-
-typedef struct stack2				//¶¨ÒåÕ»½á¹¹Ìå£¨ÁÙÊ±Í£¿¿³¡µØ£©
+typedef struct stack2 //å®šä¹‰æ ˆç»“æ„ä½“ï¼ˆä¸´æ—¶åœé åœºåœ°ï¼‰
 {
 	struct rangweicar H[MAXSIZE];
 	int topp;
-}SqStackk;
+} SqStackk;
 
-
-//±ãµÀÓÃ¶ÓÁĞ£¬Á´Ê½´æ´¢½á¹¹
+//ä¾¿é“ç”¨é˜Ÿåˆ—ï¼Œé“¾å¼å­˜å‚¨ç»“æ„
 typedef struct QNODE
 {
 	int data;
 	QNODE *next;
-}QNODE;
+} QNODE;
 
 typedef struct linkqueue
 {
-	QNODE *front,*rear;
+	QNODE *front, *rear;
 	int geshu;
-}LinkQueue;
+} LinkQueue;
 
-
-
-//ÈëÍ£³µ³¡»òÈë±ãµÀ
-void A_cars(SqStack *s,LinkQueue *q,struct car a) 
+//å…¥åœè½¦åœºæˆ–å…¥ä¾¿é“
+void A_cars(SqStack *s, LinkQueue *q, struct car a)
 {
 	QNODE *t;
-	if(s->top!=n-1)
+	if (s->top != n - 1)
 	{
 		(s->top)++;
-		(s->G[s->top]).bb =a.bb;
-		(s->G[s->top]).num =a.num;
-		(s->G[s->top]).time =a.time;
+		(s->G[s->top]).bb = a.bb;
+		(s->G[s->top]).num = a.num;
+		(s->G[s->top]).time = a.time;
 	}
-	else 
+	else
 	{
-	cout<<"Í£³µ³¡ÒÑÂú\n";
-		t =new QNODE;
-		t->data =a.num;
+		cout << "åœè½¦åœºå·²æ»¡\n";
+		t = new QNODE;
+		t->data = a.num;
 		t->next = NULL;
-		q->rear->next =t;
-		q->rear =t;
+		q->rear->next = t;
+		q->rear = t;
 		q->geshu++;
 	}
 }
 
-
-int D_cars(SqStack *s,LinkQueue *q,struct car d)
-{ 
-	int i,j,l,x,y;
+int D_cars(SqStack *s, LinkQueue *q, struct car d)
+{
+	int i, j, l, x, y;
 	QNODE *p;
 	SqStackk *k;
-	if(d.num==(s->G[s->top].num))  //ÈôÀë¿ªµÄ³µÎª×îºóÍ£ÔÚÍ£³µ³¡ÖĞµÄ³µ
+	if (d.num == (s->G[s->top].num)) //è‹¥ç¦»å¼€çš„è½¦ä¸ºæœ€ååœåœ¨åœè½¦åœºä¸­çš„è½¦
 	{
-		x = d.time-s->G[s->top].time;
-		y =fee*x;
-		cout<<"Í£³µÊ±¼äÎª:"<<x<<"Ğ¡Ê±,Í£³µ·ÑÓÃÎª:"<<y<<"Ôª!\n";
-		if(q->geshu==0)//±ãµÀÎŞ³µ£¬º¯Êı·µ»Ø
-		{	
-			cout<<"±ãµÀÎª¿Õ£¡\n";
-			s->top =s->top-1;
+		x = d.time - s->G[s->top].time;
+		y = fee * x;
+		cout << "åœè½¦æ—¶é—´ä¸º:" << x << "å°æ—¶,åœè½¦è´¹ç”¨ä¸º:" << y << "å…ƒ!\n";
+		if (q->geshu == 0) //ä¾¿é“æ— è½¦ï¼Œå‡½æ•°è¿”å›
+		{
+			cout << "ä¾¿é“ä¸ºç©ºï¼\n";
+			s->top = s->top - 1;
 			return 0;
 		}
-		else//±ãµÀÓĞ³µ£¬³µÍ£ÈëÍ£³µ³¡
+		else //ä¾¿é“æœ‰è½¦ï¼Œè½¦åœå…¥åœè½¦åœº
 		{
-			p=q->front->next;
-			q->front->next=p->next;
-			(s->G[s->top]).num=p->data;
-			(s->G[s->top]).time=d.time;
-			delete(p);
+			p = q->front->next;
+			q->front->next = p->next;
+			(s->G[s->top]).num = p->data;
+			(s->G[s->top]).time = d.time;
+			delete (p);
 			q->geshu--;
-			if(q->front->next==NULL)//Èç¹û±ãµÀ¿ÕÁË
+			if (q->front->next == NULL) //å¦‚æœä¾¿é“ç©ºäº†
 			{
-				q->rear=q->front;
+				q->rear = q->front;
 				return 1;
 			}
 		}
 	}
-	else			//²»ÊÇ×îºóÒ»¸ö½øÈëÍ£³µ³¡µÄ£¬ĞèÒªÈÃÎ»ÁË
+	else //ä¸æ˜¯æœ€åä¸€ä¸ªè¿›å…¥åœè½¦åœºçš„ï¼Œéœ€è¦è®©ä½äº†
 	{
-		for(i=0;i<(s->top);i++)
+		for (i = 0; i < (s->top); i++)
 		{
-			if(s->G[i].num!=d.num)
+			if (s->G[i].num != d.num)
 				continue;
 			else
 				break;
 		}
-		if(i>=(s->top))		//Í£³µ³¡ÖĞÃ»ÓĞÊäÈë³µºÅµÄ³µ
+		if (i >= (s->top)) //åœè½¦åœºä¸­æ²¡æœ‰è¾“å…¥è½¦å·çš„è½¦
 		{
-		cout<<"ERROR!\n";
-		return -1;
+			cout << "ERROR!\n";
+			return -1;
 		}
-		x = d.time-(s->G[i]) . time;
-		y = fee*x;
-		cout<<"Í£³µÊ±¼äÎª:"<<x<<"Ğ¡Ê±,Í£³µ·ÑÓÃÎª:"<<y<<"Ôª!\n";
-		k =new SqStackk ;
+		x = d.time - (s->G[i]).time;
+		y = fee * x;
+		cout << "åœè½¦æ—¶é—´ä¸º:" << x << "å°æ—¶,åœè½¦è´¹ç”¨ä¸º:" << y << "å…ƒ!\n";
+		k = new SqStackk;
 		k->topp = -1;
-		for(j=(s->top); j>i; j--)// Àë¿ªµÄ³µºóÃæµÄ³µ¶¼½øÈëÁÙÊ±Õ»
+		for (j = (s->top); j > i; j--) // ç¦»å¼€çš„è½¦åé¢çš„è½¦éƒ½è¿›å…¥ä¸´æ—¶æ ˆ
 		{
 			k->topp++;
-			(k->H[k->topp]) .num =(s->G[j]) .num;
-			(k->H[k->topp]) .time =(s->G[j]) . time;
+			(k->H[k->topp]).num = (s->G[j]).num;
+			(k->H[k->topp]).time = (s->G[j]).time;
 			s->top--;
 		}
-		cout<<"ÁÙÊ±Õ»ÖĞĞÅÏ¢Îª: (³µºÅºÍÊ±¼ä) :\n";
-	
-		for( l=0; l<=(k->topp); l++ )//ÏÔÊ¾ÔÚĞÂÕ»ÖĞµÄ³µÁ¾ĞÅÏ¢
-		{
-			printf ("%d, %d\n", (k->H[l]).num, (k->H[l]).time) ;
+		cout << "ä¸´æ—¶æ ˆä¸­ä¿¡æ¯ä¸º: (è½¦å·å’Œæ—¶é—´) :\n";
 
+		for (l = 0; l <= (k->topp); l++) //æ˜¾ç¤ºåœ¨æ–°æ ˆä¸­çš„è½¦è¾†ä¿¡æ¯
+		{
+			printf("%d, %d\n", (k->H[l]).num, (k->H[l]).time);
 		}
 
 		s->top--;
 
-		while (k->topp>=0)//ÁÙÊ±Õ»µÄ³µÈëÍ£³µ³¡
-		{	s-> top++;
-			(s->G[s->top]) .bb = 'A';
-			(s->G[s->top]) .num =(k->H [k->topp]).num;
-			(s->G[s->top]) .time =(k->H[k->topp]).time;
+		while (k->topp >= 0) //ä¸´æ—¶æ ˆçš„è½¦å…¥åœè½¦åœº
+		{
+			s->top++;
+			(s->G[s->top]).bb = 'A';
+			(s->G[s->top]).num = (k->H[k->topp]).num;
+			(s->G[s->top]).time = (k->H[k->topp]).time;
 			k->topp--;
 		}
 
-		if (q->geshu==0)//±ãµÀµÈ´ı³µÊıÎª0
+		if (q->geshu == 0) //ä¾¿é“ç­‰å¾…è½¦æ•°ä¸º0
 		{
-			cout<<"±ãµÀÎª¿Õ£¡\n";
+			cout << "ä¾¿é“ä¸ºç©ºï¼\n";
 			return 2;
 		}
-		else//²»Îª0£¬½øÈëÍ£³µ³¡
-		{	s-> top++;
-			p = q-> front->next;    
-			q-> front->next = p->next;
-			(s->G[s->top]) .num = p->data;
-			(s->G[s->top]) .time = d.time;
-			free(p) ;
+		else //ä¸ä¸º0ï¼Œè¿›å…¥åœè½¦åœº
+		{
+			s->top++;
+			p = q->front->next;
+			q->front->next = p->next;
+			(s->G[s->top]).num = p->data;
+			(s->G[s->top]).time = d.time;
+			free(p);
 			q->geshu--;
-			if (q->front->next==NULL)
-				q->rear = q-> front;
+			if (q->front->next == NULL)
+				q->rear = q->front;
 			return 3;
 		}
 	}
 }
 
-
-
-//Í¨¹ı´«µİÀ´µÄ³µÁ¾ĞÅÏ¢µ÷ÓÃÏà¹Øº¯ÊıÊµÏÖ²Ù×÷
+//é€šè¿‡ä¼ é€’æ¥çš„è½¦è¾†ä¿¡æ¯è°ƒç”¨ç›¸å…³å‡½æ•°å®ç°æ“ä½œ
 void Judge_Output(SqStack *s, LinkQueue *q, struct car *r)
 {
-	if( (*r).bb=='E' || (*r).bb=='e')
+	if ((*r).bb == 'E' || (*r).bb == 'e')
 	{
-		cout<<"STOP!\n" ;
+		cout << "STOP!\n";
 	}
-	else if((*r).bb=='P' ||(*r).bb=='p')
-	{	
-		cout<<"Í£³µ³¡ÖĞÆû³µÁ¾ÊıÎª:"<<(s->top) +1<<"\n" ;
-	} 
-	else if((*r).bb=='W' || (*r).bb=='w')
-	{	
-		cout<<"±ãµÀÖĞÆû³µÁ¾ÊıÎª:"<< q->geshu<<"\n";
-	}
-	else if((*r).bb=='A' || (*r).bb=='a')
+	else if ((*r).bb == 'P' || (*r).bb == 'p')
 	{
-		A_cars(s,q,*r);
+		cout << "åœè½¦åœºä¸­æ±½è½¦è¾†æ•°ä¸º:" << (s->top) + 1 << "\n";
 	}
-	else if((*r).bb=='D' || (*r).bb=='d')
-	{	
-		D_cars(s,q,*r);
+	else if ((*r).bb == 'W' || (*r).bb == 'w')
+	{
+		cout << "ä¾¿é“ä¸­æ±½è½¦è¾†æ•°ä¸º:" << q->geshu << "\n";
 	}
-	else {
-		cout<<"ERROR! \n" ;
+	else if ((*r).bb == 'A' || (*r).bb == 'a')
+	{
+		A_cars(s, q, *r);
+	}
+	else if ((*r).bb == 'D' || (*r).bb == 'd')
+	{
+		D_cars(s, q, *r);
+	}
+	else
+	{
+		cout << "ERROR! \n";
 	}
 }
 
@@ -203,29 +199,30 @@ void main()
 	LinkQueue *q;
 	QNODE *p;
 	char d;
-	int a,b;
-	struct car aa [MAXSIZE];
-	int  i;
-	s =new SqStack ;
-	s->top =-1;
-	q = new LinkQueue ;
-	p = new QNODE ;
+	int a, b;
+	struct car aa[MAXSIZE];
+	int i;
+	s = new SqStack;
+	s->top = -1;
+	q = new LinkQueue;
+	p = new QNODE;
 	p->next = NULL;
 	q->front = q->rear = p;
-	q->geshu=0;
-	cout<<"Í£³µ³¡¹ÜÀíÏµÍ³\n";
-	cout<<"********************************************************\n" ;
-	cout<<"A.³µÁ¾µ½´ï\nD.³µÁ¾Àë¿ª\nP.Í£³µ³¡³µÁ¾×ÜÊı\nW.±ãµÀ³µÁ¾×ÜÊı\nE.ÍË³ö\n";
-	cout<<"\n";
-	for (i=0; i<MAXSIZE;i++)
-	{	cout<<"ÇëÊäÈë³µÁ¾µÄ×´Ì¬£¬³µÅÆºÅºÍÊ±¼ä: \n";
-		cin>>d;
-		cin>>a>>b;
-	    aa[i].bb=d;
-		aa[i].num=a;
-		aa[i].time=b;
-		Judge_Output(s,q,&aa[i]);
-		if(aa[i].bb=='E')
+	q->geshu = 0;
+	cout << "åœè½¦åœºç®¡ç†ç³»ç»Ÿ\n";
+	cout << "********************************************************\n";
+	cout << "A.è½¦è¾†åˆ°è¾¾\nD.è½¦è¾†ç¦»å¼€\nP.åœè½¦åœºè½¦è¾†æ€»æ•°\nW.ä¾¿é“è½¦è¾†æ€»æ•°\nE.é€€å‡º\n";
+	cout << "\n";
+	for (i = 0; i < MAXSIZE; i++)
+	{
+		cout << "è¯·è¾“å…¥è½¦è¾†çš„çŠ¶æ€ï¼Œè½¦ç‰Œå·å’Œæ—¶é—´: \n";
+		cin >> d;
+		cin >> a >> b;
+		aa[i].bb = d;
+		aa[i].num = a;
+		aa[i].time = b;
+		Judge_Output(s, q, &aa[i]);
+		if (aa[i].bb == 'E')
 			break;
 	}
 }

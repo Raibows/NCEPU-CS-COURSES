@@ -12,18 +12,18 @@ public class Sign extends JFrame {
 	private	JPanel	panelCerter	=	new JPanel();
 	private	JPanel	panelSouth	=	new JPanel();
 	
-	private	JLabel		label1	=	new JLabel("ĞÕÃû", SwingConstants.CENTER);
+	private	JLabel		label1	=	new JLabel("å§“å", SwingConstants.CENTER);
 	private	JLabel		label2	=	new JLabel("id     ", SwingConstants.CENTER);
-	private	JLabel		label3	=	new JLabel("ÃÜÂë", SwingConstants.CENTER);
-	private	JLabel		label4	=	new JLabel("ĞÔ±ğ    ", SwingConstants.CENTER);
+	private	JLabel		label3	=	new JLabel("å¯†ç ", SwingConstants.CENTER);
+	private	JLabel		label4	=	new JLabel("æ€§åˆ«    ", SwingConstants.CENTER);
 	private	JTextField		t1	=	new JTextField(18);
 	private	JTextField		t2	=	new JTextField(18);
 	private	JPasswordField	p1	=	new JPasswordField(18);
-	private	JRadioButton	rb1	=	new JRadioButton("ÄĞ", true);
-	private	JRadioButton	rb2	=	new JRadioButton("Å®");
+	private	JRadioButton	rb1	=	new JRadioButton("ç”·", true);
+	private	JRadioButton	rb2	=	new JRadioButton("å¥³");
 	private ButtonGroup	group	=	new ButtonGroup();
-	private	JButton		b1		=	new JButton("È·¶¨");
-	private	JButton		b2		=	new JButton("È¡Ïû");
+	private	JButton		b1		=	new JButton("ç¡®å®š");
+	private	JButton		b2		=	new JButton("å–æ¶ˆ");
 	
 	public Sign(String title) {
 		super(title);
@@ -66,7 +66,7 @@ public class Sign extends JFrame {
 	private class MyActionListener implements  ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			String b = e.getActionCommand();
-			if (b.equals("È·¶¨")) {
+			if (b.equals("ç¡®å®š")) {
 				MySQLDemo con = new MySQLDemo();
 				con.connect();
 				try {
@@ -85,13 +85,13 @@ public class Sign extends JFrame {
 					smt.setInt(3, sex);
 					smt.setString(4, password);
 					if (smt.executeUpdate() > 0) {
-						JOptionPane.showMessageDialog(null,"×¢²á³É¹¦");
+						JOptionPane.showMessageDialog(null,"æ³¨å†ŒæˆåŠŸ");
 						Sign.this.dispose();
 					}
 					
 				} catch (Exception e1) {
 					e1.printStackTrace();
-					JOptionPane.showMessageDialog(null,"ÇëÕıÈ·ÌîĞ´ĞÅÏ¢£¡");
+					JOptionPane.showMessageDialog(null,"è¯·æ­£ç¡®å¡«å†™ä¿¡æ¯ï¼");
 				} finally {
 					con.closed();
 				}

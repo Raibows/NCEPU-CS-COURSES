@@ -2,7 +2,7 @@
 #include<string>
 using namespace std;
 
-//ÓÅÏÈ¹ØÏµ±í
+//ä¼˜å…ˆå…³ç³»è¡¨
 char yx[8][8] = { ' ','+','*','-','i','(',')','#',
 				'+','>','<','<','<','<','>','>',
 				'*','>','>','<','<','<','>','>',
@@ -20,7 +20,7 @@ int Temp[100];
 int Tp, four_count = 0;
 
 
-//Êä³ö²Ù×÷Êı
+//è¾“å‡ºæ“ä½œæ•°
 void sc_shu(int i)
 {
 	if (i < 100)//
@@ -42,7 +42,7 @@ void sc_shu(int i)
 		cout << "T" << i - 300;
 }
 
-//ËÄÔªÊ½
+//å››å…ƒå¼
 typedef class four_shi
 {
 	char op;
@@ -72,13 +72,13 @@ public:
 	}
 	void cs_four()
 	{
-		cout << "²úÉú:" << four_count;
+		cout << "äº§ç”Ÿ:" << four_count;
 		four_sc();
 	}
 }*Four;
 Four four[100];
 
-//·ÖÎöÕ»
+//åˆ†ææ ˆ
 struct stack
 {
 	int top=0;
@@ -134,7 +134,7 @@ void shuchu(int i)
 		cout << "T" << i - 300;
 }
 
-//Êä³öÕ»
+//è¾“å‡ºæ ˆ
 void sc_stack()
 {
 	for (int i = 0;i < s.top;i++)
@@ -155,7 +155,7 @@ else
 	return false;
 }
 
-//²éÑ¯ÓÅÏÈ¹ØÏµ
+//æŸ¥è¯¢ä¼˜å…ˆå…³ç³»
 int c_yx(int i, int j)
 {
 	if (i / 100 == 1)
@@ -181,14 +181,14 @@ int siyuanshi(int t[3])
 	return four_count + 300;
 }
 
-//ÓïÒå×Ó³ÌĞò
+//è¯­ä¹‰å­ç¨‹åº
 int fanyi(int* ch, int ll)
 {
 	pop(ch, ll);
 	if (ll == 1)//E->i
 	{
 		Temp[++Tp] = ch[0];
-		cout << "ºÏ²¢:";
+		cout << "åˆå¹¶:";
 		shuchu(ch[0]);
 		cout << "==>";
 		shuchu(Tp + 200);
@@ -198,16 +198,16 @@ int fanyi(int* ch, int ll)
 	else if (ch[0] == 5 && ch[2] == 6)//E->(E1)
 	{
 		Temp[++Tp] = ch[1];
-		cout << "ºÏ²¢£º(";
+		cout << "åˆå¹¶ï¼š(";
 		shuchu(ch[1]);
 		cout << ")==>";
 		shuchu(Tp + 200);
 		cout << endl;
 		return Tp + 200;
 	}
-	else if (ch[0] > 100 && ch[2] > 100 && ch[1] < 100)//E¡úE1+E2 E¡úE1*E2 E¡úE1**E2
+	else if (ch[0] > 100 && ch[2] > 100 && ch[1] < 100)//Eâ†’E1+E2 Eâ†’E1*E2 Eâ†’E1**E2
 	{
-		cout << "ºÏ²¢£º";
+		cout << "åˆå¹¶ï¼š";
 		shuchu(ch[0]);
 		shuchu(ch[1]);
 		shuchu(ch[2]);
@@ -218,12 +218,12 @@ int fanyi(int* ch, int ll)
 	}
 	else
 	{
-		cout << "ºÏ²¢Ê§°Ü£¡" << endl;
+		cout << "åˆå¹¶å¤±è´¥ï¼" << endl;
 		//exit(0);
 	}
 }
 
-//×Ö·û´æÔÚÊı×éÀï
+//å­—ç¬¦å­˜åœ¨æ•°ç»„é‡Œ
 int zifu(char ch)
 {
 	for (int i = 1;i < c_arr[0];i++)
@@ -233,7 +233,7 @@ int zifu(char ch)
 	return Sp + 100;
 }
 
-//×Ö·û»¯³ÉÊı×Ö
+//å­—ç¬¦åŒ–æˆæ•°å­—
 int c2i(char ch)
 {
 	int j;
@@ -248,16 +248,16 @@ int c2i(char ch)
 		return 0;
 }
 
-//ÊäÈë×Ö·û´®»¯³ÉÊı×Ö
+//è¾“å…¥å­—ç¬¦ä¸²åŒ–æˆæ•°å­—
 void in2i(int sr_i[], char str[], int& d_len, int len)
 {
 	for (int i = 0;i < len;i++)
 	{
 		sr_i[d_len] = c2i(str[i]);
-		if (sr_i[d_len] == 0)//²»ÊÇ×Ö·û
+		if (sr_i[d_len] == 0)//ä¸æ˜¯å­—ç¬¦
 		{
-			cout << "ÊäÈë´íÎó£¡" << "Î»ÖÃ:" << i + 1 << endl;
-			cout << str[i] << "²»ÄÜ±»Ê¶±ğ" << endl;
+			cout << "è¾“å…¥é”™è¯¯ï¼" << "ä½ç½®:" << i + 1 << endl;
+			cout << str[i] << "ä¸èƒ½è¢«è¯†åˆ«" << endl;
 			system("pause");
 			exit(0);
 		}
@@ -268,7 +268,7 @@ void in2i(int sr_i[], char str[], int& d_len, int len)
 	}
 }
 
-//ÅĞ¶ÏÊÇ·ñÎªÖÕ½á·û
+//åˆ¤æ–­æ˜¯å¦ä¸ºç»ˆç»“ç¬¦
 bool IsVT(char c)
 {
 	bool flag = false;
@@ -287,7 +287,7 @@ int main()
 	char shuru[100];
 	int* ch = new int[100];
 	
-	cout << "ÓïÒå·ÖÎöÆ÷µÄÓÅÏÈ·ÖÎö±íÈçÏÂ£º" << endl;
+	cout << "è¯­ä¹‰åˆ†æå™¨çš„ä¼˜å…ˆåˆ†æè¡¨å¦‚ä¸‹ï¼š" << endl;
 	for (int i = 0;i < 8;i++)
 	{
 		for (int j = 0;j < 8;j++)
@@ -301,12 +301,12 @@ int main()
 	}
 	cout << "---------------------------------------------------------" << endl;
 	
-	cout << "ÇëÊäÈëÒ»¶Î³ÌĞò(ÒÔ # ½áÊø£¡):" << endl;
+	cout << "è¯·è¾“å…¥ä¸€æ®µç¨‹åº(ä»¥ # ç»“æŸï¼):" << endl;
 	cin.getline(shuru, 100);int len = strlen(shuru);
 	
 	in2i(sr_i, shuru, sr_len, len);
 
-	cout << "·ûºÅÕ»:" << '\t' << '\t' << "¶¯×÷:" << '\t' << '\t' << '\t' << "ËÄÔªÊ½:" << endl;
+	cout << "ç¬¦å·æ ˆ:" << '\t' << '\t' << "åŠ¨ä½œ:" << '\t' << '\t' << '\t' << "å››å…ƒå¼:" << endl;
 	push(7);
 	
 	int ll = 0;
@@ -316,7 +316,7 @@ int main()
 	do{
 		a = sr_i[ll];
 
-		//·ÖÎöÕ»×î¶¥µÄÖÕ½á·û
+		//åˆ†ææ ˆæœ€é¡¶çš„ç»ˆç»“ç¬¦
 		if (getchar(top) < 200)
 			top_vt = top;
 		else
@@ -324,12 +324,12 @@ int main()
 
 		while (a < 200 && (c_yx(getchar(top_vt), a) == 1))
 		{
-			sc_stack();//Êä³öµ±Ç°·ÖÎöÕ» 
+			sc_stack();//è¾“å‡ºå½“å‰åˆ†ææ ˆ 
 			int ff = top_vt, ss = ff - 1;
 			if (getchar(ss) > 200)
 				ss--;
 
-			//½« s[j+1]¡­s[k]¹éÔ¼ÎªÄ³¸öN;
+			//å°† s[j+1]â€¦s[k]å½’çº¦ä¸ºæŸä¸ªN;
 			while (c_yx(getchar(ss), getchar(ff)) != -1)
 			{
 				ff = ss;
@@ -342,17 +342,17 @@ int main()
 			ss++;
 			int length = start - ss;
 			
-			push(fanyi(ch, length));//¹éÔ¼µÄÖÕ½á·û´®
+			push(fanyi(ch, length));//å½’çº¦çš„ç»ˆç»“ç¬¦ä¸²
 			top_vt = size() - 1;
 			if (getchar(top_vt) > 200)
 				top_vt--;
 		}
 		
-		//ÓÅÏÈ¼¶Ğ¡ÓÚµÈÓÚµÄ¾ÍÒÆ½ø
+		//ä¼˜å…ˆçº§å°äºç­‰äºçš„å°±ç§»è¿›
 		if ((a < 200) && (c_yx(getchar(top_vt), a) == 2))
 		{
-			cout << "´íÎó!" << endl;
-			cout << "µÚ" << ll + 1 << " ×ÖÄ¸´íÎó!" << endl;
+			cout << "é”™è¯¯!" << endl;
+			cout << "ç¬¬" << ll + 1 << " å­—æ¯é”™è¯¯!" << endl;
 			shuchu(a);
 
 			exit(0);
@@ -360,7 +360,7 @@ int main()
 		else
 		{
 			sc_stack();
-			cout << "ÒÆ½ø:";
+			cout << "ç§»è¿›:";
 			shuchu(a);
 			cout << endl;
 			push(a);
@@ -378,7 +378,7 @@ int main()
 		cout << "No!" << endl;
 	
 	
-	cout << "×îºóËÄÔªÊ½ÈçÏÂ:" << endl;
+	cout << "æœ€åå››å…ƒå¼å¦‚ä¸‹:" << endl;
 	for (int l = 1;l <= four_count;l++)
 	{
 		cout << l << ":";

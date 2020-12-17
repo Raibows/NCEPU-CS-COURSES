@@ -12,11 +12,11 @@ typedef struct SeqList{
 
 void panduan(PSeqList L){
 	if(!L){
-		cout<<"±í²»´æÔÚ£¡";
+		cout<<"è¡¨ä¸å­˜åœ¨ï¼";
 		return ;
 	}
 	if(L->length>=MAXSIZE){
-		cout<<"±íÒç³ö£¡";
+		cout<<"è¡¨æº¢å‡ºï¼";
 	return ;
 	}
 }
@@ -25,10 +25,10 @@ void panduan(PSeqList L){
 PSeqList Init_SeqList(){
 	PSeqList L=new SeqList;
 
-	cout<<"ÊäÈëÔ¼Éª·ò»·µÄÈËÊı:";
+	cout<<"è¾“å…¥çº¦ç‘Ÿå¤«ç¯çš„äººæ•°:";
 	cin>>L->length;
  
-	cout<<"ÊäÈëÈËÃû£º";
+	cout<<"è¾“å…¥äººåï¼š";
 	for(int i=0;i<L->length;i++){
 		cin>>L->data[i];
 	}
@@ -40,34 +40,34 @@ PSeqList Init_SeqList(){
 
 void Delete_SeqList(PSeqList L,int i){
 	
-	panduan(L);//ÅĞ¶ÏÏßĞÔ±íÊÇ·ñÎª¿Õ
+	panduan(L);//åˆ¤æ–­çº¿æ€§è¡¨æ˜¯å¦ä¸ºç©º
 	
 	if(i<1 || i>L->length+1){
-		cout<<"É¾³ıÊ§°Ü£¡";
+		cout<<"åˆ é™¤å¤±è´¥ï¼";
 		return;
 	}
 
 	int j=i-1;
 	for(j=i-1;j<L->length;j++){
-		L->data[j]=L->data[j+1];//É¾³ıÁËiÎ»ÖÃ
+		L->data[j]=L->data[j+1];//åˆ é™¤äº†iä½ç½®
 	}
 
-	L->length--;//³¤¶È¼õÒ»
+	L->length--;//é•¿åº¦å‡ä¸€
 }
  
 
-//sÎ»ÖÃ¿ªÊ¼,É¾³ıµÚmÎ»
+//sä½ç½®å¼€å§‹,åˆ é™¤ç¬¬mä½
 void yue_SeqList(PSeqList L,int s,int m){
 	panduan(L);	
 	int j=1;
 	int s1=s-1;
 	
-	cout<<"\nÊä³öÔ¼Éª·òĞòÁĞ£º\n";
+	cout<<"\nè¾“å‡ºçº¦ç‘Ÿå¤«åºåˆ—ï¼š\n";
 
 	int i=L->length;
 	for( i=L->length;i>0;i--){
 		s1=(s1+m-1)%i;
-		cout<<"µÚ"<<j<<"¸ö³öÁĞµÄÈËÊÇ£º"<<L->data[s1]<<endl;
+		cout<<"ç¬¬"<<j<<"ä¸ªå‡ºåˆ—çš„äººæ˜¯ï¼š"<<L->data[s1]<<endl;
 		Delete_SeqList(L,s1+1);
 		j++;
 	}
@@ -81,7 +81,7 @@ int main(){
 	PSeqList L=Init_SeqList();
 	int s;
 	int m;
-	cout<<"ÇëÊäÈëÔ¼Éª·ò»·µÄÆğÊ¼ĞòºÅsºÍ¼ÆÊıÖµmµÄÖµ·Ö±ğÊÇ£º";
+	cout<<"è¯·è¾“å…¥çº¦ç‘Ÿå¤«ç¯çš„èµ·å§‹åºå·så’Œè®¡æ•°å€¼mçš„å€¼åˆ†åˆ«æ˜¯ï¼š";
 	cin>>s>>m;
 	yue_SeqList(L,s,m);
  

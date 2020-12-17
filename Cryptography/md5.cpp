@@ -70,7 +70,7 @@ Rotation is separate from addition to prevent recomputation.
  // MD5 initialization. Begins an MD5 operation, writing a new context.
 
 
-void MD5::MD5Init(MD5_CTX* context)//³õÊ¼»¯4¸ö¼Ä´æÆ÷
+void MD5::MD5Init(MD5_CTX* context)//åˆå§‹åŒ–4ä¸ªå¯„å­˜å™¨
 {
 	context->count[0] = context->count[1] = 0;
 	// Load magic initialization constants.
@@ -96,7 +96,7 @@ void MD5::MD5Update(MD5_CTX* context, unsigned char* input, unsigned int inputLe
 	unsigned int i, index, partLen;
 
 	// Compute number of bytes mod 64 
-	//¼ÆËãÃ÷ÎÄÌî³äÇ°³¤¶È mod 64
+	//è®¡ç®—æ˜Žæ–‡å¡«å……å‰é•¿åº¦ mod 64
 	index = (unsigned int)((context->count[0] >> 3) & 0x3F);
 
 	// Update number of bits 
@@ -110,7 +110,7 @@ void MD5::MD5Update(MD5_CTX* context, unsigned char* input, unsigned int inputLe
 
 	if (inputLen >= partLen)
 	{
-		MD5_memcpy((POINTER)&context->buffer[index], (POINTER)input, partLen);//ÖÐ¼äµÄ¸³Öµ¸ø×óÃæµÄ
+		MD5_memcpy((POINTER)&context->buffer[index], (POINTER)input, partLen);//ä¸­é—´çš„èµ‹å€¼ç»™å·¦é¢çš„
 		MD5Transform(context->state, context->buffer);
 
 		for (i = partLen; i + 63 < inputLen; i += 64)
@@ -148,12 +148,12 @@ void MD5::MD5Final(unsigned char digest[16], MD5_CTX* context)
 }
 
 // MD5 basic transformation. Transforms state based on block.
-//Ñ¹Ëõº¯Êý
-void MD5::MD5Transform(UINT4 state[4], unsigned char block[64])//Ñ¹Ëõº¯Êý
+//åŽ‹ç¼©å‡½æ•°
+void MD5::MD5Transform(UINT4 state[4], unsigned char block[64])//åŽ‹ç¼©å‡½æ•°
 {
 	UINT4 a = state[0], b = state[1], c = state[2], d = state[3], x[16];
 
-	Decode(x, block, 64);//ÓÉblock[64]²úÉúx[16]
+	Decode(x, block, 64);//ç”±block[64]äº§ç”Ÿx[16]
 
 	// Round 1
 
@@ -246,7 +246,7 @@ void MD5::MD5Transform(UINT4 state[4], unsigned char block[64])//Ñ¹Ëõº¯Êý
 //unsigned char *output;
 //UINT4 *input;
 //unsigned int len;
-//±àÂë
+//ç¼–ç 
 void MD5::Encode(unsigned char* output, UINT4* input, unsigned int len)
 {
 	unsigned int i, j;
@@ -331,7 +331,7 @@ int MD5::MD5File(unsigned char* filename1, unsigned char* output)
 	err = fopen_s(&fp1, (char*)filename1, "r");
 	if (err != 0)
 	{
-		cout << "´ò¿ªÔ­ÎÄ¼þÊ§°Ü" << endl;
+		cout << "æ‰“å¼€åŽŸæ–‡ä»¶å¤±è´¥" << endl;
 		return 0;
 	}
 
@@ -467,7 +467,7 @@ void MD5::MD5String(unsigned char* inputData, unsigned char* hashstr)
 	MD5_memchange((POINTER)&cInputLen[0], (UINT4*)&mInformation->count[0]);
 
 	iInputLen = iInputLen + 8;
-	if (iInputLen == 64)//²»ÐèÒªÌî³ä
+	if (iInputLen == 64)//ä¸éœ€è¦å¡«å……
 	{
 		MD5_memcpy((POINTER)&mInformation->buffer[iInputLen - 8], (POINTER)&cInputLen[0], 8);
 		MD5_memcpy((POINTER)&mInformation->buffer[0], (POINTER)&cInputString[0], iInputLen - 8);
@@ -480,7 +480,7 @@ void MD5::MD5String(unsigned char* inputData, unsigned char* hashstr)
 		MD5_memcpy((POINTER)&mInformation->buffer[0], (POINTER)&cInputString[0], iInputLen - 8);
 		MD5_memcpy((POINTER)&mInformation->buffer[iInputLen - 8], (POINTER)&cInputLen[0], 8);
 
-		iPaddingStringLen = 64 - iInputLen;//Ìî³ä
+		iPaddingStringLen = 64 - iInputLen;//å¡«å……
 		MD5_memcpy((POINTER)&mInformation->buffer[iInputLen], (POINTER)&PADDING[0], iPaddingStringLen);
 
 		MD5Transform((UINT4*)&mInformation->state[0], (POINTER)&mInformation->buffer[0]);
@@ -493,7 +493,7 @@ void MD5::MD5String(unsigned char* inputData, unsigned char* hashstr)
 		MD5Transform((UINT4*)&mInformation->state[0], (POINTER)&mInformation->buffer[0]);
 
 		MD5_memcpy((POINTER)&mInformation->buffer[0], (POINTER)&cInputLen[72 - iInputLen], iInputLen - 64);
-		iPaddingStringLen = 64 + 64 - iInputLen;//Ìî³ä
+		iPaddingStringLen = 64 + 64 - iInputLen;//å¡«å……
 		MD5_memcpy((POINTER)&mInformation->buffer[iInputLen - 64], (POINTER)&PADDING[0], iPaddingStringLen);
 
 		MD5Transform((UINT4*)&mInformation->state[0], (POINTER)&mInformation->buffer[0]);

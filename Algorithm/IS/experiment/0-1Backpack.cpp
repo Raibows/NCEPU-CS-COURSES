@@ -5,19 +5,19 @@
 using namespace std;
 
 struct goods{
-int wight;//ÎïÆ·ÖØÁ¿
-int value;//ÎïÆ·¼ÛÖµ
+int wight;//ç‰©å“é‡é‡
+int value;//ç‰©å“ä»·å€¼
 };
 
-int n,C;//ÎïÆ·ÊıÁ¿£¬±³°üÈİÁ¿
-int X[N];//×îÖÕ´æ´¢×´Ì¬
+int n,C;//ç‰©å“æ•°é‡ï¼ŒèƒŒåŒ…å®¹é‡
+int X[N];//æœ€ç»ˆå­˜å‚¨çŠ¶æ€
 struct goods goods[N];
 
 int KnapSack(int n,struct goods a[],int C,int x[]){
     int V[N][10*N];
-    for(int m = 0; m <= n; m++)//³õÊ¼»¯µÚ0ÁĞ
+    for(int m = 0; m <= n; m++)//åˆå§‹åŒ–ç¬¬0åˆ—
         V[m][0] = 0;
-    for(int l = 0; l <= C; l++)//³õÊ¼»¯µÚ0ĞĞ
+    for(int l = 0; l <= C; l++)//åˆå§‹åŒ–ç¬¬0è¡Œ
         V[0][l] = 0;
     for(int k = 1; k <= n; k++)
         for(int j = 1; j <= C; j++)
@@ -38,18 +38,18 @@ int KnapSack(int n,struct goods a[],int C,int x[]){
 }
 int main()
 {
-    printf("ÎïÆ·ÖÖÀàn£º");
+    printf("ç‰©å“ç§ç±»nï¼š");
     scanf("%d",&n);
-    printf("±³°üÈİÁ¿C£º");
+    printf("èƒŒåŒ…å®¹é‡Cï¼š");
     scanf("%d",&C);
     for(int i = 0; i < n; i++){
-        printf("ÎïÆ·%dµÄÖØÁ¿w[%d]¼°Æä¼ÛÖµv[%d]£º",i+1,i+1,i+1);
+        printf("ç‰©å“%dçš„é‡é‡w[%d]åŠå…¶ä»·å€¼v[%d]ï¼š",i+1,i+1,i+1);
         scanf("%d%d",&goods[i].wight,&goods[i].value);
     }
     int sum2 = KnapSack(n,goods,C,X);
-     printf("¶¯Ì¬¹æ»®·¨Çó½â0/1±³°üÎÊÌâ:\nX=[");
+     printf("åŠ¨æ€è§„åˆ’æ³•æ±‚è§£0/1èƒŒåŒ…é—®é¢˜:\nX=[");
      for(int j = 0; j < n; j++)
-        cout<<X[j]<<" ";//Êä³öËùÇóX[n]¾ØÕó
-     printf("]   ×°Èë×Ü¼ÛÖµ%d\n", sum2);
+        cout<<X[j]<<" ";//è¾“å‡ºæ‰€æ±‚X[n]çŸ©é˜µ
+     printf("]   è£…å…¥æ€»ä»·å€¼%d\n", sum2);
      return 0;
 }

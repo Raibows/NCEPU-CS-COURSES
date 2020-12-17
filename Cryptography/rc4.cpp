@@ -87,13 +87,13 @@ int RC4::RC4File(char* filename1, char* filename2, char* session)
 	err = fopen_s(&fp1, filename1, "rb");
 	if (err != 0)
 	{
-		cout << "´ò¿ªÔ­ÎÄ¼þÊ§°Ü" << endl;
+		cout << "æ‰“å¼€åŽŸæ–‡ä»¶å¤±è´¥" << endl;
 		return 0;
 	}
 	err = fopen_s(&fp2, filename2, "wb");
 	if (err != 0)
 	{
-		cout << "´ò¿ªÄ¿±êÎÄ¼þÊ§°Ü" << endl;
+		cout << "æ‰“å¼€ç›®æ ‡æ–‡ä»¶å¤±è´¥" << endl;
 		return 0;
 	}
 	abcd = strlen(session);

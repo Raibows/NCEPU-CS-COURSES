@@ -4,7 +4,7 @@ using namespace std;
 
 
 /*
-分治二分查找
+鍒嗘不浜屽垎鏌ユ壘
 */
 
 template <class T>
