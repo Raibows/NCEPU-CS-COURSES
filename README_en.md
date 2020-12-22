@@ -8,8 +8,6 @@ Initial commit on 19 Jun 2019.
 
 This is an open source project aimed at sharing undergraduate courses and experiments example codes for college of Computer Science. All the courses, codes and materials are from NCEPU. If you have any support plan or advice, please <a href="Mailto:luckychizuo@gmail.com">contact </a>with me. And welcome to pull requests! Please see [Wiki](https://github.com/Raibows/NCEPU-CS-COURSES/wiki) to learn more.
 
-Note that the code in the CS subfolder comes from the Computer Science and Technology major and the IS subfolder comes from the Information Security major.
-
 ### Catalog
 
 - [x] Advanced Program Design
